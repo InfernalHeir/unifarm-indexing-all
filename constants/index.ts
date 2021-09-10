@@ -1,0 +1,1 @@
+export const DAYS = 86400;
