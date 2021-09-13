@@ -33,4 +33,7 @@ export class Stake {
     @Column("string")
     block: string;
 
+    @Column("number")
+    chainId: number;
+
 }

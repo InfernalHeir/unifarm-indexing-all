@@ -30,4 +30,7 @@ export class Unstake {
     @Column("string")
     block: string;
 
+    @Column("number")
+    chainId: number;
+
 }

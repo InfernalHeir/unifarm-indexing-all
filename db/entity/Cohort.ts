@@ -1,4 +1,4 @@
-import {Entity, PrimaryGeneratedColumn, Column, Generated} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
 
 @Entity()
 export class Cohort {
@@ -9,8 +9,8 @@ export class Cohort {
     @Column({type: "string"})
     cohortAddress: string;
 
-    @Column({type: "integer"})
-    stakeDuration: number;
+    @Column({type: "string"})
+    stakeDuration: string;
 
     @Column({type:"string",length: 255})
     poolStartTime: string;
@@ -24,15 +24,14 @@ export class Cohort {
     @Column({type: "array"})
     tokens: string[];
 
-    @Column({type: "varchar",length:255})
+    @Column({type: "varchar",length:255,nullable: true})
     refferalPercentage: string;
 
     @Column("number",{nullable: true})
     optionalBenefits: number;
 
-    @Column()
-    @Generated("increment")
-    cohortVersion: number;
+    @Column("string")
+    cohortVersion: string;
 
     @Column("string")
     rewardStrategy: string;
@@ -45,5 +44,11 @@ export class Cohort {
 
     @Column("boolean")
     gaslessAvailablity: boolean;
+
+    @Column("number")
+    chainId: number;
+
+    @Column("string")
+    tag: string;
 
 }

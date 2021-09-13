@@ -38,4 +38,7 @@ export class Token {
 
     @Column("string")
     rewardCap: string;
+
+    @Column("number")
+    chainId: number;
 }

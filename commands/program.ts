@@ -1,9 +1,5 @@
-import { Command } from 'commander';
+export {};
 
-const program = new Command();
 
-program.option('-s, --seed', 'seed all cohorts');
-
-program.parse();
 
 

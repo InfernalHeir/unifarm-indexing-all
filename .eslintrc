@@ -1,8 +1,6 @@
 {
     "parser": "@typescript-eslint/parser",
     "rules": {
-        "semi":"error",
-        "no-console": "error",
         "no-await-in-loop": "error"
     }
 }
