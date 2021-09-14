@@ -1,15 +1,18 @@
-import { logger } from "ethers";
-import { createConnection,Connection } from "typeorm";
+import "reflect-metadata";
+import { logger } from "../log/index";
+import { Connection, getConnectionManager } from "typeorm";
 import { clientOps } from "./connectionConfig";
 
-export async function bootstarp() : Promise<Connection | undefined> {
+export async function bootstarp(): Promise<
+  Connection | undefined
+> {
   try {
-    const client = await createConnection(clientOps);
+    const client = await getConnectionManager().create(clientOps);
     await client.connect();
     logger.info(`connection established to ${client.name}`);
     return client;
   } catch (err) {
-    logger.makeError(err.message);
+    logger.error(err.message);
     return;
   }
 }

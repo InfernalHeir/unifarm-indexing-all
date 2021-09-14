@@ -6,49 +6,52 @@ export class Cohort {
     @PrimaryGeneratedColumn("uuid")
     id: string;
 
-    @Column({type: "string"})
+    @Column({type: "varchar"})
     cohortAddress: string;
 
-    @Column({type: "string"})
+    @Column({type: "varchar"})
     stakeDuration: string;
 
-    @Column({type:"string",length: 255})
+    @Column({type:"varchar"})
     poolStartTime: string;
 
-    @Column({type: "int64", length:64})
+    @Column({type: "numeric"})
     tokensCount: number;
 
-    @Column({type: "array"})
-    intervalDays: number[];
+    @Column({type: "varchar",array:true})
+    intervalDays: string[];
 
-    @Column({type: "array"})
+    @Column({type: "varchar",array:true})
     tokens: string[];
 
-    @Column({type: "varchar",length:255,nullable: true})
+    @Column({type: "varchar",nullable: true})
     refferalPercentage: string;
 
-    @Column("number",{nullable: true})
-    optionalBenefits: number;
+    @Column("varchar",{nullable: true})
+    optionalBenefits: string;
 
-    @Column("string")
+    @Column("varchar")
     cohortVersion: string;
 
-    @Column("string")
+    @Column("varchar")
     rewardStrategy: string;
 
-    @Column("number")
+    @Column("numeric")
     DAYS: number;
 
-    @Column("number")
+    @Column("numeric")
     HOURS: number;
 
     @Column("boolean")
     gaslessAvailablity: boolean;
 
-    @Column("number")
+    @Column("numeric")
     chainId: number;
 
-    @Column("string")
+    @Column("varchar")
     tag: string;
+
+    @Column("varchar",{nullable: true,array:true})
+    proxies: string[]
 
 }

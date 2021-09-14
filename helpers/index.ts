@@ -1,5 +1,4 @@
 import { Contract } from "ethers";
-import _ from "lodash";
 import { Promise } from "bluebird";
 import { V1, V2, V3 } from "../constants";
 import {isAddress} from "@ethersproject/address"
@@ -9,11 +8,12 @@ import {isAddress} from "@ethersproject/address"
  */
 
 export const deriveStakeDuration = async (
-  instance: Contract
+  instance: Contract,
+  chainId?: number
 ): Promise<string | undefined> => {
   try {
     const stakeDuration: string = await instance.stakeDuration();
-    return stakeDuration;
+    return String(stakeDuration);
   } catch (err) {
     return;
   }
@@ -25,17 +25,18 @@ export const deriveStakeDuration = async (
  */
 
 export const getNoOfPools = async (
-  instance: Contract
+  instance: Contract,
+  chainId: number 
 ): Promise<number> => {
-  if (instance.address.toLowerCase() === V1.toLowerCase()) {
+  if (instance.address.toLowerCase() === V1.toLowerCase() && chainId === 1) {
     return 5;
   } else if (
-    instance.address.toLowerCase() === V2.toLowerCase()
+    instance.address.toLowerCase() === V2.toLowerCase() && chainId ===1
   ) {
     return 6;
   }
   const noOfPools = await instance.viewTokensCount();
-  return noOfPools;
+  return Number(noOfPools);
 };
 
 /**
@@ -46,11 +47,12 @@ export const getNoOfPools = async (
 
 export const getIntervalDays = async (
   instance: Contract,
-  n: number
+  n: number,
+  chainId: number,
 ): Promise<string[]> => {
   const promises = [];
   
-  if(instance.address.toLowerCase() === V3.toLowerCase()){
+  if(instance.address.toLowerCase() === V3.toLowerCase() && chainId=== 1){
     return ['1','8','15','22','29','36']
   }
 
@@ -63,22 +65,24 @@ export const getIntervalDays = async (
 };
 
 export const getPoolStartTime = async (
-  instance: Contract
+  instance: Contract,
+  chainId: number
 ): Promise<string> => {
-  if (instance.address.toLowerCase() === V1.toLowerCase()) {
+  if (instance.address.toLowerCase() === V1.toLowerCase() && chainId === 1) {
     return "1612302959";
   } else if (
-    instance.address.toLowerCase() === V2.toLowerCase()
+    instance.address.toLowerCase() === V2.toLowerCase() && chainId ===1
   ) {
     return "1613215605";
   }
   const poolStartTime = await instance.poolStartTime();
-  return poolStartTime;
+  return String(poolStartTime);
 };
 
 export const getTokens = async (
   instance: Contract,
-  n: number
+  n: number,
+  chainId: number
 ): Promise<string[]> => {
   const promises = [];
   for (let i = 0; i < n; i++) {
@@ -90,42 +94,44 @@ export const getTokens = async (
 };
 
 export const getRefferralPercentage = async (
-  instance: Contract
+  instance: Contract,
+  chainId: number
 ): Promise<string | null> => {
   
-  if (instance.address.toLowerCase() === V1.toLowerCase()) {
+  if (instance.address.toLowerCase() === V1.toLowerCase() && chainId === 1) {
     return null;
   }
   const refPercentage = await instance.refPercentage();
-  return refPercentage;
+  return String(refPercentage);
 };
 
 export const getOptionalBenefits = async (
-  instance: Contract
+  instance: Contract,
+  chainId: number
 ) => {
-  if (instance.address.toLowerCase() === V1.toLowerCase()) {
+  if (instance.address.toLowerCase() === V1.toLowerCase() && chainId === 1) {
     return null;
   } else if (
-    instance.address.toLowerCase() === V2.toLowerCase()
+    instance.address.toLowerCase() === V2.toLowerCase() && chainId ===1
   ) {
     return null;
   }
   const optionalBenefits = await instance.optionableBenefit();
-  return optionalBenefits;
+  return String(optionalBenefits);
 };
 
-export const getRewardStrategy = (instance: Contract) => {
-  if (instance.address.toLowerCase() === V1.toLowerCase()) {
+export const getRewardStrategy = (instance: Contract,chainId: number) => {
+  if (instance.address.toLowerCase() === V1.toLowerCase() && chainId === 1) {
     return "daily";
   } else if (
-    instance.address.toLowerCase() === V2.toLowerCase()
+    instance.address.toLowerCase() === V2.toLowerCase() && chainId === 1
   ) {
     return "daily";
   }
   return "hourly";
 };
 
-export const gasless = async (instance: Contract): Promise<boolean | undefined> => {
+export const gasless = async (instance: Contract,chainId: number): Promise<boolean | undefined> => {
   try{
     const trustForwarder = await instance.trustedForwarder();
     if(isAddress(trustForwarder)){

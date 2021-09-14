@@ -1,0 +1,112 @@
+2021-09-14T13:06:41.215Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T13:06:41.324Z [__UNIFARM__] error: something wrong went with the database connection.
+2021-09-14T13:07:23.364Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T13:07:23.498Z [__UNIFARM__] error: something wrong went with the database connection.
+2021-09-14T13:08:02.591Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T13:08:02.701Z [__UNIFARM__] error: something wrong went with the database connection.
+2021-09-14T13:08:32.360Z [__UNIFARM__] error: something wrong went with the database connection.
+2021-09-14T13:10:36.244Z [__UNIFARM__] error: something wrong went with the database connection.
+2021-09-14T13:13:30.451Z [__UNIFARM__] error: Cannot create a "unifarm" connection because connection to the database already established.
+2021-09-14T13:16:58.756Z [__UNIFARM__] error: Cannot create a "unifarm01" connection because connection to the database already established.
+2021-09-14T13:17:23.759Z [__UNIFARM__] error: Cannot create a "default" connection because connection to the database already established.
+2021-09-14T13:22:20.873Z [__UNIFARM__] error: Cannot create a "default" connection because connection to the database already established.
+2021-09-14T13:23:19.690Z [__UNIFARM__] error: Cannot create a "Unifarm" connection because connection to the database already established.
+2021-09-14T13:26:26.678Z [__UNIFARM__] error: Cannot create a "Unifarm" connection because connection to the database already established.
+2021-09-14T13:33:03.467Z [__UNIFARM__] error: Cannot create a "Unifarm" connection because connection to the database already established.
+2021-09-14T13:33:42.342Z [__UNIFARM__] error: Cannot create a "Unifarm" connection because connection to the database already established.
+2021-09-14T13:33:55.360Z [__UNIFARM__] error: Cannot create a "Unifarm" connection because connection to the database already established.
+2021-09-14T13:39:18.988Z [__UNIFARM__] error: Cannot create a "unifarm" connection because connection to the database already established.
+2021-09-14T13:44:38.743Z [__UNIFARM__] error: Cannot create a "unifarm" connection because connection to the database already established.
+2021-09-14T13:45:02.216Z [__UNIFARM__] error: Cannot create a "unifarm" connection because connection to the database already established.
+2021-09-14T13:48:21.118Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T13:49:39.315Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T13:49:39.447Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T13:51:42.316Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T13:51:42.326Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T13:57:04.714Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T13:57:04.849Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T13:57:36.075Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T13:57:36.181Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T13:58:46.169Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T13:58:46.277Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T13:59:12.482Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T13:59:12.598Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T14:00:01.276Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T14:00:01.390Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T14:00:46.030Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T14:04:03.346Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T14:04:03.473Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T14:04:21.511Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T14:04:21.623Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T14:04:24.928Z [__UNIFARM__] info: Basic Actions Performed
+2021-09-14T14:06:20.793Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T14:06:20.878Z [__UNIFARM__] error: Data type "string" in "Cohort.cohortAddress" is not supported by "postgres" database.
+2021-09-14T14:06:24.513Z [__UNIFARM__] info: Basic Actions Performed
+2021-09-14T14:07:09.698Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T14:07:09.787Z [__UNIFARM__] error: Data type "longtext" in "Cohort.cohortAddress" is not supported by "postgres" database.
+2021-09-14T14:07:49.615Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T14:07:49.722Z [__UNIFARM__] error: Data type "bytes" in "Cohort.cohortAddress" is not supported by "postgres" database.
+2021-09-14T14:09:38.518Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T14:09:38.609Z [__UNIFARM__] error: Data type "string" in "Cohort.cohortAddress" is not supported by "postgres" database.
+2021-09-14T14:11:06.275Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T14:11:06.388Z [__UNIFARM__] error: Data type "string" in "Cohort.stakeDuration" is not supported by "postgres" database.
+2021-09-14T14:11:56.795Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T14:11:56.895Z [__UNIFARM__] error: Column poolStartTime of Entity Cohort does not support length property.
+2021-09-14T14:12:21.187Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T14:12:21.275Z [__UNIFARM__] error: Data type "int64" in "Cohort.tokensCount" is not supported by "postgres" database.
+2021-09-14T14:17:34.383Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T14:17:34.564Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T14:17:40.179Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T14:17:40.342Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T14:17:43.721Z [__UNIFARM__] info: Basic Actions Performed
+2021-09-14T14:19:09.101Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T14:19:09.263Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T14:19:12.632Z [__UNIFARM__] info: Basic Actions Performed
+2021-09-14T14:19:15.052Z [__UNIFARM__] info: Database Sync Successfully for the 1
+2021-09-14T14:20:31.120Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T14:20:31.284Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T14:20:34.516Z [__UNIFARM__] info: Basic Actions Performed
+2021-09-14T14:20:36.930Z [__UNIFARM__] info: Database Sync Successfully for the 1
+2021-09-14T14:21:15.919Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T14:21:16.081Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T14:21:19.506Z [__UNIFARM__] info: Basic Actions Performed
+2021-09-14T14:21:21.994Z [__UNIFARM__] info: Database Sync Successfully for the 1
+2021-09-14T14:22:10.653Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-14T14:22:10.813Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T14:22:14.057Z [__UNIFARM__] info: Basic Actions Performed
+2021-09-14T14:22:35.161Z [__UNIFARM__] info: Database Sync Successfully for the 1
+2021-09-14T14:27:20.624Z [__UNIFARM__] info: manifest loaded. cohorts found 7
+2021-09-14T14:27:20.675Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-14T14:28:02.473Z [__UNIFARM__] info: manifest loaded. cohorts found 7
+2021-09-14T14:28:02.624Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T14:28:04.801Z [__UNIFARM__] info: Basic Actions Performed
+2021-09-14T14:30:20.148Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-14T14:30:20.288Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T14:30:21.395Z [__UNIFARM__] info: Basic Actions Performed
+2021-09-14T14:30:22.235Z [__UNIFARM__] info: Database Sync Successfully for the 56
+2021-09-14T14:31:05.027Z [__UNIFARM__] info: manifest loaded. cohorts found 2
+2021-09-14T14:31:05.160Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T14:31:06.365Z [__UNIFARM__] info: Basic Actions Performed
+2021-09-14T14:31:41.140Z [__UNIFARM__] info: manifest loaded. cohorts found 6
+2021-09-14T14:31:41.287Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T14:31:43.155Z [__UNIFARM__] info: Basic Actions Performed
+2021-09-14T14:31:44.697Z [__UNIFARM__] info: Database Sync Successfully for the 56
+2021-09-14T14:33:51.486Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-14T14:33:51.621Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T14:33:52.577Z [__UNIFARM__] info: Basic Actions Performed
+2021-09-14T14:48:51.130Z [__UNIFARM__] info: manifest loaded. cohorts found 7
+2021-09-14T14:48:51.279Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T14:48:53.229Z [__UNIFARM__] info: Basic Actions Performed
+2021-09-14T14:48:54.952Z [__UNIFARM__] info: Database Sync Successfully for the 56
+2021-09-14T14:51:20.997Z [__UNIFARM__] info: manifest loaded. cohorts found 7
+2021-09-14T14:51:21.164Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T14:51:23.105Z [__UNIFARM__] info: Basic Actions Performed
+2021-09-14T14:51:24.785Z [__UNIFARM__] info: Database Sync Successfully for the 56
+2021-09-14T14:53:03.523Z [__UNIFARM__] info: manifest loaded. cohorts found 2
+2021-09-14T14:53:03.700Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T14:53:04.804Z [__UNIFARM__] info: Basic Actions Performed
+2021-09-14T14:53:05.645Z [__UNIFARM__] info: Database Sync Successfully for the 81
+2021-09-14T14:54:00.429Z [__UNIFARM__] info: manifest loaded. cohorts found 2
+2021-09-14T14:54:00.583Z [__UNIFARM__] info: connection established to unifarm
+2021-09-14T14:54:02.860Z [__UNIFARM__] info: Basic Actions Performed
+2021-09-14T14:54:04.426Z [__UNIFARM__] info: Database Sync Successfully for the 81

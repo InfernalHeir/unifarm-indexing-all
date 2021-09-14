@@ -1,0 +1,25 @@
+2021-09-14T13:06:41.324Z [__UNIFARM__] error: something wrong went with the database connection.
+2021-09-14T13:07:23.498Z [__UNIFARM__] error: something wrong went with the database connection.
+2021-09-14T13:08:02.701Z [__UNIFARM__] error: something wrong went with the database connection.
+2021-09-14T13:08:32.360Z [__UNIFARM__] error: something wrong went with the database connection.
+2021-09-14T13:10:36.244Z [__UNIFARM__] error: something wrong went with the database connection.
+2021-09-14T13:13:30.451Z [__UNIFARM__] error: Cannot create a "unifarm" connection because connection to the database already established.
+2021-09-14T13:16:58.756Z [__UNIFARM__] error: Cannot create a "unifarm01" connection because connection to the database already established.
+2021-09-14T13:17:23.759Z [__UNIFARM__] error: Cannot create a "default" connection because connection to the database already established.
+2021-09-14T13:22:20.873Z [__UNIFARM__] error: Cannot create a "default" connection because connection to the database already established.
+2021-09-14T13:23:19.690Z [__UNIFARM__] error: Cannot create a "Unifarm" connection because connection to the database already established.
+2021-09-14T13:26:26.678Z [__UNIFARM__] error: Cannot create a "Unifarm" connection because connection to the database already established.
+2021-09-14T13:33:03.467Z [__UNIFARM__] error: Cannot create a "Unifarm" connection because connection to the database already established.
+2021-09-14T13:33:42.342Z [__UNIFARM__] error: Cannot create a "Unifarm" connection because connection to the database already established.
+2021-09-14T13:33:55.360Z [__UNIFARM__] error: Cannot create a "Unifarm" connection because connection to the database already established.
+2021-09-14T13:39:18.988Z [__UNIFARM__] error: Cannot create a "unifarm" connection because connection to the database already established.
+2021-09-14T13:44:38.743Z [__UNIFARM__] error: Cannot create a "unifarm" connection because connection to the database already established.
+2021-09-14T13:45:02.216Z [__UNIFARM__] error: Cannot create a "unifarm" connection because connection to the database already established.
+2021-09-14T14:06:20.878Z [__UNIFARM__] error: Data type "string" in "Cohort.cohortAddress" is not supported by "postgres" database.
+2021-09-14T14:07:09.787Z [__UNIFARM__] error: Data type "longtext" in "Cohort.cohortAddress" is not supported by "postgres" database.
+2021-09-14T14:07:49.722Z [__UNIFARM__] error: Data type "bytes" in "Cohort.cohortAddress" is not supported by "postgres" database.
+2021-09-14T14:09:38.609Z [__UNIFARM__] error: Data type "string" in "Cohort.cohortAddress" is not supported by "postgres" database.
+2021-09-14T14:11:06.388Z [__UNIFARM__] error: Data type "string" in "Cohort.stakeDuration" is not supported by "postgres" database.
+2021-09-14T14:11:56.895Z [__UNIFARM__] error: Column poolStartTime of Entity Cohort does not support length property.
+2021-09-14T14:12:21.275Z [__UNIFARM__] error: Data type "int64" in "Cohort.tokensCount" is not supported by "postgres" database.
+2021-09-14T14:27:20.675Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
