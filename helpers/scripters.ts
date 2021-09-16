@@ -1,7 +1,7 @@
 import fs from "fs";
 import yaml from "yaml";
 import { chainNameById } from "../constants";
-import { Promise } from "bluebird";
+import { Promise as BluePromise } from "bluebird";
 
 export function yamlParser(chainId: number) {
   const fileContent = fs.readFileSync("./command.yml", "utf8");
@@ -24,7 +24,7 @@ export async function multicall(
     n++;
   }
 
-  var results = await Promise.map(multi, (values) => {
+  var results = await BluePromise.map(multi, (values) => {
     return values;
   });
 

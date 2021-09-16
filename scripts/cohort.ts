@@ -3,8 +3,8 @@ import { logger } from "../log/index";
 import { CohortOptions, Cohorts } from "../types/Cohorts";
 import { multicall, yamlParser } from "../helpers/scripters";
 import { getCohorts } from "../providers/provider";
-import { cohortActions } from "../actions/defaultActions";
-import { Promise } from "bluebird";
+import { cohortActions } from "../actions/CohortActions";
+import { Promise as BluePromise} from "bluebird";
 import { actionsProperties } from "../actions";
 import { getTag } from "../helpers";
 import { DAYS, HOURS } from "../constants/index";
@@ -12,9 +12,7 @@ import {  getConnection,  getConnectionManager } from "typeorm";
 import { Cohort } from "../db/entity/Cohort";
 
 // boot straping the database
-
 if(!getConnectionManager().has("unifarm")){
-
 bootstarp()
   .catch((err) => {
     logger.error(
@@ -24,7 +22,6 @@ bootstarp()
     );
     process.exit(0);
   });
-
 }
 
 export async function allCohortInsertation(opts: CohortOptions) {
@@ -58,7 +55,7 @@ export async function allCohortInsertation(opts: CohortOptions) {
       n++;
     }
 
-    const results = await Promise.map(
+    const results = await BluePromise.map(
       multiPromise,
       (values) => values
     );
@@ -95,7 +92,7 @@ export async function allCohortInsertation(opts: CohortOptions) {
       );
     }
 
-    const multiResponse = await Promise.map(
+    const multiResponse = await BluePromise.map(
       multiverse,
       (values) => {
         return values;
@@ -136,7 +133,6 @@ export async function allCohortInsertation(opts: CohortOptions) {
 
     //console.log(COHORTS);
     //logger.info(COHORTS);
-
     // sync this values to the db
 
      await getConnection("unifarm")

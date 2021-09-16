@@ -52,8 +52,8 @@ services:
         address: "0x2d168651d85fe8b16aebf42272a9b64f24ac3603"
     proxies:
         -
-         - "0x0862eD7f6B2bc350508B29542511249b7E11A0a0"
          - "0xe8369CA802f89b16A968ccb24431A7A412F41f27"
+         - "0x0862eD7f6B2bc350508B29542511249b7E11A0a0"
         -
          - "0xdb6cf8acca5031eb42e283fa441a4c9ada5cc8d9"
          - "0x152A8d34c5C4540645443A63Bd8C1d395543BdC2"

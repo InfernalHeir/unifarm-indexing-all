@@ -23,3 +23,20 @@
 2021-09-14T14:11:56.895Z [__UNIFARM__] error: Column poolStartTime of Entity Cohort does not support length property.
 2021-09-14T14:12:21.275Z [__UNIFARM__] error: Data type "int64" in "Cohort.tokensCount" is not supported by "postgres" database.
 2021-09-14T14:27:20.675Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T13:49:23.721Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T13:49:23.722Z [__UNIFARM__] error: Token Indexing Failed Reason: Class constructor Cohort cannot be invoked without 'new'
+2021-09-16T13:51:55.288Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T13:54:53.969Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T13:57:37.312Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:05:17.676Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:05:39.324Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:06:39.416Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:07:53.844Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:09:48.997Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:10:41.247Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:14:40.672Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:16:32.288Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:19:00.614Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:19:20.148Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:21:19.534Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:23:26.959Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined

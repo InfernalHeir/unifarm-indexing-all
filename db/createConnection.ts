@@ -11,8 +11,26 @@ export async function bootstarp(): Promise<
     await client.connect();
     logger.info(`connection established to ${client.name}`);
     return client;
-  } catch (err) {
-    logger.error(err.message);
-    return;
+  } catch (err: unknown) {
+    logger.error(err);
+    return undefined;
+  }
+}
+
+// please push the NODE_ENV = dev | Prod
+export async function appBoot() {
+  if(!getConnectionManager().has("unifarm")){
+    bootstarp()
+      .then(() => {
+        return Promise.resolve();
+      })
+      .catch((err) => {
+        logger.error(
+          `something wrong went with the database connection.`,
+          "NETWORK_ERROR",
+          err.message
+        );
+        return Promise.reject(`${err.message}`)
+      });
   }
 }

@@ -110,3 +110,85 @@
 2021-09-14T14:54:00.583Z [__UNIFARM__] info: connection established to unifarm
 2021-09-14T14:54:02.860Z [__UNIFARM__] info: Basic Actions Performed
 2021-09-14T14:54:04.426Z [__UNIFARM__] info: Database Sync Successfully for the 81
+2021-09-16T12:49:53.388Z [__UNIFARM__] info: RewardCap Json file created
+2021-09-16T13:49:23.674Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T13:49:23.721Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T13:49:23.722Z [__UNIFARM__] error: Token Indexing Failed Reason: Class constructor Cohort cannot be invoked without 'new'
+2021-09-16T13:51:55.273Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T13:51:55.288Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T13:54:53.954Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T13:54:53.969Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T13:57:37.296Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T13:57:37.312Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:05:17.660Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T14:05:17.676Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:05:39.309Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T14:05:39.324Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:06:39.401Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T14:06:39.416Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:07:53.828Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T14:07:53.844Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:09:48.981Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T14:09:48.997Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:10:41.236Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T14:10:41.247Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:14:40.656Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T14:14:40.672Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:16:32.272Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T14:16:32.288Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:19:00.599Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T14:19:00.614Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:19:20.134Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T14:19:20.148Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:21:19.517Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T14:21:19.534Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:23:26.959Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T14:24:35.244Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T14:24:35.430Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T14:25:36.820Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T14:25:36.927Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T14:26:14.685Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T14:26:14.800Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T14:28:49.688Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T14:28:49.815Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T14:29:18.865Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T14:29:18.978Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T14:31:05.642Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T14:31:05.760Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T14:31:47.724Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T14:31:47.848Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T14:32:57.216Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-16T14:32:57.326Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T14:34:23.722Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-16T14:34:23.836Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T14:42:10.443Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-16T14:42:10.570Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T14:43:31.173Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-16T14:43:31.289Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T14:44:23.533Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T14:44:33.440Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-16T14:44:43.436Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-16T14:46:25.559Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T14:46:35.469Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-16T14:48:01.236Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T14:48:11.153Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-16T14:49:02.449Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T14:49:12.384Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-16T14:57:28.557Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T14:57:38.465Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-16T14:58:43.601Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T14:58:53.519Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-16T14:59:42.465Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T14:59:52.382Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-16T15:00:28.772Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T15:00:38.707Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-16T15:01:11.280Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T15:01:21.207Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-16T15:02:06.359Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T15:02:16.285Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-16T15:03:02.285Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T15:03:12.222Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-16T15:06:08.248Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T15:06:18.166Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-16T15:07:11.245Z [__UNIFARM__] info: connection established to unifarm
+2021-09-16T15:07:21.178Z [__UNIFARM__] info: manifest loaded. cohorts found 15
