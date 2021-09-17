@@ -48,6 +48,6 @@ POLYGON_RPC=<YOUR_POLYGON_RPC>
 
 > cd ./db && docker compose up -d
 
-## Sync All Cohort
+## Sync All Cohorts in One Command
 
 > npx ts-node ./scripts/cohort.ts
