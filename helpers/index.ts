@@ -190,16 +190,14 @@ export const getPoolInformation = async (
   tokenAddress: string,
   chainId: number
 ): Promise<TokenDetails> => {
-  const pool = await instance.methods
-    .tokenDetails(tokenAddress)
-    .call();
+  const pool = await instance.tokenDetails(tokenAddress);
 
   if (
     instance.address.toLowerCase() === V1.toLowerCase() &&
     chainId === 1
   ) {
     return {
-      deciamls: String(pool.decimals),
+      deciamls: String(pool.decimal),
       userMinStake: "0",
       userMaxStake: String(pool.userStakeLimit),
       totalStakeLimit: String(pool.maxStake),
@@ -211,7 +209,7 @@ export const getPoolInformation = async (
     chainId === 1
   ) {
     return {
-      deciamls: String(pool.decimals),
+      deciamls: String(pool.decimal),
       userMinStake: "0",
       userMaxStake: String(pool.userStakeLimit),
       totalStakeLimit: String(pool.maxStake),
@@ -220,7 +218,7 @@ export const getPoolInformation = async (
     };
   } else {
     return {
-      deciamls: String(pool.decimals),
+      deciamls: String(pool.decimal),
       userMinStake: String(pool.userMinStake),
       userMaxStake: String(pool.userMaxStake),
       totalStakeLimit: String(pool.totalMaxStake),

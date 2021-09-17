@@ -13,7 +13,7 @@ export class Stake {
     tokenId: string;
 
     @Column("string")
-    cohortId: string
+    cohortId: string;
 
     @Column("number")
     stakeId: number;

@@ -40,3 +40,4 @@
 2021-09-16T14:19:20.148Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
 2021-09-16T14:21:19.534Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
 2021-09-16T14:23:26.959Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-16T15:25:05.511Z [__UNIFARM__] error: Token Indexing Failed Reason: Cannot read property 'tokenDetails' of undefined

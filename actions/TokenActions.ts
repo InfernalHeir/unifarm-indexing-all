@@ -1,3 +1,3 @@
 export const defaultTokenActions = [
-    "getNoOfPools"
-]
+    "getPoolInformation"
+];
