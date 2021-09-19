@@ -4,7 +4,8 @@
   "main": "./index.js",
   "license": "MIT",
   "scripts": {
-    "token-seed": "export NODE_ENV=dev && ts-node scripts/tokens.ts"
+    "token-seed": "export NODE_ENV=dev && ts-node scripts/tokens.ts",
+    "ethereum-stake-event": "ts-node events/ethereum.events-stake.ts"
   },
   "dependencies": {
     "@ethersproject/address": "^5.4.0",
