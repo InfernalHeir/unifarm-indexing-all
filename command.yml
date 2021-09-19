@@ -120,7 +120,7 @@ services:
        - "0x920a203e0C9F55d747F6b7Ea76ff96715725335a"        
   polygon:
     abi: "./constant/polygon/ABI.json"
-    chainId: 81
+    chainId: 137
     cohorts:
       - 
         version: "V13"

@@ -17,7 +17,8 @@ export interface Cohorts {
 }
 
 export interface CohortOptions {
-   chainId: number 
+   chainId: number,
+   cohorts?: string[] 
 }
 
 export type CohortInsertation = string[];

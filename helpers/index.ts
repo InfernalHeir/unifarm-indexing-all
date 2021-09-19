@@ -1,6 +1,14 @@
 import { Contract } from "ethers";
 import { Promise as BluePromise } from "bluebird";
-import { V1, V18, V1REPROXY, V2, V3 } from "../constants";
+import {
+  OROWETH,
+  UFARMUSDC,
+  V1,
+  V18,
+  V1REPROXY,
+  V2,
+  V3,
+} from "../constants";
 import { isAddress } from "@ethersproject/address";
 import { TokenDetails } from "../types/Tokens";
 import rewards from "../constants/miscellaneous/rewards.json";
@@ -197,7 +205,7 @@ export const getPoolInformation = async (
     chainId === 1
   ) {
     return {
-      deciamls: String(pool.decimal),
+      decimals: String(pool.decimal),
       userMinStake: "0",
       userMaxStake: String(pool.userStakeLimit),
       totalStakeLimit: String(pool.maxStake),
@@ -209,7 +217,7 @@ export const getPoolInformation = async (
     chainId === 1
   ) {
     return {
-      deciamls: String(pool.decimal),
+      decimals: String(pool.decimal),
       userMinStake: "0",
       userMaxStake: String(pool.userStakeLimit),
       totalStakeLimit: String(pool.maxStake),
@@ -218,7 +226,7 @@ export const getPoolInformation = async (
     };
   } else {
     return {
-      deciamls: String(pool.decimal),
+      decimals: String(pool.decimal),
       userMinStake: String(pool.userMinStake),
       userMaxStake: String(pool.userMaxStake),
       totalStakeLimit: String(pool.totalMaxStake),
@@ -236,7 +244,9 @@ export const locking = (
 ): string => {
   if (
     chainId === 1 &&
-    cohort.toLowerCase() === V18.toLowerCase()
+    cohort.toLowerCase() === V18.toLowerCase() &&
+    cohort.toLowerCase() === OROWETH.toLowerCase() &&
+    cohort.toLowerCase() === UFARMUSDC.toLowerCase()
   ) {
     return locking;
   }

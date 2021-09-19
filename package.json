@@ -1,8 +1,11 @@
 {
   "name": "unifarm-indexing-all",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./index.js",
   "license": "MIT",
+  "scripts": {
+    "token-seed": "export NODE_ENV=dev && ts-node scripts/tokens.ts"
+  },
   "dependencies": {
     "@ethersproject/address": "^5.4.0",
     "@ethersproject/contracts": "^5.4.1",

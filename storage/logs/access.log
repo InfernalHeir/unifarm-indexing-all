@@ -212,3 +212,27 @@
 2021-09-17T05:22:58.328Z [__UNIFARM__] info: manifest loaded. cohorts found 15
 2021-09-17T05:30:41.971Z [__UNIFARM__] info: connection established to unifarm
 2021-09-17T05:30:51.880Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-19T15:41:06.008Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-19T15:42:22.876Z [__UNIFARM__] error: connect ECONNREFUSED 127.0.0.1:5432
+2021-09-19T15:42:26.897Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-19T15:42:26.912Z [__UNIFARM__] error: Token Indexing Failed Reason: Cannot read property 'length' of undefined
+2021-09-19T15:42:56.774Z [__UNIFARM__] info: connection established to unifarm
+2021-09-19T15:43:00.654Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-19T15:46:02.815Z [__UNIFARM__] info: connection established to unifarm
+2021-09-19T15:46:06.715Z [__UNIFARM__] info: manifest loaded. cohorts found 3
+2021-09-19T15:47:14.791Z [__UNIFARM__] info: connection established to unifarm
+2021-09-19T15:47:18.707Z [__UNIFARM__] info: manifest loaded. cohorts found 3
+2021-09-19T15:48:07.842Z [__UNIFARM__] info: connection established to unifarm
+2021-09-19T15:48:11.760Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-19T15:49:04.642Z [__UNIFARM__] info: connection established to unifarm
+2021-09-19T15:49:08.584Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-19T15:52:30.308Z [__UNIFARM__] info: connection established to unifarm
+2021-09-19T15:52:34.229Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-19T15:56:46.952Z [__UNIFARM__] info: connection established to unifarm
+2021-09-19T15:56:50.885Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-09-19T16:17:08.947Z [__UNIFARM__] info: connection established to unifarm
+2021-09-19T16:17:12.886Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-19T16:17:23.265Z [__UNIFARM__] error: Token Indexing Failed Reason: missing revert data in call exception (error={"reason":"processing response error","code":"SERVER_ERROR","body":"{\"jsonrpc\":\"2.0\",\"id\":486,\"error\":{\"code\":-32000,\"message\":\"execution reverted\"}}\n","error":{"code":-32000},"requestBody":"{\"method\":\"eth_call\",\"params\":[{\"to\":\"0x1c14eb2f2bf443557fc131b3f6f4e929c0081346\",\"data\":\"0x539cd3b4000000000000000000000000c02aaa39b223fe8d0a0e5c4f27ead9083c756cc20000000000000000000000000000000000000000000000000000000000000001\"},\"latest\"],\"id\":486,\"jsonrpc\":\"2.0\"}","requestMethod":"POST","url":"https://speedy-nodes-nyc.moralis.io/dec2412db64dbb40e0016a68/eth/mainnet/archive"}, data="0x", code=CALL_EXCEPTION, version=providers/5.4.5)
+2021-09-19T16:18:16.126Z [__UNIFARM__] info: connection established to unifarm
+2021-09-19T16:18:20.060Z [__UNIFARM__] info: manifest loaded. cohorts found 15
+2021-09-19T16:18:37.221Z [__UNIFARM__] error: Token Indexing Failed Reason: missing revert data in call exception (error={"reason":"processing response error","code":"SERVER_ERROR","body":"{\"jsonrpc\":\"2.0\",\"id\":490,\"error\":{\"code\":-32000,\"message\":\"execution reverted\"}}","error":{"code":-32000},"requestBody":"{\"method\":\"eth_call\",\"params\":[{\"to\":\"0x32d72d6cc98436ef983be7f5288ab2ca63480fe4\",\"data\":\"0x539cd3b4000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb480000000000000000000000000000000000000000000000000000000000000001\"},\"latest\"],\"id\":490,\"jsonrpc\":\"2.0\"}","requestMethod":"POST","url":"https://mainnet.infura.io/v3/97e10ae5a3f64d429716decbb5746db7"}, data="0x", code=CALL_EXCEPTION, version=providers/5.4.5)

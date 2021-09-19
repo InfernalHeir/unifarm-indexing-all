@@ -57,7 +57,7 @@ export const getCohorts = (chainId: number) => {
       return ethereumCohorts;
     case 56:
       return bscCohorts;
-    case 81:
+    case 137:
       return polygonCohorts;
     default:
       return null;

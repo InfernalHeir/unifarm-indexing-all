@@ -6,6 +6,14 @@ import { getCohorts } from "../providers/provider";
 import { CohortOptions } from "../types/Cohorts";
 import { Promise } from "bluebird";
 import { defaultTokenActions } from "../actions/TokenActions";
+import {
+  getRewardCap,
+  getTokenDailyDistribution,
+  getTokenSequenceList,
+  locking,
+} from "../helpers";
+import { TokenDetails, TokenMetaData } from "../types/Tokens";
+import fs from "fs";
 
 async function allTokens(opts: CohortOptions) {
   // totally automatic
@@ -60,7 +68,7 @@ async function allTokens(opts: CohortOptions) {
       async (values) => {
         const tokens = await Promise.map(
           values.tokenMetaData,
-          (items) => {
+          (items: TokenDetails) => {
             return {
               ...items,
               cohortId: values.cohortId,
@@ -74,7 +82,6 @@ async function allTokens(opts: CohortOptions) {
     );
 
     // get the token sequence
-
     var tokensInformation = [];
     for (var v = 0; v < tokensMetaData.length; v++) {
       for (var k = 0; k < tokensMetaData[v].length; k++) {
@@ -90,28 +97,75 @@ async function allTokens(opts: CohortOptions) {
       const items = tokensInformation[j];
       const instance = contract(items.cohortId);
       tokenSequencePromise.push(
-        multicall(
-          ["getTokenSequenceList"],
-          [
-            instance,
-            items.token,
-            items.tokenId,
-            items.tokens.length,
-          ]
+        getTokenSequenceList(
+          instance,
+          items.tokenId,
+          items.tokens.length
         )
       );
     }
 
-    /* var tokenSequence = await Promise.map(tokenSequencePromise,(values) => {
-      return values;
-    });
+    var tokenSequence = await Promise.map(
+      tokenSequencePromise,
+      (values) => {
+        return values;
+      }
+    );
 
-    // loop again
-    var 
-    for(var r=0; r < tokensInformation.length; r++){
-      
-    } */
+    var oneDayReward = [];
 
+    for (var t = 0; t < tokenSequence.length; t++) {
+      const instance = contract(tokensInformation[t].cohortId);
+      oneDayReward.push(
+        getTokenDailyDistribution(
+          instance,
+          tokenSequence[t],
+          tokensInformation[t].tokenId,
+          opts.chainId
+        )
+      );
+    }
+
+    var rewards = await Promise.map(
+      oneDayReward,
+      (values) => values
+    );
+
+    var tokenMetaInformation: TokenMetaData[] =
+      tokensInformation.map((items, i) => {
+        const lockableDays = locking(
+          items.cohortId,
+          items.lockableDays,
+          opts.chainId
+        );
+
+        const rewardCap = getRewardCap(
+          opts.chainId,
+          items.cohortId,
+          items.tokenId
+        );
+
+        return {
+          tokenId: items.tokenId,
+          decimals: items.decimals,
+          userMinStake: items.userMinStake,
+          userMaxStake: items.userMaxStake,
+          totalStakeLimit: items.totalStakeLimit,
+          lockableDays,
+          optionableStatus: items.optionableStatus,
+          tokenSequenceList: tokenSequence[i],
+          tokenDailyDistribution: rewards[i],
+          cohortId: String(items.cohortId),
+          rewardCap,
+          chainId: opts.chainId,
+        };
+      });
+
+    console.log(tokenMetaInformation);
+    fs.writeFileSync(
+      "./.tmp/tokens.json",
+      JSON.stringify(tokenMetaInformation)
+    );
   } catch (err) {
     logger.error(`Token Indexing Failed Reason: ${err.message}`);
   }
@@ -122,5 +176,5 @@ appBoot().then(() => {
     await allTokens({
       chainId: 1,
     });
-  }, 10000);
+  }, 4000);
 });
