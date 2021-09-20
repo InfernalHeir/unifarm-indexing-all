@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "token-seed": "export NODE_ENV=dev && ts-node scripts/tokens.ts",
-    "ethereum-stake-event": "ts-node events/ethereum.events-stake.ts"
+    "ethereum-stake-event-seed": "export NODE_ENV=dev && ts-node events/db-seed/db-seed-stake-ethereum.ts"
   },
   "dependencies": {
     "@ethersproject/address": "^5.4.0",

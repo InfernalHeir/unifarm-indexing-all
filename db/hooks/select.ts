@@ -12,7 +12,10 @@ export async function getTokensFromDatabase(
       .where("cohort.cohortAddress = :cohortAddress", {
         cohortAddress: cohort,
       })
-      .andWhere("cohort.chainId = :chainId", { chainId:String(chainId) }).execute();
+      .andWhere("cohort.chainId = :chainId", {
+        chainId: String(chainId),
+      })
+      .execute();
     return tokens[0].tokens;
   } catch (err) {
     Promise.reject(err.message);

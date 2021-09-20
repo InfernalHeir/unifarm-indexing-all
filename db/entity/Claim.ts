@@ -1,7 +1,7 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
-export class Unstake {
+export class Claim {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
@@ -12,13 +12,13 @@ export class Unstake {
   cohortId: string;
 
   @Column("varchar")
-  unStakedTokenAddress: string;
+  stakedTokenAddress: string;
 
   @Column("varchar")
-  unStakedAmount: string;
+  rewardTokenAddress: string;
 
-  @Column("varchar", { nullable: true })
-  stakeId: string | null;
+  @Column("varchar")
+  claimedRewards: string;
 
   @Column("varchar")
   time: string;

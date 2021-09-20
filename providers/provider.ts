@@ -8,7 +8,10 @@ import PolygonCohortABI from "../constants/polygon/ABI.json";
 // SEPERATE ABI for TWO VERSIONs
 import UNIFARMV1 from "../constants/ethereum/UNIFARMV1.json";
 import UNIFARMV2 from "../constants/ethereum/UNIFARMV2.json";
-import { V1, V2 } from "../constants";
+import UNIFARMV3ABI from "../constants/ethereum/UNIFARMV3.json";
+import UNIFARMV4ABI from "../constants/ethereum/UNIFARMV4.json";
+
+import { V1, V2, V3, V4 } from "../constants";
 
 export const ethProvider = new JsonRpcProvider(ethereumRPCUrl);
 
@@ -19,19 +22,24 @@ export const polygonProvider = new JsonRpcProvider(
 );
 
 export const ethereumCohorts = (cohortAddress: string) => {
-  if(cohortAddress.toLowerCase() === V1.toLowerCase()){
+  if (cohortAddress.toLowerCase() === V1.toLowerCase()) {
+    return new Contract(cohortAddress, UNIFARMV1, ethProvider);
+  } else if (cohortAddress.toLowerCase() === V2.toLowerCase()) {
+    return new Contract(cohortAddress, UNIFARMV2, ethProvider);
+  } else if (cohortAddress.toLowerCase() === V3.toLowerCase()) {
     return new Contract(
       cohortAddress,
-      UNIFARMV1,
+      UNIFARMV3ABI,
       ethProvider
-    ); 
-  }else if(cohortAddress.toLowerCase() ==V2.toLowerCase()){
+    );
+  } else if (cohortAddress.toLowerCase() === V4.toLowerCase()) {
     return new Contract(
       cohortAddress,
-      UNIFARMV2,
+      UNIFARMV4ABI,
       ethProvider
-    );  
+    );
   }
+
   return new Contract(
     cohortAddress,
     EthereumCohortABI,

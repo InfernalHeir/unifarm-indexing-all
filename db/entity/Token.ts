@@ -1,44 +1,43 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 @Entity()
 export class Token {
-    
-    @PrimaryGeneratedColumn("uuid")
-    id: string;
+  @PrimaryGeneratedColumn("uuid")
+  id: string;
 
-    @Column("string")
-    tokenId: string;
+  @Column("varchar")
+  tokenId: string;
 
-    @Column("number")
-    decimals: number;
+  @Column("varchar")
+  decimals: string;
 
-    @Column("string")
-    userMinStake: string;
+  @Column("varchar")
+  userMinStake: string;
 
-    @Column("string")
-    userMaxStake: string;
+  @Column("varchar")
+  userMaxStake: string;
 
-    @Column("string")
-    totalStakeLimit: string;
+  @Column("varchar")
+  totalStakeLimit: string;
 
-    @Column("string")
-    lockableDays: string;
+  @Column("varchar")
+  lockableDays: string;
 
-    @Column("boolean")
-    optionableStatus: boolean;
+  @Column("boolean")
+  optionableStatus: boolean;
 
-    @Column("array")
-    tokenSequenceList: string[];
+  @Column("varchar", { array: true })
+  tokenSequenceList: string[];
 
-    @Column("array")
-    tokenDailyDistribution: string[];
+  @Column("varchar", { array: true })
+  tokenDailyDistribution: string[];
 
-    @Column("string")
-    cohortId: string;
+  @Column("varchar")
+  cohortId: string;
 
-    @Column("string")
-    rewardCap: string;
+  @Column("varchar")
+  rewardCap: string;
 
-    @Column("number")
-    chainId: number;
+  @Column("numeric")
+  chainId: number;
 }

@@ -5,14 +5,21 @@ import { Promise } from "bluebird";
 import { logger } from "../log";
 import { Event } from "ethers";
 // GLOBAL
-const EVENT_NAME: string = "Stake";
+
+type Mixin = any[];
 
 interface EventsFetcherOptions {
   chainId: number;
+  eventName: string;
+  eventParams: Mixin;
   cohort?: string;
+  toBlock?: number;
+  fromBlock?: number;
 }
 
-async function main(opts: EventsFetcherOptions) {
+export async function readAllCohortsEvents(
+  opts: EventsFetcherOptions
+) {
   try {
     const yaml = yamlParser(opts.chainId);
     var multiCohortsEvents = [];
@@ -22,27 +29,27 @@ async function main(opts: EventsFetcherOptions) {
       multiCohortsEvents.push(
         queryEvents(
           instance,
-          EVENT_NAME,
-          [null, null, null, null, null, null],
+          opts.eventName,
+          opts.eventParams,
           opts.chainId
         )
       );
     }
-
     const events = await Promise.map(
       multiCohortsEvents,
       (values) => values
     );
 
-    logger.info(`${EVENT_NAME} fetch successfully`);
-    console.log(events);
+    logger.info(`${opts.eventName} event fetch successfully`);
+    return events;
   } catch (err) {
-    logger.error(`${EVENT_NAME} event sync failed...`);
+    logger.error(`${opts.eventName} event sync failed...`);
+    return undefined;
   }
 }
 
 // single contract fetch
-export async function readSpecficCohortStakeEvent(
+export async function readSpecficCohortAllEvents(
   opts: EventsFetcherOptions
 ): Promise<Event[]> | undefined {
   try {
@@ -51,18 +58,14 @@ export async function readSpecficCohortStakeEvent(
     if (!instance) return null;
     const events = await queryEvents(
       instance,
-      EVENT_NAME,
-      [null, null, null, null, null, null],
+      opts.eventName,
+      opts.eventParams,
       opts.chainId
     );
-    logger.info(`Cohort ${EVENT_NAME} event fetched`);
+    logger.info(`Cohort ${opts.eventName} event fetched`);
     return events;
   } catch (err) {
     logger.error(`err found ${err.message}`);
     return undefined;
   }
 }
-
-main({
-  chainId: 1,
-});

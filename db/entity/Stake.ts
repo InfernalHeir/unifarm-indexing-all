@@ -1,39 +1,37 @@
-import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 @Entity()
 export class Stake {
-    
-    @PrimaryGeneratedColumn("uuid")
-    id: string;
+  @PrimaryGeneratedColumn("uuid")
+  id: string;
 
-    @Column("string")
-    userAddress: string;
+  @Column("varchar")
+  userAddress: string;
 
-    @Column("string")
-    tokenId: string;
+  @Column("varchar")
+  tokenId: string;
 
-    @Column("string")
-    cohortId: string;
+  @Column("varchar")
+  cohortId: string;
 
-    @Column("number")
-    stakeId: number;
+  @Column("varchar", { nullable: true })
+  stakeId: string;
 
-    @Column("string")
-    referrerAddress: string;
+  @Column("varchar", { nullable: true })
+  referrerAddress: string;
 
-    @Column("string")
-    stakedAmount: string;
+  @Column("varchar")
+  stakedAmount: string;
 
-    @Column("string")
-    time: string;
+  @Column("varchar")
+  time: string;
 
-    @Column("string")
-    hash: string;
+  @Column("varchar")
+  hash: string;
 
-    @Column("string")
-    block: string;
+  @Column("varchar")
+  block: string;
 
-    @Column("number")
-    chainId: number;
-
+  @Column("numeric")
+  chainId: number;
 }

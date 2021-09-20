@@ -236,3 +236,25 @@
 2021-09-19T16:18:16.126Z [__UNIFARM__] info: connection established to unifarm
 2021-09-19T16:18:20.060Z [__UNIFARM__] info: manifest loaded. cohorts found 15
 2021-09-19T16:18:37.221Z [__UNIFARM__] error: Token Indexing Failed Reason: missing revert data in call exception (error={"reason":"processing response error","code":"SERVER_ERROR","body":"{\"jsonrpc\":\"2.0\",\"id\":490,\"error\":{\"code\":-32000,\"message\":\"execution reverted\"}}","error":{"code":-32000},"requestBody":"{\"method\":\"eth_call\",\"params\":[{\"to\":\"0x32d72d6cc98436ef983be7f5288ab2ca63480fe4\",\"data\":\"0x539cd3b4000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb480000000000000000000000000000000000000000000000000000000000000001\"},\"latest\"],\"id\":490,\"jsonrpc\":\"2.0\"}","requestMethod":"POST","url":"https://mainnet.infura.io/v3/97e10ae5a3f64d429716decbb5746db7"}, data="0x", code=CALL_EXCEPTION, version=providers/5.4.5)
+2021-09-20T10:12:42.483Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-20T10:12:42.497Z [__UNIFARM__] error: Stake event sync failed...
+2021-09-20T10:13:16.222Z [__UNIFARM__] error: connect ECONNREFUSED 127.0.0.1:5432
+2021-09-20T10:14:07.625Z [__UNIFARM__] info: connection established to unifarm
+2021-09-20T10:15:39.897Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-20T13:20:58.513Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-20T13:24:10.161Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-20T13:43:14.409Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-20T13:52:16.145Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-20T13:57:55.474Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-20T13:59:16.652Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-20T14:01:35.866Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-20T14:07:06.366Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-20T14:13:06.261Z [__UNIFARM__] error: Stake event sync failed...
+2021-09-20T14:14:15.032Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-20T14:14:54.163Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-20T14:17:46.981Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-20T14:17:47.021Z [__UNIFARM__] info: total stakes in ethereum cohorts 4892
+2021-09-20T14:23:49.106Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-20T14:23:49.154Z [__UNIFARM__] info: total stakes in ethereum cohorts 4892
+2021-09-20T14:26:21.963Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-20T14:26:22.003Z [__UNIFARM__] info: total stakes in ethereum cohorts 4892
