@@ -1,5 +1,5 @@
 import { appBoot } from "../db/createConnection";
-import { getTokensFromDatabase } from "../helpers/db-helpers";
+import { getTokensFromDatabase } from "../db/hooks/select";
 import { multicall, yamlParser } from "../helpers/scripters";
 import { logger } from "../log";
 import { getCohorts } from "../providers/provider";
@@ -13,7 +13,10 @@ import {
   locking,
 } from "../helpers";
 import { TokenDetails, TokenMetaData } from "../types/Tokens";
-import fs from "fs";
+//import fs from "fs";
+import { getConnection } from "typeorm";
+import { Token } from "../db/entity/Token";
+import { chainNameById } from "../constants";
 
 async function allTokens(opts: CohortOptions) {
   // totally automatic
@@ -21,17 +24,13 @@ async function allTokens(opts: CohortOptions) {
     const manifest = yamlParser(opts.chainId);
     const cohorts = manifest.cohorts;
 
-    logger.info(
-      `manifest loaded. cohorts found ${cohorts.length}`
-    );
+    logger.info(`manifest loaded. cohorts found ${cohorts.length}`);
 
     var n = 0;
     var contract = getCohorts(opts.chainId);
 
     if (!contract)
-      throw new Error(
-        `Fatal Error Contract Not found for the related ChainId`
-      );
+      throw new Error(`Fatal Error Contract Not found for the related ChainId`);
 
     var multiTokensPromise = [];
     while (n < cohorts.length) {
@@ -41,10 +40,7 @@ async function allTokens(opts: CohortOptions) {
       n++;
     }
 
-    const tokens = await Promise.map(
-      multiTokensPromise,
-      (values) => values
-    );
+    const tokens = await Promise.map(multiTokensPromise, (values) => values);
 
     var TokenPromise = [];
     for (var q = 0; q < tokens.length; q++) {
@@ -63,23 +59,20 @@ async function allTokens(opts: CohortOptions) {
       }
     }
 
-    const tokensMetaData = await Promise.map(
-      TokenPromise,
-      async (values) => {
-        const tokens = await Promise.map(
-          values.tokenMetaData,
-          (items: TokenDetails) => {
-            return {
-              ...items,
-              cohortId: values.cohortId,
-              tokenId: values.tokenId,
-              tokens: values.tokens,
-            };
-          }
-        );
-        return tokens;
-      }
-    );
+    const tokensMetaData = await Promise.map(TokenPromise, async (values) => {
+      const tokens = await Promise.map(
+        values.tokenMetaData,
+        (items: TokenDetails) => {
+          return {
+            ...items,
+            cohortId: values.cohortId,
+            tokenId: values.tokenId,
+            tokens: values.tokens,
+          };
+        }
+      );
+      return tokens;
+    });
 
     // get the token sequence
     var tokensInformation = [];
@@ -97,20 +90,13 @@ async function allTokens(opts: CohortOptions) {
       const items = tokensInformation[j];
       const instance = contract(items.cohortId);
       tokenSequencePromise.push(
-        getTokenSequenceList(
-          instance,
-          items.tokenId,
-          items.tokens.length
-        )
+        getTokenSequenceList(instance, items.tokenId, items.tokens.length)
       );
     }
 
-    var tokenSequence = await Promise.map(
-      tokenSequencePromise,
-      (values) => {
-        return values;
-      }
-    );
+    var tokenSequence = await Promise.map(tokenSequencePromise, (values) => {
+      return values;
+    });
 
     var oneDayReward = [];
 
@@ -126,13 +112,10 @@ async function allTokens(opts: CohortOptions) {
       );
     }
 
-    var rewards = await Promise.map(
-      oneDayReward,
-      (values) => values
-    );
+    var rewards = await Promise.map(oneDayReward, (values) => values);
 
-    var tokenMetaInformation: TokenMetaData[] =
-      tokensInformation.map((items, i) => {
+    var tokenMetaInformation: TokenMetaData[] = tokensInformation.map(
+      (items, i) => {
         const lockableDays = locking(
           items.cohortId,
           items.lockableDays,
@@ -159,13 +142,24 @@ async function allTokens(opts: CohortOptions) {
           rewardCap,
           chainId: opts.chainId,
         };
-      });
-
-    console.log(tokenMetaInformation);
-    fs.writeFileSync(
-      "./.tmp/tokens.json",
-      JSON.stringify(tokenMetaInformation)
+      }
     );
+
+    /* console.log(tokenMetaInformation);
+
+    fs.writeFileSync(
+      "./.tmp/tokens/polygon-tokens.json",
+      JSON.stringify(tokenMetaInformation)
+    ); */
+
+    await getConnection("unifarm")
+      .createQueryBuilder()
+      .insert()
+      .into(Token)
+      .values(tokenMetaInformation)
+      .execute();
+
+    logger.info(`Tokens Sync done for ${chainNameById[opts.chainId]} chain`);
   } catch (err) {
     logger.error(`Token Indexing Failed Reason: ${err.message}`);
   }
@@ -174,7 +168,7 @@ async function allTokens(opts: CohortOptions) {
 appBoot().then(() => {
   setTimeout(async () => {
     await allTokens({
-      chainId: 1,
+      chainId: 137,
     });
   }, 4000);
 });

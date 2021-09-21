@@ -4,8 +4,10 @@
   "main": "./index.js",
   "license": "MIT",
   "scripts": {
+    "cohort-seed": "export NODE_ENV=dev && ts-node scripts/cohort.ts",
     "token-seed": "export NODE_ENV=dev && ts-node scripts/tokens.ts",
-    "ethereum-stake-event-seed": "export NODE_ENV=dev && ts-node events/db-seed/db-seed-stake-ethereum.ts"
+    "ethereum-stake-event-seed": "export NODE_ENV=dev && ts-node events/db-seed/db-seed-stake-ethereum.ts",
+    "create-rewardCap": "export NODE_ENV=dev && ts-node scripts/createRewardCapJson.ts"
   },
   "dependencies": {
     "@ethersproject/address": "^5.4.0",

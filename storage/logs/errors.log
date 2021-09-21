@@ -50,3 +50,18 @@
 2021-09-20T10:12:42.497Z [__UNIFARM__] error: Stake event sync failed...
 2021-09-20T10:13:16.222Z [__UNIFARM__] error: connect ECONNREFUSED 127.0.0.1:5432
 2021-09-20T14:13:06.261Z [__UNIFARM__] error: Stake event sync failed...
+2021-09-21T08:20:27.935Z [__UNIFARM__] error: Token Indexing Failed Reason: this.subQuery is not a function
+2021-09-21T08:56:57.280Z [__UNIFARM__] error: Token Indexing Failed Reason: missing revert data in call exception (error={"reason":"missing response","code":"SERVER_ERROR","requestBody":"{\"method\":\"eth_call\",\"params\":[{\"to\":\"0x6fd0bbf295965db381f1d5b353ff3e523c771dd6\",\"data\":\"0x539cd3b4000000000000000000000000474021845c4643113458ea4414bdb7fb74a01a770000000000000000000000000000000000000000000000000000000000000004\"},\"latest\"],\"id\":457,\"jsonrpc\":\"2.0\"}","requestMethod":"POST","serverError":{"errno":-60,"code":"ETIMEDOUT","syscall":"connect","address":"172.67.9.247","port":443},"url":"https://speedy-nodes-nyc.moralis.io/dec2412db64dbb40e0016a68/eth/mainnet/archive"}, data="0x", code=CALL_EXCEPTION, version=providers/5.4.5)
+2021-09-21T08:59:07.004Z [__UNIFARM__] error: Token Indexing Failed Reason: null value in column "rewardCap" of relation "token" violates not-null constraint
+2021-09-21T09:01:31.034Z [__UNIFARM__] error: Token Indexing Failed Reason: missing revert data in call exception (error={"reason":"missing response","code":"SERVER_ERROR","requestBody":"{\"method\":\"eth_call\",\"params\":[{\"to\":\"0xab6ffa6a5d5589378a21dbb30df2940e0320d1cd\",\"data\":\"0x539cd3b4000000000000000000000000657b83a0336561c8f64389a6f5ade675c04b0c3b0000000000000000000000000000000000000000000000000000000000000003\"},\"latest\"],\"id\":223,\"jsonrpc\":\"2.0\"}","requestMethod":"POST","serverError":{"errno":-60,"code":"ETIMEDOUT","syscall":"connect","address":"54.209.101.60","port":443},"url":"https://mainnet.infura.io/v3/fe181b0b61fe4d18aa937ecad8912c55"}, data="0x", code=CALL_EXCEPTION, version=providers/5.4.5)
+2021-09-21T09:05:53.875Z [__UNIFARM__] error: Token Indexing Failed Reason: ENOENT: no such file or directory, open './.tmp/token/bsc-tokens.json'
+2021-09-21T09:11:18.451Z [__UNIFARM__] error: Token Indexing Failed Reason: Cannot read property 'length' of undefined
+2021-09-21T09:21:04.366Z [__UNIFARM__] error: something wrong went No repository for "Cohort" was found. Looks like this entity is not registered in current "unifarm" connection?
+2021-09-21T09:23:58.805Z [__UNIFARM__] error: Token Indexing Failed Reason: Cannot read property 'length' of undefined
+2021-09-21T09:30:41.888Z [__UNIFARM__] error: something wrong went syntax error at or near ":"
+2021-09-21T09:31:09.877Z [__UNIFARM__] error: something wrong went syntax error at or near ":"
+2021-09-21T09:31:57.475Z [__UNIFARM__] error: something wrong went syntax error at or near ":"
+2021-09-21T09:32:45.998Z [__UNIFARM__] error: something wrong went syntax error at or near ":"
+2021-09-21T10:04:06.320Z [__UNIFARM__] error: something wrong went syntax error at or near ":"
+2021-09-21T10:06:01.981Z [__UNIFARM__] error: something wrong went syntax error at or near ":"
+2021-09-21T10:08:32.123Z [__UNIFARM__] error: something wrong went column cohort.chainid does not exist

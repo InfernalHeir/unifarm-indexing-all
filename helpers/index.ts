@@ -1,13 +1,16 @@
 import { Contract } from "ethers";
-import { Promise as BluePromise } from "bluebird";
+import { Promise } from "bluebird";
 import {
+  BUSD,
   OROWETH,
   UFARMUSDC,
+  USDC,
   V1,
   V18,
   V1REPROXY,
   V2,
   V3,
+  WETH,
 } from "../constants";
 import { isAddress } from "@ethersproject/address";
 import { TokenDetails } from "../types/Tokens";
@@ -42,10 +45,7 @@ export const getNoOfPools = async (
   instance: Contract,
   chainId: number
 ): Promise<number> => {
-  if (
-    instance.address.toLowerCase() === V1.toLowerCase() &&
-    chainId === 1
-  ) {
+  if (instance.address.toLowerCase() === V1.toLowerCase() && chainId === 1) {
     return 5;
   } else if (
     instance.address.toLowerCase() === V2.toLowerCase() &&
@@ -70,17 +70,14 @@ export const getIntervalDays = async (
 ): Promise<string[]> => {
   const promises = [];
 
-  if (
-    instance.address.toLowerCase() === V3.toLowerCase() &&
-    chainId === 1
-  ) {
+  if (instance.address.toLowerCase() === V3.toLowerCase() && chainId === 1) {
     return ["1", "8", "15", "22", "29", "36"];
   }
 
   for (let i = 0; i < n; i++) {
     promises.push(instance.intervalDays(i));
   }
-  return BluePromise.map(promises, (items) => {
+  return Promise.map(promises, (items) => {
     return String(items);
   });
 };
@@ -89,10 +86,7 @@ export const getPoolStartTime = async (
   instance: Contract,
   chainId: number
 ): Promise<string> => {
-  if (
-    instance.address.toLowerCase() === V1.toLowerCase() &&
-    chainId === 1
-  ) {
+  if (instance.address.toLowerCase() === V1.toLowerCase() && chainId === 1) {
     return "1612302959";
   } else if (
     instance.address.toLowerCase() === V2.toLowerCase() &&
@@ -113,7 +107,7 @@ export const getTokens = async (
   for (let i = 0; i < n; i++) {
     promises.push(instance.tokens(i));
   }
-  return BluePromise.map(promises, (items) => {
+  return Promise.map(promises, (items) => {
     return items;
   });
 };
@@ -122,10 +116,7 @@ export const getRefferralPercentage = async (
   instance: Contract,
   chainId: number
 ): Promise<string | null> => {
-  if (
-    instance.address.toLowerCase() === V1.toLowerCase() &&
-    chainId === 1
-  ) {
+  if (instance.address.toLowerCase() === V1.toLowerCase() && chainId === 1) {
     return null;
   }
   const refPercentage = await instance.refPercentage();
@@ -136,10 +127,7 @@ export const getOptionalBenefits = async (
   instance: Contract,
   chainId: number
 ) => {
-  if (
-    instance.address.toLowerCase() === V1.toLowerCase() &&
-    chainId === 1
-  ) {
+  if (instance.address.toLowerCase() === V1.toLowerCase() && chainId === 1) {
     return null;
   } else if (
     instance.address.toLowerCase() === V2.toLowerCase() &&
@@ -151,14 +139,8 @@ export const getOptionalBenefits = async (
   return String(optionalBenefits);
 };
 
-export const getRewardStrategy = (
-  instance: Contract,
-  chainId: number
-) => {
-  if (
-    instance.address.toLowerCase() === V1.toLowerCase() &&
-    chainId === 1
-  ) {
+export const getRewardStrategy = (instance: Contract, chainId: number) => {
+  if (instance.address.toLowerCase() === V1.toLowerCase() && chainId === 1) {
     return "daily";
   } else if (
     instance.address.toLowerCase() === V2.toLowerCase() &&
@@ -200,10 +182,7 @@ export const getPoolInformation = async (
 ): Promise<TokenDetails> => {
   const pool = await instance.tokenDetails(tokenAddress);
 
-  if (
-    instance.address.toLowerCase() === V1.toLowerCase() &&
-    chainId === 1
-  ) {
+  if (instance.address.toLowerCase() === V1.toLowerCase() && chainId === 1) {
     return {
       decimals: String(pool.decimal),
       userMinStake: "0",
@@ -259,10 +238,17 @@ export const getTokenSequenceList = async (
   n: number //
 ): Promise<string[]> => {
   const promises: any[] = [];
+  if (
+    address.toLowerCase() === BUSD.toLowerCase() ||
+    address.toLowerCase() === WETH.toLowerCase() ||
+    address.toLowerCase() === USDC.toLowerCase()
+  ) {
+    return [];
+  }
   for (let r = 0; r < n; r++) {
     promises.push(instance.tokensSequenceList(address, r));
   }
-  return BluePromise.map(promises, (values) => {
+  return Promise.map(promises, (values) => {
     return String(values);
   });
 };
@@ -278,21 +264,16 @@ export const getTokenDailyDistribution = async (
     instance.address.toLowerCase() === V1REPROXY.toLowerCase() &&
     chainId === 1
   ) {
-    instance = new Contract(
-      V1REPROXY,
-      V1REPROXYABI,
-      ethProvider
-    );
+    instance = new Contract(V1REPROXY, V1REPROXYABI, ethProvider);
   }
 
   const promises = [];
+
   for (let k = 0; k < tokenSequence.length; k++) {
     const address = tokenSequence[k];
-    promises.push(
-      instance.tokenDailyDistribution(tokenAddress, address)
-    );
+    promises.push(instance.tokenDailyDistribution(tokenAddress, address));
   }
-  return BluePromise.map(promises, (values, i) => {
+  return Promise.map(promises, (values, i) => {
     return String(values);
   });
 };
@@ -305,10 +286,8 @@ export const getRewardCap = (
   const tokenReward = rewards.filter((e) => {
     return (
       Number(e.chainId) === chainId &&
-      String(e.cohortAddress).toLowerCase() ===
-        cohort.toLowerCase() &&
-      String(e.tokenAddress).toLowerCase() ===
-        token.toLowerCase()
+      String(e.cohortAddress).toLowerCase() === cohort.toLowerCase() &&
+      String(e.tokenAddress).toLowerCase() === token.toLowerCase()
     );
   });
   if (_.isEmpty(tokenReward)) return null;

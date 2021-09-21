@@ -26,16 +26,16 @@ export class Token {
   @Column("boolean")
   optionableStatus: boolean;
 
-  @Column("varchar", { array: true })
+  @Column("varchar", { array: true, nullable: true })
   tokenSequenceList: string[];
 
-  @Column("varchar", { array: true })
+  @Column("varchar", { array: true, nullable: true })
   tokenDailyDistribution: string[];
 
   @Column("varchar")
   cohortId: string;
 
-  @Column("varchar")
+  @Column("varchar", { nullable: true })
   rewardCap: string;
 
   @Column("numeric")
