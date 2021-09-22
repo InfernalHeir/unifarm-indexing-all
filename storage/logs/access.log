@@ -324,3 +324,99 @@
 2021-09-21T12:01:43.934Z [__UNIFARM__] info: connection established to unifarm
 2021-09-21T12:01:47.853Z [__UNIFARM__] info: manifest loaded. cohorts found 2
 2021-09-21T12:01:51.590Z [__UNIFARM__] info: Tokens Sync done for polygon chain
+2021-09-21T13:46:17.851Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-21T13:48:57.614Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-22T13:35:06.702Z [__UNIFARM__] info: Cron Server Started Successfully
+2021-09-22T13:35:56.400Z [__UNIFARM__] info: Cron Server Started Successfully
+2021-09-22T13:40:10.372Z [__UNIFARM__] info: Cron Server Started Successfully
+2021-09-22T13:41:01.308Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-22T13:41:01.316Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again.
+2021-09-22T13:41:01.317Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T13:42:01.481Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-22T13:42:01.488Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again.
+2021-09-22T13:42:01.488Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T13:43:01.216Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-22T13:43:01.219Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again.
+2021-09-22T13:43:01.219Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T13:44:01.223Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-22T13:44:01.226Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again.
+2021-09-22T13:44:01.227Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T13:45:01.232Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-22T13:45:01.236Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again.
+2021-09-22T13:45:01.236Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T13:45:40.182Z [__UNIFARM__] info: Cron Server Started Successfully
+2021-09-22T13:46:01.238Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-22T13:46:01.240Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason ENOENT: no such file or directory, open './blocks/blocks.json'
+2021-09-22T13:46:01.240Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T13:47:01.954Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-22T13:47:01.957Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason ENOENT: no such file or directory, open './blocks/blocks.json'
+2021-09-22T13:47:01.958Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T13:47:06.661Z [__UNIFARM__] info: Cron Server Started Successfully
+2021-09-22T13:48:01.148Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-22T13:48:01.152Z [__UNIFARM__] info: Stake indexed successfully new fetched block is 2000
+2021-09-22T13:48:01.157Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T14:06:42.930Z [__UNIFARM__] info: Cron Server Started Successfully
+2021-09-22T14:07:01.156Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-22T14:07:01.159Z [__UNIFARM__] info: Stake indexed successfully new fetched block is 2000
+2021-09-22T14:07:01.164Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T14:08:01.120Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-22T14:08:01.122Z [__UNIFARM__] info: Stake indexed successfully new fetched block is 2000
+2021-09-22T14:08:01.124Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T14:08:32.483Z [__UNIFARM__] info: Cron Server Started Successfully
+2021-09-22T14:09:37.929Z [__UNIFARM__] info: Cron Server Started Successfully
+2021-09-22T14:10:01.237Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-22T14:10:01.239Z [__UNIFARM__] info: Stake indexed successfully new fetched block is 6733820
+2021-09-22T14:10:01.244Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T14:11:01.193Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-22T14:11:01.195Z [__UNIFARM__] info: Stake indexed successfully new fetched block is 6733820
+2021-09-22T14:11:01.198Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T14:11:47.828Z [__UNIFARM__] info: Cron Server Started Successfully
+2021-09-22T14:12:16.225Z [__UNIFARM__] error: Stake event sync failed...
+2021-09-22T14:12:16.226Z [__UNIFARM__] info: Stake indexed successfully new fetched block is 6735820
+2021-09-22T14:12:16.227Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T14:13:03.586Z [__UNIFARM__] info: Cron Server Started Successfully
+2021-09-22T14:13:39.003Z [__UNIFARM__] info: Cron Server Started Successfully
+2021-09-22T14:14:02.081Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-22T14:14:02.084Z [__UNIFARM__] info: Stake indexed successfully new fetched block is 6737820
+2021-09-22T14:14:02.089Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T14:15:01.266Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-22T14:15:01.269Z [__UNIFARM__] info: Stake indexed successfully new fetched block is 6737820
+2021-09-22T14:15:01.271Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T14:16:01.171Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-22T14:16:01.175Z [__UNIFARM__] info: Stake indexed successfully new fetched block is 6737820
+2021-09-22T14:16:01.178Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T14:20:32.016Z [__UNIFARM__] info: Cron Server Started Successfully
+2021-09-22T14:20:52.593Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-22T14:20:52.597Z [__UNIFARM__] info: Stake indexed successfully new fetched block is 6733820
+2021-09-22T14:20:52.603Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T14:22:37.841Z [__UNIFARM__] info: Cron Server Started Successfully
+2021-09-22T14:22:51.169Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason could not detect network (event="noNetwork", code=NETWORK_ERROR, version=providers/5.4.5)
+2021-09-22T14:22:51.170Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T14:23:28.005Z [__UNIFARM__] info: Cron Server Started Successfully
+2021-09-22T14:23:52.253Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-22T14:23:52.256Z [__UNIFARM__] info: Stake indexed successfully new fetched block is 6735820
+2021-09-22T14:23:52.262Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T14:24:57.615Z [__UNIFARM__] info: Cron Server Started Successfully
+2021-09-22T14:25:02.494Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-22T14:25:02.496Z [__UNIFARM__] info: Stake indexed successfully new fetched block is 6737820
+2021-09-22T14:25:02.500Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T14:25:27.328Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-22T14:25:27.331Z [__UNIFARM__] info: Stake indexed successfully new fetched block is 6737820
+2021-09-22T14:25:27.333Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T14:25:52.462Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-22T14:25:52.465Z [__UNIFARM__] info: Stake indexed successfully new fetched block is 6737820
+2021-09-22T14:25:52.466Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T14:26:02.534Z [__UNIFARM__] info: Stake event fetch successfully
+2021-09-22T14:26:02.536Z [__UNIFARM__] info: Stake indexed successfully new fetched block is 6737820
+2021-09-22T14:26:02.538Z [__UNIFARM__] info: BSC_EVENTS SYNC JOB Completed
+2021-09-22T15:21:42.586Z [__UNIFARM__] error: UnStake event sync failed... processing response error (body="{\"jsonrpc\":\"2.0\",\"id\":48,\"error\":{\"code\":-32000,\"message\":\"exceed maximum block range: 5000\"}}", error={"code":-32000}, requestBody="{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x0\",\"toBlock\":\"latest\",\"address\":\"0x69b63a145597f39ed1703f6aeeb2b832bb92f670\",\"topics\":[\"0xa4b627609e711628747558b171b04b9636337afdadac065ee7113fb91eab0b72\"]}],\"id\":48,\"jsonrpc\":\"2.0\"}", requestMethod="POST", url="https://bsc-dataseed.binance.org/", code=SERVER_ERROR, version=web/5.4.0)
+2021-09-22T15:22:50.812Z [__UNIFARM__] error: UnStake event sync failed... bad response (status=504, headers={"date":"Wed, 22 Sep 2021 15:22:50 GMT","content-type":"text/plain","content-length":"24","connection":"close","x-envoy-upstream-service-time":"15001","cf-cache-status":"DYNAMIC","expect-ct":"max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"","server":"cloudflare","cf-ray":"692c87953aec1ba4-DEL"}, body="upstream request timeout", requestBody="{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x0\",\"toBlock\":\"latest\",\"address\":\"0x6fd0bbf295965db381f1d5b353ff3e523c771dd6\",\"topics\":[\"0xa4b627609e711628747558b171b04b9636337afdadac065ee7113fb91eab0b72\"]}],\"id\":55,\"jsonrpc\":\"2.0\"}", requestMethod="POST", url="https://speedy-nodes-nyc.moralis.io/dec2412db64dbb40e0016a68/eth/mainnet/archive", code=SERVER_ERROR, version=web/5.4.0)
+2021-09-22T15:26:31.593Z [__UNIFARM__] info: UnStake event fetch successfully
+2021-09-22T15:26:31.615Z [__UNIFARM__] info: total unstakes in ethereum cohorts 1379
+2021-09-22T15:28:47.926Z [__UNIFARM__] info: Claim event fetch successfully
+2021-09-22T15:28:47.958Z [__UNIFARM__] info: total claims in ethereum cohorts 4598
+2021-09-22T15:29:59.739Z [__UNIFARM__] error: ReferralEarn event sync failed... The comparison function must be either a function or undefined
+2021-09-22T15:35:49.411Z [__UNIFARM__] error: ReferralEarn event sync failed... instance.filters[eventName] is not a function
+2021-09-22T15:37:20.382Z [__UNIFARM__] error: ReferralEarn event sync failed... instance.filters[eventName] is not a function
+2021-09-22T15:39:00.894Z [__UNIFARM__] info: ReferralEarn event fetch successfully
+2021-09-22T15:39:00.899Z [__UNIFARM__] info: total claims in ethereum cohorts 56

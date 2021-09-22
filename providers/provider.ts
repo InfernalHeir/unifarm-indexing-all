@@ -1,73 +1,81 @@
 import { JsonRpcProvider } from "@ethersproject/providers";
-import { Contract } from "ethers";
-import { bscRPCUrl, ethereumRPCUrl, polygonRPCUrl } from "./rpc";
-import EthereumCohortABI from "../constants/ethereum/ABI.json";
+import { Contract, ethers } from "ethers";
+import {
+   bscRPCUrl,
+   ethereumRPCUrl,
+   polygonRPCUrl,
+   wsBscRPCUrl,
+   wsEthRPCUrl,
+   wsPolygonRPCUrl,
+} from "./rpc";
 import BscCohortABI from "../constants/bsc/ABI.json";
 import PolygonCohortABI from "../constants/polygon/ABI.json";
-
-// SEPERATE ABI for TWO VERSIONs
-import UNIFARMV1 from "../constants/ethereum/UNIFARMV1.json";
-import UNIFARMV2 from "../constants/ethereum/UNIFARMV2.json";
-import UNIFARMV3ABI from "../constants/ethereum/UNIFARMV3.json";
-import UNIFARMV4ABI from "../constants/ethereum/UNIFARMV4.json";
-
-import { V1, V2, V3, V4 } from "../constants";
+import { ethSwitch } from "./switch";
 
 export const ethProvider = new JsonRpcProvider(ethereumRPCUrl);
 
 export const bscProvider = new JsonRpcProvider(bscRPCUrl);
 
-export const polygonProvider = new JsonRpcProvider(
-  polygonRPCUrl
+export const polygonProvider = new JsonRpcProvider(polygonRPCUrl);
+
+/* export const wsEthProvider = new ethers.providers.WebSocketProvider(
+   String(wsEthRPCUrl)
 );
 
-export const ethereumCohorts = (cohortAddress: string) => {
-  if (cohortAddress.toLowerCase() === V1.toLowerCase()) {
-    return new Contract(cohortAddress, UNIFARMV1, ethProvider);
-  } else if (cohortAddress.toLowerCase() === V2.toLowerCase()) {
-    return new Contract(cohortAddress, UNIFARMV2, ethProvider);
-  } else if (cohortAddress.toLowerCase() === V3.toLowerCase()) {
-    return new Contract(
-      cohortAddress,
-      UNIFARMV3ABI,
-      ethProvider
-    );
-  } else if (cohortAddress.toLowerCase() === V4.toLowerCase()) {
-    return new Contract(
-      cohortAddress,
-      UNIFARMV4ABI,
-      ethProvider
-    );
-  }
+export const wsBscProvider = new ethers.providers.WebSocketProvider(
+   String(wsBscRPCUrl)
+);
 
-  return new Contract(
-    cohortAddress,
-    EthereumCohortABI,
-    ethProvider
-  );
+export const wsPolygonProvider = new ethers.providers.WebSocketProvider(
+   String(wsPolygonRPCUrl)
+); */
+
+export const ethereumCohorts = (cohortAddress: string) => {
+   return ethSwitch(cohortAddress, ethProvider);
 };
 
 export const bscCohorts = (cohortAddress: string) => {
-  return new Contract(cohortAddress, BscCohortABI, bscProvider);
+   return new Contract(cohortAddress, BscCohortABI, bscProvider);
 };
 
 export const polygonCohorts = (cohortAddress: string) => {
-  return new Contract(
-    cohortAddress,
-    PolygonCohortABI,
-    polygonProvider
-  );
+   return new Contract(cohortAddress, PolygonCohortABI, polygonProvider);
 };
 
+/* export const wsEthereumCohorts = (cohortAddress: string) => {
+   return ethSwitch(cohortAddress, wsEthProvider);
+};
+
+export const wsBscCohorts = (cohortAddress: string) => {
+   return new Contract(cohortAddress, BscCohortABI, wsBscProvider);
+};
+
+export const wsPolygonCohorts = (cohortAddress: string) => {
+   return new Contract(cohortAddress, PolygonCohortABI, wsPolygonProvider);
+}; */
+
 export const getCohorts = (chainId: number) => {
-  switch (chainId) {
-    case 1:
-      return ethereumCohorts;
-    case 56:
-      return bscCohorts;
-    case 137:
-      return polygonCohorts;
-    default:
-      return null;
-  }
+   switch (chainId) {
+      case 1:
+         return ethereumCohorts;
+      case 56:
+         return bscCohorts;
+      case 137:
+         return polygonCohorts;
+      default:
+         return null;
+   }
+};
+
+export const getProviders = (chainId: number) => {
+   switch (chainId) {
+      case 1:
+         return ethProvider;
+      case 56:
+         return bscProvider;
+      case 137:
+         return polygonProvider;
+      default:
+         return null;
+   }
 };

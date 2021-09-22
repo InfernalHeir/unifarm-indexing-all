@@ -18,12 +18,16 @@ export const UFARMUSDC: string = "0x32D72D6CC98436EF983BE7f5288ab2Ca63480fE4";
 export const V1REPROXY: string = "0x0862eD7f6B2bc350508B29542511249b7E11A0a0";
 
 export const chainNameById: Chain = {
-  1: "ethereum",
-  56: "bsc",
-  137: "polygon",
+   1: "ethereum",
+   56: "bsc",
+   137: "polygon",
 };
 
 // DUMP pools
 export const BUSD: string = "0xe9e7cea3dedca5984780bafc599bd69add087d56";
 export const WETH: string = "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2";
 export const USDC: string = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48";
+
+export const ETH_CHAIN = 1;
+export const BSC_CHAIN = 56;
+export const POLYGON_CHAIN = 137;

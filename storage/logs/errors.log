@@ -65,3 +65,17 @@
 2021-09-21T10:04:06.320Z [__UNIFARM__] error: something wrong went syntax error at or near ":"
 2021-09-21T10:06:01.981Z [__UNIFARM__] error: something wrong went syntax error at or near ":"
 2021-09-21T10:08:32.123Z [__UNIFARM__] error: something wrong went column cohort.chainid does not exist
+2021-09-22T13:41:01.316Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again.
+2021-09-22T13:42:01.488Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again.
+2021-09-22T13:43:01.219Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again.
+2021-09-22T13:44:01.226Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again.
+2021-09-22T13:45:01.236Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again.
+2021-09-22T13:46:01.240Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason ENOENT: no such file or directory, open './blocks/blocks.json'
+2021-09-22T13:47:01.957Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason ENOENT: no such file or directory, open './blocks/blocks.json'
+2021-09-22T14:12:16.225Z [__UNIFARM__] error: Stake event sync failed...
+2021-09-22T14:22:51.169Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason could not detect network (event="noNetwork", code=NETWORK_ERROR, version=providers/5.4.5)
+2021-09-22T15:21:42.586Z [__UNIFARM__] error: UnStake event sync failed... processing response error (body="{\"jsonrpc\":\"2.0\",\"id\":48,\"error\":{\"code\":-32000,\"message\":\"exceed maximum block range: 5000\"}}", error={"code":-32000}, requestBody="{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x0\",\"toBlock\":\"latest\",\"address\":\"0x69b63a145597f39ed1703f6aeeb2b832bb92f670\",\"topics\":[\"0xa4b627609e711628747558b171b04b9636337afdadac065ee7113fb91eab0b72\"]}],\"id\":48,\"jsonrpc\":\"2.0\"}", requestMethod="POST", url="https://bsc-dataseed.binance.org/", code=SERVER_ERROR, version=web/5.4.0)
+2021-09-22T15:22:50.812Z [__UNIFARM__] error: UnStake event sync failed... bad response (status=504, headers={"date":"Wed, 22 Sep 2021 15:22:50 GMT","content-type":"text/plain","content-length":"24","connection":"close","x-envoy-upstream-service-time":"15001","cf-cache-status":"DYNAMIC","expect-ct":"max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"","server":"cloudflare","cf-ray":"692c87953aec1ba4-DEL"}, body="upstream request timeout", requestBody="{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x0\",\"toBlock\":\"latest\",\"address\":\"0x6fd0bbf295965db381f1d5b353ff3e523c771dd6\",\"topics\":[\"0xa4b627609e711628747558b171b04b9636337afdadac065ee7113fb91eab0b72\"]}],\"id\":55,\"jsonrpc\":\"2.0\"}", requestMethod="POST", url="https://speedy-nodes-nyc.moralis.io/dec2412db64dbb40e0016a68/eth/mainnet/archive", code=SERVER_ERROR, version=web/5.4.0)
+2021-09-22T15:29:59.739Z [__UNIFARM__] error: ReferralEarn event sync failed... The comparison function must be either a function or undefined
+2021-09-22T15:35:49.411Z [__UNIFARM__] error: ReferralEarn event sync failed... instance.filters[eventName] is not a function
+2021-09-22T15:37:20.382Z [__UNIFARM__] error: ReferralEarn event sync failed... instance.filters[eventName] is not a function
