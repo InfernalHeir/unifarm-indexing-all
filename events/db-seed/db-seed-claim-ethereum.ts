@@ -1,14 +1,18 @@
-//import { appBoot } from "../../db/createConnection";
+import { appBoot } from "../../db/createConnection";
 import { ETH_CHAIN } from "../../constants";
 import { ClaimEvent } from "../../types/events";
 import { readAllCohortsEvents } from "../ethereum.events";
 import fs from "fs";
 import { logger } from "../../log";
 import { CohortsEvents } from "../events";
+import { insertClaimEvent } from "../../db/hooks/insertation";
+import { ethProvider } from "../../providers/provider";
 
 //appBoot();
 
 async function allClaimEvents() {
+   const latestBlockNumber = await ethProvider.getBlockNumber();
+
    const events = await readAllCohortsEvents({
       chainId: ETH_CHAIN,
       eventName: CohortsEvents.CLAIM,
@@ -33,12 +37,20 @@ async function allClaimEvents() {
       }
    });
 
-   fs.writeFileSync(
+   /* fs.writeFileSync(
       "./.tmp/events/ethereum-claim.json",
       JSON.stringify(claimEvents)
-   );
+   ); */
 
-   logger.info(`total claims in ethereum cohorts ${claimEvents.length}`);
+   await insertClaimEvent(claimEvents);
+
+   logger.info(
+      `total claims in ethereum cohorts ${claimEvents.length}. last block fetch for Claim Entity ${latestBlockNumber}`
+   );
 }
 
-allClaimEvents();
+appBoot().then(() => {
+   setTimeout(() => {
+      allClaimEvents();
+   }, 5000);
+});

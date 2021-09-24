@@ -1,31 +1,45 @@
-//import { appBoot } from "../../db/createConnection";
+import { appBoot } from "../../db/createConnection";
 import { BSC_CHAIN, ETH_CHAIN, V1, V2, V3, V4 } from "../../constants";
 import { UnStakeEvent } from "../../types/events";
-import { readAllCohortsEvents } from "../ethereum.events";
+import { readAllCohortsEvents, readAllProxiesState } from "../ethereum.events";
 import fs from "fs";
 import { logger } from "../../log";
 import { CohortsEvents } from "../events";
+import { insertUnstakeEvent } from "../../db/hooks/insertation";
+import { ethProvider } from "../../providers/provider";
+import { AllEventsSync } from "../../types/type";
 
-//appBoot();
+async function allUnStakeEvents(fetchOptions: AllEventsSync) {
+   const latestBlockNumber = await ethProvider.getBlockNumber();
 
-async function allUnStakeEvents() {
-   const events = await readAllCohortsEvents({
-      chainId: ETH_CHAIN,
-      eventName: CohortsEvents.UNSTAKE,
-      eventParams: [null, null, null, null, null],
-   });
+   var events;
+
+   if (fetchOptions.isProxy) {
+      events = readAllProxiesState({
+         chainId: ETH_CHAIN,
+         eventName: CohortsEvents.UNSTAKE,
+         eventParams: [null, null, null, null, null],
+      });
+   } else {
+      events = await readAllCohortsEvents({
+         chainId: ETH_CHAIN,
+         eventName: CohortsEvents.UNSTAKE,
+         eventParams: [null, null, null, null, null],
+      });
+   }
 
    if (!events) return null;
 
-   const unStakeEvents: UnStakeEvent[] | any[] = events.map((items) => {
+   const unStakeEvents: UnStakeEvent[] = events.map((items) => {
       if (items.args === undefined) return null;
       var stakeId: string | null = String(items.args[4]);
 
       if (
-         items.address.toLowerCase() === V1.toLowerCase() ||
-         items.address.toLowerCase() === V2.toLowerCase() ||
-         items.address.toLowerCase() === V3.toLowerCase() ||
-         items.address.toLowerCase() === V4.toLowerCase()
+         (items.address.toLowerCase() === V1.toLowerCase() ||
+            items.address.toLowerCase() === V2.toLowerCase() ||
+            items.address.toLowerCase() === V3.toLowerCase() ||
+            items.address.toLowerCase() === V4.toLowerCase()) &&
+         !fetchOptions.isProxy
       ) {
          stakeId = null;
       }
@@ -33,7 +47,7 @@ async function allUnStakeEvents() {
       return {
          userAddress: items.args[0],
          cohortId: items.address,
-         unStakeTokenAddress: items.args[1],
+         unStakedTokenAddress: String(items.args[1]),
          unStakedAmount: String(items.args[2]),
          stakeId,
          time: String(items.args[3]),
@@ -43,12 +57,32 @@ async function allUnStakeEvents() {
       };
    });
 
-   fs.writeFileSync(
-      "./.tmp/events/ethereum-unstakes.json",
-      JSON.stringify(unStakeEvents)
-   );
+   console.log(unStakeEvents);
 
-   logger.info(`total unstakes in ethereum cohorts ${unStakeEvents.length}`);
+   if (fetchOptions.isProxy) {
+      fs.writeFileSync(
+         "./.tmp/events/proxy/ethereum-unstakes.json",
+         JSON.stringify(unStakeEvents)
+      );
+   } else {
+      fs.writeFileSync(
+         "./.tmp/events/ethereum-unstakes.json",
+         JSON.stringify(unStakeEvents)
+      );
+   }
+
+   //await insertUnstakeEvent(unStakeEvents);
+
+   logger.info(
+      `insertation has been done for Unstake Entity. Unstake entity last block fetch is ${latestBlockNumber}`
+   );
 }
 
-allUnStakeEvents();
+appBoot().then(() => {
+   setTimeout(async () => {
+      await allUnStakeEvents({
+         // if PROXY Fetching events please enable it
+         isProxy: true,
+      });
+   }, 5000);
+});

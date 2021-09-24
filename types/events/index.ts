@@ -14,7 +14,7 @@ export interface StakeEvent {
 export interface UnStakeEvent {
    userAddress: string;
    cohortId: string;
-   unStakeTokenAddress: string;
+   unStakedTokenAddress: string;
    unStakedAmount: string;
    stakeId: string | null;
    time: string;

@@ -15,6 +15,7 @@ export const OROWETH: string = "0x1c14Eb2f2bf443557fC131b3f6F4e929C0081346";
 export const UFARMUSDC: string = "0x32D72D6CC98436EF983BE7f5288ab2Ca63480fE4";
 
 // other proxies
+export const V1PROXY: string = "0xe8369CA802f89b16A968ccb24431A7A412F41f27";
 export const V1REPROXY: string = "0x0862eD7f6B2bc350508B29542511249b7E11A0a0";
 
 export const chainNameById: Chain = {

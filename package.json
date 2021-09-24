@@ -11,8 +11,8 @@
       "ethereum-claim-event-seed": "export NODE_ENV=dev && ts-node events/db-seed/db-seed-claim-ethereum.ts",
       "ethereum-refferal-claim-event-seed": "export NODE_ENV=dev && ts-node events/db-seed/db-seed-refferal-claim-ethereum.ts",
       "create-rewardCap": "export NODE_ENV=dev && ts-node scripts/createRewardCapJson.ts",
-      "start:graph-server": "nodemon --ext '.ts' ./graphql/graph.ts",
-      "start:eth-listeners": "export NODE_ENV=dev && nodemon --ext '.ts' events/listeners/index.ts",
+      "start:graph-server": "export NODE_ENV=dev && nodemon --ext '.ts' ./graphql/graph.ts",
+      "start:eth-listeners": "export NODE_ENV=dev && export CHAIN_ID=1 && nodemon --ext '.ts' events/listeners/index.ts",
       "start:cron-server": "export NODE_ENV=dev && nodemon --ext '.ts' cron/index.ts"
    },
    "dependencies": {

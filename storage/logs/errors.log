@@ -79,3 +79,25 @@
 2021-09-22T15:29:59.739Z [__UNIFARM__] error: ReferralEarn event sync failed... The comparison function must be either a function or undefined
 2021-09-22T15:35:49.411Z [__UNIFARM__] error: ReferralEarn event sync failed... instance.filters[eventName] is not a function
 2021-09-22T15:37:20.382Z [__UNIFARM__] error: ReferralEarn event sync failed... instance.filters[eventName] is not a function
+2021-09-23T12:17:00.908Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-09-23T12:27:13.401Z [__UNIFARM__] error: Cohort:: Single Cohort Fetched Failed
+2021-09-23T12:27:44.905Z [__UNIFARM__] error: Cohort:: Single Cohort Fetched Failed
+2021-09-23T12:29:18.154Z [__UNIFARM__] error: Cohort:: Single Cohort Fetched Failed
+2021-09-23T12:33:08.213Z [__UNIFARM__] error: Cohort:: Single Cohort Fetched Failed
+2021-09-23T12:59:23.202Z [__UNIFARM__] error: AllCohorts:: Cohorts Fetched Failed
+2021-09-23T13:30:44.724Z [__UNIFARM__] error: AllCohorts:: Cohorts Fetched Failed
+2021-09-23T13:31:50.401Z [__UNIFARM__] error: AllCohorts:: Cohorts Fetched Failed
+2021-09-23T13:33:14.340Z [__UNIFARM__] error: AllCohorts:: Cohorts Fetched Failed
+2021-09-23T14:18:26.527Z [__UNIFARM__] error: Pools:: Pools Fetched Failed
+2021-09-23T15:13:37.878Z [__UNIFARM__] error: Tokens:: Tokens Fetched Failed
+2021-09-24T05:58:24.245Z [__UNIFARM__] error: UnStake event sync failed... bad response (status=504, headers={"date":"Fri, 24 Sep 2021 05:58:24 GMT","content-type":"text/plain","content-length":"24","connection":"close","x-envoy-upstream-service-time":"15004","cf-cache-status":"DYNAMIC","expect-ct":"max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"","server":"cloudflare","cf-ray":"6939c7828b9c1be7-DEL"}, body="upstream request timeout", requestBody="{\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x0\",\"toBlock\":\"latest\",\"address\":\"0x3d41675d0e5b610cfea98998129780753bd664b5\",\"topics\":[\"0xa4b627609e711628747558b171b04b9636337afdadac065ee7113fb91eab0b72\"]}],\"id\":55,\"jsonrpc\":\"2.0\"}", requestMethod="POST", url="https://speedy-nodes-nyc.moralis.io/dec2412db64dbb40e0016a68/eth/mainnet/archive", code=SERVER_ERROR, version=web/5.4.0)
+2021-09-24T09:26:30.169Z [__UNIFARM__] error: readAllProxiesState: Error event sync failed please try again reason Cannot read property 'getLogs' of null
+2021-09-24T09:45:45.070Z [__UNIFARM__] error: readAllProxiesState: Error event sync failed please try again reason Cannot read property 'getLogs' of null
+2021-09-24T09:48:59.274Z [__UNIFARM__] error: readAllProxiesState: Error event sync failed please try again reason Cannot read property 'getLogs' of null
+2021-09-24T09:49:55.729Z [__UNIFARM__] error: readAllProxiesState: Error event sync failed please try again reason Cannot read property 'getLogs' of null
+2021-09-24T09:55:06.168Z [__UNIFARM__] error: readAllProxiesState: Error event sync failed please try again reason Cannot read property 'getLogs' of null
+2021-09-24T09:57:19.966Z [__UNIFARM__] error: readAllProxiesState: Error event sync failed please try again reason Cannot read property 'getLogs' of null
+2021-09-24T09:59:04.138Z [__UNIFARM__] error: readAllProxiesState: Error event sync failed please try again reason query failed for the cohort address 0xe8369CA802f89b16A968ccb24431A7A412F41f27
+2021-09-24T10:05:04.180Z [__UNIFARM__] error: readAllProxiesState: Error event sync failed please try again reason query failed for the cohort address 0xe8369CA802f89b16A968ccb24431A7A412F41f27 reason Cannot read property 'getLogs' of null
+2021-09-24T10:07:40.746Z [__UNIFARM__] error: readAllProxiesState: Error event sync failed please try again reason query failed for the cohort address 0xe8369CA802f89b16A968ccb24431A7A412F41f27 reason Cannot read property 'getLogs' of null
+2021-09-24T10:08:20.470Z [__UNIFARM__] error: readAllProxiesState: Error event sync failed please try again reason query failed for the cohort address 0xe8369CA802f89b16A968ccb24431A7A412F41f27 reason Cannot read property 'getLogs' of null

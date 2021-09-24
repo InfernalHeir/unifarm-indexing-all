@@ -1,14 +1,18 @@
-//import { appBoot } from "../../db/createConnection";
+import { appBoot } from "../../db/createConnection";
 import { ETH_CHAIN } from "../../constants";
 import { ClaimEvent, RefferalClaimEvent } from "../../types/events";
 import { readAllCohortsEvents } from "../ethereum.events";
 import fs from "fs";
 import { logger } from "../../log";
 import { CohortsEvents } from "../events";
+import { insertRefferalEvent } from "../../db/hooks/insertation";
+import { ethProvider } from "../../providers/provider";
 
 //appBoot();
 
 async function allRefferalEvents() {
+   const latestBlockNumber = await ethProvider.getBlockNumber();
+
    const events = await readAllCohortsEvents({
       chainId: ETH_CHAIN,
       eventName: CohortsEvents.REFERRALEARN,
@@ -33,14 +37,20 @@ async function allRefferalEvents() {
       }
    });
 
-   fs.writeFileSync(
+   /* fs.writeFileSync(
       "./.tmp/events/ethereum-refferral-claim.json",
       JSON.stringify(refferralClaim)
-   );
+   ); */
+
+   await insertRefferalEvent(refferralClaim);
 
    logger.info(
-      `total refferral claim in ethereum cohorts ${refferralClaim.length}`
+      `total refferral claim in ethereum cohorts ${refferralClaim.length}. last block fetch Refferal Claim Entity ${latestBlockNumber}`
    );
 }
 
-allRefferalEvents();
+appBoot().then(() => {
+   setTimeout(() => {
+      allRefferalEvents();
+   }, 5000);
+});

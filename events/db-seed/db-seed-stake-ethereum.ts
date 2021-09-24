@@ -1,4 +1,4 @@
-//import { appBoot } from "../../db/createConnection";
+import { appBoot } from "../../db/createConnection";
 import { ETH_CHAIN, V1, V2, V3 } from "../../constants";
 import { StakeEvent } from "../../types/events";
 import { readAllCohortsEvents } from "../ethereum.events";
@@ -6,10 +6,12 @@ import fs from "fs";
 import { logger } from "../../log";
 import _ from "lodash";
 import { CohortsEvents } from "../events";
-
-//appBoot();
+import { insertStakeEvent } from "../../db/hooks/insertation";
+import { ethProvider } from "../../providers/provider";
 
 async function insertAllStakeEvents() {
+   const latestBlockNumber = await ethProvider.getBlockNumber();
+
    const events = await readAllCohortsEvents({
       chainId: ETH_CHAIN,
       eventName: CohortsEvents.STAKE,
@@ -52,12 +54,20 @@ async function insertAllStakeEvents() {
       };
    });
 
-   fs.writeFileSync(
+   /* fs.writeFileSync(
       "./.tmp/events/ethereum-stakes.json",
       JSON.stringify(stakeEvents)
-   );
+   ); */
 
-   logger.info(`total stakes in ethereum cohorts ${stakeEvents.length}`);
+   await insertStakeEvent(stakeEvents);
+
+   logger.info(
+      `ethereum cohorts staking data inserted successfully. total Stake Entity row is ${stakeEvents.length}. last sync block is ${latestBlockNumber}`
+   );
 }
 
-insertAllStakeEvents();
+appBoot().then(() => {
+   setTimeout(async () => {
+      await insertAllStakeEvents();
+   }, 5000);
+});

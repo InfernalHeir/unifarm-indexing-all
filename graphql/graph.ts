@@ -3,9 +3,15 @@ import express from "express";
 import { logger } from "../log";
 import { resolvers } from "./resolvers";
 import fs from "fs";
+import { typeDefs } from "./typeDefs";
+import { DocumentNode } from "graphql";
+import { appBoot } from "../db/createConnection";
 
-async function startApolloServer(typeDefs: string, resolvers: any) {
+async function startApolloServer(typeDefs: DocumentNode, resolvers: any) {
    const app = express();
+
+   // take connection from database
+   await appBoot();
 
    const server = new ApolloServer({
       typeDefs,
@@ -23,4 +29,4 @@ async function startApolloServer(typeDefs: string, resolvers: any) {
    });
 }
 
-startApolloServer(fs.readFileSync("./schema.graphql").toString(), resolvers);
+startApolloServer(typeDefs, resolvers);
