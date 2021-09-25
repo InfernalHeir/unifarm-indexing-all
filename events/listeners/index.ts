@@ -6,7 +6,6 @@ import {
 } from "../../providers/provider";
 import { EXPECTED_PONG_BACK, KEEP_ALIVE_CHECK_INTERVAL } from "../events";
 import { config } from "dotenv";
-import { ethListenerConfig } from "./listeners-config/eth-listenster.config";
 import { chainNameById } from "../../constants";
 import { ListenerConfig } from "./listeners-config/typing";
 
@@ -40,7 +39,7 @@ export const startConnection = () => {
 
       // TODO: handle contract listeners setup + indexing
       // activate the cohort listeners
-      var listernsConfig: ListenerConfig;
+      /* var listernsConfig: ListenerConfig;
 
       if (CHAIN_ID === 1) {
          listernsConfig = ethListenerConfig;
@@ -61,7 +60,7 @@ export const startConnection = () => {
          instance.on("*", (eventName, event) => {
             console.log(eventName);
          });
-      }
+      } */
 
       logger.info(`Listers activated for all proxies cohorts`);
    });

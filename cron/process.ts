@@ -1,70 +1,157 @@
 import { BSC_CHAIN, chainNameById, POLYGON_CHAIN } from "../constants";
 import { logger } from "../log";
-import { getProviders } from "../providers/provider";
-import blocks from "./blocks/blocks.json";
 import _ from "lodash";
-import { readAllCohortsEvents } from "../events/ethereum.events";
+import { getOffset, setOffset } from "./cronHelpers";
+import { getPastEventByMoralis } from "../events/events-helpers";
 import { CohortsEvents } from "../events/events";
-import fs from "fs";
+import {
+   insertClaimEvent,
+   insertRefferalEvent,
+   insertStakeEvent,
+   insertUnstakeEvent,
+} from "../db/hooks/insertation";
+import {
+   ClaimEvent,
+   RefferalClaimEvent,
+   StakeEvent,
+   UnStakeEvent,
+} from "../types/events";
+import jobs from "./jobs";
 
-export async function cronJobForStake(chainId: number) {
+export async function processor(
+   chainId: number,
+   eventName: string,
+   cohortId: string,
+   EVENT_ABI: string,
+   topic: string
+) {
    try {
       if (!chainId) return null;
 
-      const fetchedBlock = (blocks as any)[chainId];
-      const provider = getProviders(chainId);
-      const currentBlock = await provider?.getBlockNumber();
+      const currentOffset = await getOffset(cohortId, eventName, chainId);
+      // fetch the particular event
 
-      // destination blocknumber derivation
-      const diffBlock = _.subtract(
-         currentBlock as number,
-         fetchedBlock as number
+      const pastEvents = await getPastEventByMoralis(
+         chainId,
+         cohortId,
+         topic,
+         EVENT_ABI,
+         currentOffset === null || undefined ? 0 : currentOffset
       );
 
-      const toBlock = diffBlock > 4000 ? 4000 : diffBlock;
+      const total = pastEvents.total;
 
-      // query the blockchain state
-      const events = await readAllCohortsEvents({
-         chainId,
-         eventName: CohortsEvents.STAKE,
-         eventParams: [null, null, null, null, null],
-         cohort: null,
-         fromBlock: fetchedBlock,
-         toBlock,
-      });
+      if (currentOffset === total) {
+         // stop the cron
+         logger.info(
+            `Job Successfully completed and now this will be stop forever ${cohortId} for ${chainNameById[chainId]} chain.`
+         );
 
-      // save the new fetch blocked
-      const newFetchedBlock = _.add(fetchedBlock, toBlock);
-
-      const indenticalChain = chainId === BSC_CHAIN ? POLYGON_CHAIN : BSC_CHAIN;
-
-      var updatedJson;
-
-      if (chainId === BSC_CHAIN) {
-         updatedJson = {
-            56: newFetchedBlock,
-            137: (blocks as any)[indenticalChain],
-         };
-      } else {
-         updatedJson = {
-            56: (blocks as any)[indenticalChain],
-            137: newFetchedBlock,
-         };
+         return;
       }
 
-      fs.writeFileSync(
-         `${__dirname}/blocks/blocks.json`,
-         JSON.stringify(updatedJson)
+      const diffrence = _.subtract(total, currentOffset);
+      const newOffset =
+         diffrence > pastEvents.page_size
+            ? _.add(currentOffset, pastEvents.page_size)
+            : _.add(currentOffset, diffrence);
+
+      // store the new Offset in data base
+      const updated = await setOffset(
+         cohortId,
+         eventName,
+         chainId,
+         String(newOffset)
       );
+
+      if (!updated) {
+         throw new Error(
+            `Job Failed for the ${cohortId} and the eventName is ${eventName}. APP chain name is ${chainNameById[chainId]}`
+         );
+      }
 
       logger.info(
-         `${CohortsEvents.STAKE} indexed successfully new fetched block is ${newFetchedBlock}`
+         `PROCESSOR:: Sync Happens for ${chainNameById[chainId]} chain. cohortId is ${cohortId} and eventName is ${eventName}`
       );
 
-      console.log(events);
+      // store the values in data base accordingly
+      if (eventName === CohortsEvents.STAKE) {
+         const stakeEventData: StakeEvent[] = pastEvents.result.map((items) => {
+            return {
+               userAddress: items.data.userAddress,
+               tokenId: items.data.tokenAddress,
+               cohortId: items.address,
+               stakeId: items.data.stakeId,
+               referrerAddress: items.data.referrerAddress,
+               stakedAmount: items.data.stakedAmount,
+               time: items.data.time,
+               hash: items.transaction_hash,
+               block: items.block_number,
+               chainId: chainId,
+            };
+         });
+
+         await insertStakeEvent(stakeEventData);
+      } else if (eventName === CohortsEvents.UNSTAKE) {
+         const unstakeEventData: UnStakeEvent[] = pastEvents.result.map(
+            (items) => {
+               return {
+                  userAddress: items.data.userAddress,
+                  cohortId: items.address,
+                  unStakedTokenAddress: items.data.unStakedTokenAddress,
+                  unStakedAmount: items.data.unStakedAmount,
+                  stakeId: items.data.stakeId,
+                  time: items.data.time,
+                  hash: items.transaction_hash,
+                  block: items.block_number,
+                  chainId: chainId,
+               };
+            }
+         );
+
+         await insertUnstakeEvent(unstakeEventData);
+      } else if (eventName === CohortsEvents.CLAIM) {
+         const claimEventData: ClaimEvent[] = pastEvents.result.map((items) => {
+            return {
+               userAddress: items.data.userAddress,
+               cohortId: items.address,
+               stakedTokenAddress: items.data.stakedTokenAddress,
+               rewardTokenAddress: items.data.tokenAddress,
+               claimedRewards: items.data.claimRewards,
+               time: items.data.time,
+               hash: items.transaction_hash,
+               block: items.block_number,
+               chainId: chainId,
+            };
+         });
+
+         await insertClaimEvent(claimEventData);
+      } else if (eventName === CohortsEvents.REFERRALEARN) {
+         const refferralEventData: RefferalClaimEvent[] = pastEvents.result.map(
+            (items) => {
+               return {
+                  userAddress: items.data.userAddress,
+                  cohortId: items.address,
+                  refreeAddress: items.data.callerAddress,
+                  rewardTokenAddress: items.data.rewardTokenAddress,
+                  rewardAmount: items.data.rewardAmount,
+                  time: items.data.time,
+                  hash: items.transaction_hash,
+                  block: items.block_number,
+                  chainId: chainId,
+               };
+            }
+         );
+
+         await insertRefferalEvent(refferralEventData);
+      } else {
+         throw new Error(`No associated Event Name found.`);
+      }
    } catch (err) {
       logger.error(
          `there is something wrong went with ${chainNameById[chainId]} chain. it will trying again. reason ${err.message}`
       );
    }
 }
+
+// stop All the jobs in 5 seconds

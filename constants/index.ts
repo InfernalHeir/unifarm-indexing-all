@@ -32,3 +32,7 @@ export const USDC: string = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48";
 export const ETH_CHAIN = 1;
 export const BSC_CHAIN = 56;
 export const POLYGON_CHAIN = 137;
+
+export const MORALIS_API = "https://deep-index.moralis.io";
+export const API_KEY =
+   "n3vA4ayBuxWDkJdaYy4fSlaPFK4cGe4ITTdhfuDls0IbeXCY3YsZSZdJOvDGttei";

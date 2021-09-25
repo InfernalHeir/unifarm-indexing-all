@@ -45,6 +45,7 @@ export async function readAllCohortsEvents(opts: EventsFetcherOptions) {
             )
          );
       }
+
       const events = await Promise.map(multiCohortsEvents, (values) => values);
 
       var allEvents = [];
@@ -106,6 +107,7 @@ export async function readAllProxiesState(opts: EventsFetcherOptions) {
       if (!proxyCohort) return undefined;
 
       var eventPromise = [];
+
       for (var e = 0; e < proxies.length; e++) {
          //console.log(proxies[e]);
          const instance = proxyCohort(proxies[e]);
@@ -136,6 +138,7 @@ export async function readAllProxiesState(opts: EventsFetcherOptions) {
       logger.info(
          `readAllProxiesState: ${opts.eventName} event fetch successfully`
       );
+
       return allEvents;
    } catch (err) {
       logger.error(

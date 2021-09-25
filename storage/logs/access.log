@@ -659,3 +659,135 @@
 2021-09-24T10:07:40.746Z [__UNIFARM__] error: readAllProxiesState: Error event sync failed please try again reason query failed for the cohort address 0xe8369CA802f89b16A968ccb24431A7A412F41f27 reason Cannot read property 'getLogs' of null
 2021-09-24T10:08:14.268Z [__UNIFARM__] info: connection established to unifarm
 2021-09-24T10:08:20.470Z [__UNIFARM__] error: readAllProxiesState: Error event sync failed please try again reason query failed for the cohort address 0xe8369CA802f89b16A968ccb24431A7A412F41f27 reason Cannot read property 'getLogs' of null
+2021-09-25T09:56:02.051Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T09:57:43.371Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T09:58:23.162Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T09:59:01.020Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Stake
+2021-09-25T09:59:01.023Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason Cannot read property 'map' of undefined
+2021-09-25T10:01:27.750Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T10:01:59.421Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T10:02:00.923Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Stake
+2021-09-25T10:04:58.433Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T10:05:00.803Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Stake
+2021-09-25T10:06:59.968Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T10:07:00.575Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Stake
+2021-09-25T10:11:39.295Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T10:12:01.134Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Stake
+2021-09-25T10:17:52.469Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T10:18:00.651Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Stake
+2021-09-25T10:29:07.777Z [__UNIFARM__] info: OK
+2021-09-25T10:30:32.650Z [__UNIFARM__] info: OK
+2021-09-25T10:31:51.572Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T10:32:01.128Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Stake
+2021-09-25T10:32:01.130Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason Connection "unifarm" was not found.
+2021-09-25T10:33:29.324Z [__UNIFARM__] info: OK
+2021-09-25T10:33:36.509Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T10:33:36.650Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T10:34:00.648Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Stake
+2021-09-25T10:35:00.721Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Stake
+2021-09-25T10:36:00.507Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Stake
+2021-09-25T10:37:00.404Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason Cannot read property 'stop' of undefined
+2021-09-25T10:41:01.912Z [__UNIFARM__] info: OK
+2021-09-25T10:41:34.173Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T10:41:34.290Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T10:42:46.692Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T10:42:46.818Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T10:43:00.672Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Stake
+2021-09-25T10:44:35.588Z [__UNIFARM__] info: OK
+2021-09-25T10:44:52.812Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T10:44:52.942Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T10:45:00.967Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Stake
+2021-09-25T10:46:00.705Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Stake
+2021-09-25T10:47:00.567Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Stake
+2021-09-25T10:48:00.355Z [__UNIFARM__] info: Job Successfully completed and now this will stop 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for bsc chain.
+2021-09-25T10:48:00.355Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Stake
+2021-09-25T10:48:32.207Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T10:48:32.389Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T10:48:57.227Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T10:48:57.333Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T10:49:00.444Z [__UNIFARM__] info: Job Successfully completed and now this will stop 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for bsc chain.
+2021-09-25T10:50:00.604Z [__UNIFARM__] info: Job Successfully completed and now this will stop 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for bsc chain.
+2021-09-25T10:50:45.569Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T10:50:45.689Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T10:51:00.481Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason jobs_1.default[chainIdeventNamecohortId].destroy is not a function
+2021-09-25T10:51:17.615Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T10:51:17.739Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T10:51:28.691Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T10:51:28.807Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T10:52:00.434Z [__UNIFARM__] info: Job Successfully completed and now this will stop 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for bsc chain.
+2021-09-25T11:11:25.189Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T11:11:25.321Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T11:12:00.675Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for bsc chain.
+2021-09-25T11:18:22.622Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T11:18:22.754Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T11:19:00.686Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for bsc chain.
+2021-09-25T11:19:46.227Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T11:19:46.345Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T11:20:00.501Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for bsc chain.
+2021-09-25T11:22:22.471Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T11:22:22.604Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T11:23:05.729Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T11:23:05.867Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T11:25:59.448Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T11:25:59.572Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T11:26:00.717Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for bsc chain.
+2021-09-25T11:26:36.176Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T11:26:36.294Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T11:28:07.748Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T11:28:07.869Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T11:29:34.171Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-25T11:29:34.312Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T11:30:00.435Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for bsc chain.
+2021-09-25T12:02:26.249Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T12:02:32.371Z [__UNIFARM__] error: readAllProxiesState: Error event sync failed please try again reason query failed for the cohort address 0xe8369CA802f89b16A968ccb24431A7A412F41f27 reason Cannot read property 'getLogs' of null
+2021-09-25T12:03:30.134Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T12:03:36.358Z [__UNIFARM__] error: readAllProxiesState: Error event sync failed please try again reason query failed for the cohort address 0xe8369CA802f89b16A968ccb24431A7A412F41f27 reason Cannot read property 'getLogs' of null
+2021-09-25T12:07:12.337Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T12:07:18.301Z [__UNIFARM__] error: readAllProxiesState: Error event sync failed please try again reason query failed for the cohort address 0xe8369CA802f89b16A968ccb24431A7A412F41f27 reason Cannot read property 'getLogs' of null
+2021-09-25T12:12:48.643Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T12:12:58.190Z [__UNIFARM__] info: UnStake event fetch successfully
+2021-09-25T12:12:58.218Z [__UNIFARM__] info: insertation has been done for Unstake Entity. Unstake entity last block fetch is 13294900
+2021-09-25T12:17:13.868Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T12:17:20.099Z [__UNIFARM__] error: readAllProxiesState: Error event sync failed please try again reason query failed for the cohort address 0xe8369CA802f89b16A968ccb24431A7A412F41f27 reason Cannot read property 'getLogs' of null
+2021-09-25T12:22:36.135Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T12:22:42.342Z [__UNIFARM__] error: readAllProxiesState: Error event sync failed please try again reason query failed for the cohort address 0x4d1cEC3f30aD9b1a7f69e510016a5D790cFA6fC0 reason Cannot read property 'getLogs' of null
+2021-09-25T12:24:27.821Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T12:24:33.850Z [__UNIFARM__] error: readAllProxiesState: Error event sync failed please try again reason query failed for the cohort address 0x4d1cEC3f30aD9b1a7f69e510016a5D790cFA6fC0 reason Cannot read property 'getLogs' of null
+2021-09-25T12:29:06.056Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T12:29:12.282Z [__UNIFARM__] error: readAllProxiesState: Error event sync failed please try again reason query failed for the cohort address 0x4d1cEC3f30aD9b1a7f69e510016a5D790cFA6fC0 reason Cannot read property 'getLogs' of null
+2021-09-25T12:33:31.734Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T12:34:48.813Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T12:35:21.334Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T12:35:30.640Z [__UNIFARM__] info: readAllProxiesState: UnStake event fetch successfully
+2021-09-25T12:35:30.669Z [__UNIFARM__] info: insertation has been done for Unstake Entity. Unstake entity last block fetch is 13294989
+2021-09-25T12:44:08.731Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T12:44:18.088Z [__UNIFARM__] info: readAllProxiesState: UnStake event fetch successfully
+2021-09-25T12:44:18.115Z [__UNIFARM__] info: insertation has been done for Unstake Entity. Unstake entity last block fetch is 13295028
+2021-09-25T12:46:28.968Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T12:46:38.533Z [__UNIFARM__] info: readAllProxiesState: UnStake event fetch successfully
+2021-09-25T12:46:38.712Z [__UNIFARM__] info: insertation has been done for Unstake Entity. Unstake entity last block fetch is 13295038
+2021-09-25T12:55:07.754Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T12:55:18.201Z [__UNIFARM__] info: readAllProxiesState: Claim event fetch successfully
+2021-09-25T12:55:58.541Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T12:56:09.073Z [__UNIFARM__] info: readAllProxiesState: Claim event fetch successfully
+2021-09-25T12:56:09.139Z [__UNIFARM__] info: total claims in ethereum cohorts 7917. last block fetch for Claim Entity 13295093
+2021-09-25T12:57:02.790Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T12:57:13.635Z [__UNIFARM__] info: readAllProxiesState: Claim event fetch successfully
+2021-09-25T12:57:13.716Z [__UNIFARM__] info: total claims in ethereum cohorts 7917. last block fetch for Claim Entity 13295097
+2021-09-25T12:59:44.456Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T12:59:54.859Z [__UNIFARM__] info: readAllProxiesState: Claim event fetch successfully
+2021-09-25T13:07:42.877Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T13:07:53.109Z [__UNIFARM__] info: readAllProxiesState: Claim event fetch successfully
+2021-09-25T13:07:53.369Z [__UNIFARM__] info: total claims in ethereum cohorts 7921. last block fetch for Claim Entity 13295150
+2021-09-25T13:10:32.223Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T13:10:41.901Z [__UNIFARM__] info: readAllProxiesState: ReferralEarn event fetch successfully
+2021-09-25T13:10:41.914Z [__UNIFARM__] info: total refferral claim in ethereum cohorts 780. last block fetch Refferal Claim Entity 13295167
+2021-09-25T13:11:40.372Z [__UNIFARM__] info: connection established to unifarm
+2021-09-25T13:11:49.731Z [__UNIFARM__] info: readAllProxiesState: ReferralEarn event fetch successfully
+2021-09-25T13:11:49.855Z [__UNIFARM__] info: total refferral claim in ethereum cohorts 780. last block fetch Refferal Claim Entity 13295169
+2021-09-25T13:58:31.632Z [__UNIFARM__] info: Event listener for ethereum chain has been activated.
+2021-09-25T13:59:05.315Z [__UNIFARM__] info: Event listener for ethereum chain has been activated.
+2021-09-25T14:17:21.391Z [__UNIFARM__] info: Event listener for ethereum chain has been activated.
+2021-09-25T14:25:58.725Z [__UNIFARM__] info: Event listener for ethereum chain has been activated.
+2021-09-25T14:31:45.310Z [__UNIFARM__] info: Event listener for ethereum chain has been activated.
+2021-09-25T14:33:10.978Z [__UNIFARM__] info: Event listener for ethereum chain has been activated.

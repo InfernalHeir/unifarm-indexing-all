@@ -1,6 +1,23 @@
 import { Contract, EventFilter, Event } from "ethers";
-import { ETH_CHAIN, V1, V2, V3, V4 } from "../../constants";
+import {
+   API_KEY,
+   chainNameById,
+   ETH_CHAIN,
+   MORALIS_API,
+   V1,
+   V2,
+   V3,
+   V4,
+} from "../../constants";
 import { CohortsEvents } from "../events";
+import fetch from "node-fetch";
+
+interface MoralisResponse {
+   total: number;
+   page: number;
+   page_size: number;
+   result: any;
+}
 
 export const filterEvents = (
    instance: Contract,
@@ -51,4 +68,28 @@ export const queryEvents = async (
          `query failed for the cohort address ${instance.address} reason ${err.message}`
       );
    }
+};
+
+export const getPastEventByMoralis = async (
+   chainId: number,
+   cohortId: string,
+   topic: string,
+   ABI: string,
+   offset: number
+): Promise<MoralisResponse> => {
+   if (!chainId) throw Error(`Moralis: App fetch failed please pass chainId`);
+   const results = await fetch(
+      `${MORALIS_API}/api/v2/${cohortId}/events?chain=${chainNameById[chainId]}&from_block=0&topic=${topic}&offset=${offset}`,
+      {
+         method: "post",
+         body: ABI,
+         headers: {
+            accept: "application/json",
+            "X-API-Key": API_KEY,
+            "Content-Type": "application/json",
+         },
+      }
+   );
+   const jsonFormat: MoralisResponse | any = await results.json();
+   return jsonFormat;
 };

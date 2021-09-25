@@ -65,17 +65,17 @@ export const wsPolygonCohorts = (cohortAddress: string) => {
 // Proxy Instances
 export const ethCohortsProxy = (cohortProxyAddress: string) => {
    if (cohortProxyAddress.toLowerCase() === V1PROXY.toLowerCase()) {
-      return new Contract(cohortProxyAddress, V1PROXYABI);
+      return new Contract(cohortProxyAddress, V1PROXYABI, ethProvider);
    }
-   return new Contract(cohortProxyAddress, ETHPROXYABI);
+   return new Contract(cohortProxyAddress, ETHPROXYABI, ethProvider);
 };
 
 export const bscCohortsProxy = (cohortProxyAddress: string) => {
-   return new Contract(cohortProxyAddress, BSCPROXYABI);
+   return new Contract(cohortProxyAddress, BSCPROXYABI, bscProvider);
 };
 
 export const polygonCohortsProxy = (cohortAddress: string) => {
-   return new Contract(cohortAddress, POLYGONPROXYABI);
+   return new Contract(cohortAddress, POLYGONPROXYABI, polygonProvider);
 };
 
 export const getCohorts = (chainId: number) => {

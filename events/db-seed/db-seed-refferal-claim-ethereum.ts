@@ -1,23 +1,33 @@
 import { appBoot } from "../../db/createConnection";
 import { ETH_CHAIN } from "../../constants";
 import { ClaimEvent, RefferalClaimEvent } from "../../types/events";
-import { readAllCohortsEvents } from "../ethereum.events";
+import { readAllCohortsEvents, readAllProxiesState } from "../ethereum.events";
 import fs from "fs";
 import { logger } from "../../log";
 import { CohortsEvents } from "../events";
 import { insertRefferalEvent } from "../../db/hooks/insertation";
 import { ethProvider } from "../../providers/provider";
+import { AllEventsSync } from "../../types/type";
 
 //appBoot();
 
-async function allRefferalEvents() {
+async function allRefferalEvents(fetchOptions: AllEventsSync) {
    const latestBlockNumber = await ethProvider.getBlockNumber();
 
-   const events = await readAllCohortsEvents({
-      chainId: ETH_CHAIN,
-      eventName: CohortsEvents.REFERRALEARN,
-      eventParams: [null, null, null, null, null],
-   });
+   var events;
+   if (fetchOptions.isProxy) {
+      events = await readAllProxiesState({
+         chainId: ETH_CHAIN,
+         eventName: CohortsEvents.REFERRALEARN,
+         eventParams: [null, null, null, null, null],
+      });
+   } else {
+      events = await readAllCohortsEvents({
+         chainId: ETH_CHAIN,
+         eventName: CohortsEvents.REFERRALEARN,
+         eventParams: [null, null, null, null, null],
+      });
+   }
 
    if (!events) return null;
 
@@ -37,10 +47,17 @@ async function allRefferalEvents() {
       }
    });
 
-   /* fs.writeFileSync(
-      "./.tmp/events/ethereum-refferral-claim.json",
-      JSON.stringify(refferralClaim)
-   ); */
+   if (fetchOptions.isProxy) {
+      fs.writeFileSync(
+         "./.tmp/events/proxy/ethereum-refferral-claim.json",
+         JSON.stringify(refferralClaim)
+      );
+   } else {
+      fs.writeFileSync(
+         "./.tmp/events/ethereum-refferral-claim.json",
+         JSON.stringify(refferralClaim)
+      );
+   }
 
    await insertRefferalEvent(refferralClaim);
 
@@ -51,6 +68,9 @@ async function allRefferalEvents() {
 
 appBoot().then(() => {
    setTimeout(() => {
-      allRefferalEvents();
+      allRefferalEvents({
+         // if PROXY Fetching events please enable it
+         isProxy: process.env.PROXY === "yes" ? true : false,
+      });
    }, 5000);
 });

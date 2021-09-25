@@ -1,5 +1,5 @@
 import { appBoot } from "../../db/createConnection";
-import { BSC_CHAIN, ETH_CHAIN, V1, V2, V3, V4 } from "../../constants";
+import { BSC_CHAIN, ETH_CHAIN, V1, V1PROXY, V2, V3, V4 } from "../../constants";
 import { UnStakeEvent } from "../../types/events";
 import { readAllCohortsEvents, readAllProxiesState } from "../ethereum.events";
 import fs from "fs";
@@ -12,10 +12,10 @@ import { AllEventsSync } from "../../types/type";
 async function allUnStakeEvents(fetchOptions: AllEventsSync) {
    const latestBlockNumber = await ethProvider.getBlockNumber();
 
-   var events;
+   var events: any;
 
    if (fetchOptions.isProxy) {
-      events = readAllProxiesState({
+      events = await readAllProxiesState({
          chainId: ETH_CHAIN,
          eventName: CohortsEvents.UNSTAKE,
          eventParams: [null, null, null, null, null],
@@ -44,6 +44,19 @@ async function allUnStakeEvents(fetchOptions: AllEventsSync) {
          stakeId = null;
       }
 
+      if (String(items.address).toLowerCase() === V1PROXY.toLowerCase()) {
+         return {
+            userAddress: items.args[0],
+            cohortId: items.address,
+            unStakedTokenAddress: String(items.args[1]),
+            unStakedAmount: String(items.args[3]),
+            stakeId: String(items.args[2]),
+            time: String(items.args[4]),
+            hash: items.transactionHash,
+            block: String(items.blockNumber),
+            chainId: ETH_CHAIN,
+         };
+      }
       return {
          userAddress: items.args[0],
          cohortId: items.address,
@@ -57,8 +70,6 @@ async function allUnStakeEvents(fetchOptions: AllEventsSync) {
       };
    });
 
-   console.log(unStakeEvents);
-
    if (fetchOptions.isProxy) {
       fs.writeFileSync(
          "./.tmp/events/proxy/ethereum-unstakes.json",
@@ -71,7 +82,7 @@ async function allUnStakeEvents(fetchOptions: AllEventsSync) {
       );
    }
 
-   //await insertUnstakeEvent(unStakeEvents);
+   await insertUnstakeEvent(unStakeEvents);
 
    logger.info(
       `insertation has been done for Unstake Entity. Unstake entity last block fetch is ${latestBlockNumber}`
@@ -82,7 +93,7 @@ appBoot().then(() => {
    setTimeout(async () => {
       await allUnStakeEvents({
          // if PROXY Fetching events please enable it
-         isProxy: true,
+         isProxy: process.env.PROXY === "yes" ? true : false,
       });
    }, 5000);
 });

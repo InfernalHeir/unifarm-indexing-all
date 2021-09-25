@@ -1,19 +1,64 @@
 import { CronJob } from "cron";
 import { BSC_CHAIN } from "../constants";
+import { appBoot } from "../db/createConnection";
 import { logger } from "../log";
-import { cronJobForStake } from "./process";
+import { jobList } from "./jobList";
+import { processor } from "./process";
 
-export const bscEventsSync = new CronJob(
-   "*/25 * * * * *",
-   async () => {
-      try {
-         await cronJobForStake(BSC_CHAIN);
-         logger.info(`BSC_EVENTS SYNC JOB Completed`);
-      } catch (err) {
-         logger.error(`BSC_EVENTS sync failed - ${err.message}`);
+var jobs = {};
+
+function execution() {
+   for (var c = 0; c < jobList.length; c++) {
+      const items = jobList[c];
+      jobs[`${items.chainId}_${items.eventName}_${items.cohortId}`] =
+         new CronJob(
+            "* * * * *",
+            async () => {
+               await processor(
+                  items.chainId,
+                  items.eventName,
+                  items.cohortId,
+                  items.ABI,
+                  items.topic
+               );
+            },
+            null,
+            true,
+            "Asia/Kolkata"
+         );
+   }
+}
+
+function startAllJobs() {
+   // first execute the object
+   execution();
+
+   logger.info(`All Jobs will be booted on 10 seconds.`);
+
+   // take a data base connection
+   appBoot().then(() => {
+      setTimeout(() => {
+         for (var c = 0; c < jobList.length; c++) {
+            const items = jobList[c];
+            jobs[
+               `${items.chainId}_${items.eventName}_${items.cohortId}`
+            ].start();
+         }
+      }, 10000);
+   });
+}
+
+function stopAllTheJobsAfterTenMinuates() {
+   setTimeout(() => {
+      for (var c = 0; c < jobList.length; c++) {
+         const items = jobList[c];
+         jobs[`${items.chainId}_${items.eventName}_${items.cohortId}`].stop();
       }
-   },
-   null,
-   true,
-   "Asia/Kolkata"
-);
+      logger.info(`Jobs Stopped Successfully all data syned from moralis.`);
+   }, 310000);
+}
+
+startAllJobs();
+stopAllTheJobsAfterTenMinuates();
+
+export default jobs;
