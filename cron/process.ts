@@ -98,7 +98,7 @@ export async function processor(
                return {
                   userAddress: items.data.userAddress,
                   cohortId: items.address,
-                  unStakedTokenAddress: items.data.unStakedTokenAddress,
+                  unStakedTokenAddress: items.data.unStakedtokenAddress,
                   unStakedAmount: items.data.unStakedAmount,
                   stakeId: items.data.stakeId,
                   time: items.data.time,

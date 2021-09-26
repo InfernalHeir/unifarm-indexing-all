@@ -1,13 +1,28 @@
 import ETH_COHORT_ABI from "../../../constants/ethereum/ABI.json";
+import { STAKE_ABI } from "../../bsc/ABI";
 import { CohortsEvents } from "../../events";
+
+export const request = {
+   id: 1,
+   method: "eth_subscribe",
+   params: [
+      "logs",
+      {
+         address: ["0x82F89e5bF18EA6A8b5a573D6D1F1BE5F77A27C28"],
+         topics: [
+            "0x88eaeb6c000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000365374616b6528616464726573732c75696e743235362c616464726573732c616464726573732c75696e743235362c75696e743235362900000000000000000000",
+         ],
+      },
+   ],
+};
 
 export const ethListenersConfig = [
    {
-      name: "V16",
-      address: "0x53fe82a7334c6f3683d5b39f49f0f7be19823a64",
-      abi: ETH_COHORT_ABI,
+      name: "V22",
+      address: "0x82F89e5bF18EA6A8b5a573D6D1F1BE5F77A27C28",
+      abi: STAKE_ABI,
       events: [CohortsEvents.STAKE],
-   },
+   } /* ,
    {
       name: "V18",
       address: "0x6fd0bbf295965db381f1d5b353ff3e523c771dd6",
@@ -166,5 +181,5 @@ export const ethListenersConfig = [
          CohortsEvents.CLAIM,
          CohortsEvents.REFERRALEARN,
       ],
-   },
+   }, */,
 ];

@@ -4,6 +4,7 @@ import {
    bscRPCUrl,
    ethereumRPCUrl,
    polygonRPCUrl,
+   rinkebyRPCUrl,
    wsBscRPCUrl,
    wsEthRPCUrl,
    wsPolygonRPCUrl,
@@ -26,7 +27,7 @@ export const bscProvider = new JsonRpcProvider(bscRPCUrl);
 
 export const polygonProvider = new JsonRpcProvider(polygonRPCUrl);
 
-export const wsEthProvider = new WebSocketProvider(wsEthRPCUrl, "mainnet");
+export const wsEthProvider = new WebSocketProvider(rinkebyRPCUrl);
 
 export const wsBscProvider = new WebSocketProvider(
    String(wsBscRPCUrl),

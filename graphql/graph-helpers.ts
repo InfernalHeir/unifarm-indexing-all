@@ -57,7 +57,7 @@ export const getPoolInformation = async (
          "token.cohortId",
          Cohort,
          "cohort",
-         "token.cohortId = cohort.cohortAddress"
+         "cohort.cohortAddress = token.cohortId"
       )
       .where("token.chainId =:chainId", {
          chainId,
@@ -67,7 +67,28 @@ export const getPoolInformation = async (
       })
       .getMany();
 
-   return poolInformation;
+   console.log(poolInformation);
+
+   return poolInformation.map((items) => {
+      return {
+         token: {
+            id: items.id,
+            tokenId: items.tokenId,
+            decimals: items.decimals,
+            userMinStake: items.userMinStake,
+            userMaxStake: items.userMaxStake,
+            totalStakeLimit: items.totalStakeLimit,
+            lockableDays: items.lockableDays,
+            optionableStatus: items.optionableStatus,
+            tokenSequenceList: items.tokenSequenceList,
+            tokenDailyDistribution: items.tokenDailyDistribution,
+            cohortId: items.cohortId,
+            rewardCap: items.rewardCap,
+            chainId: items.chainId,
+         },
+         cohort: items.cohortId,
+      };
+   });
 };
 
 export const getTokens = async (chainId: number, tokenAddress: string) => {

@@ -10,7 +10,7 @@ import { RefferralClaim } from "../entity/RefferalClaim";
 import { Stake } from "../entity/Stake";
 import { Unstake } from "../entity/Unstake";
 
-export const insertStakeEvent = async (data: StakeEvent[]) => {
+export const insertStakeEvent = async (data: StakeEvent[] | StakeEvent) => {
    await getRepository(Stake, "unifarm")
       .createQueryBuilder("stake")
       .insert()
@@ -18,7 +18,9 @@ export const insertStakeEvent = async (data: StakeEvent[]) => {
       .execute();
 };
 
-export const insertUnstakeEvent = async (data: UnStakeEvent[]) => {
+export const insertUnstakeEvent = async (
+   data: UnStakeEvent[] | UnStakeEvent
+) => {
    await getRepository(Unstake, "unifarm")
       .createQueryBuilder("unstake")
       .insert()
@@ -26,7 +28,7 @@ export const insertUnstakeEvent = async (data: UnStakeEvent[]) => {
       .execute();
 };
 
-export const insertClaimEvent = async (data: ClaimEvent[]) => {
+export const insertClaimEvent = async (data: ClaimEvent[] | ClaimEvent) => {
    await getRepository(Claim, "unifarm")
       .createQueryBuilder("claim")
       .insert()
@@ -34,7 +36,9 @@ export const insertClaimEvent = async (data: ClaimEvent[]) => {
       .execute();
 };
 
-export const insertRefferalEvent = async (data: RefferalClaimEvent[]) => {
+export const insertRefferalEvent = async (
+   data: RefferalClaimEvent[] | RefferalClaimEvent
+) => {
    await getRepository(RefferralClaim, "unifarm")
       .createQueryBuilder("refClaim")
       .insert()

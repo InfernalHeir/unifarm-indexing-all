@@ -791,3 +791,424 @@
 2021-09-25T14:25:58.725Z [__UNIFARM__] info: Event listener for ethereum chain has been activated.
 2021-09-25T14:31:45.310Z [__UNIFARM__] info: Event listener for ethereum chain has been activated.
 2021-09-25T14:33:10.978Z [__UNIFARM__] info: Event listener for ethereum chain has been activated.
+2021-09-26T05:37:57.822Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-26T05:37:57.940Z [__UNIFARM__] info: connection established to unifarm
+2021-09-26T05:38:00.896Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x96537bac94c8adc38fd17d70077ebcb958c1362f for polygon chain.
+2021-09-26T05:38:00.897Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is ReferralEarn
+2021-09-26T05:38:00.907Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is ReferralEarn
+2021-09-26T05:38:00.963Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0x96537bac94c8adc38fd17d70077ebcb958c1362f and eventName is UnStake
+2021-09-26T05:38:00.974Z [__UNIFARM__] error: there is something wrong went with polygon chain. it will trying again. reason null value in column "unStakedTokenAddress" of relation "unstake" violates not-null constraint
+2021-09-26T05:38:01.056Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80 and eventName is ReferralEarn
+2021-09-26T05:38:01.114Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Stake
+2021-09-26T05:38:01.176Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0x96537bac94c8adc38fd17d70077ebcb958c1362f and eventName is Claim
+2021-09-26T05:38:01.189Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80 and eventName is Claim
+2021-09-26T05:38:01.216Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0x96537bac94c8adc38fd17d70077ebcb958c1362f and eventName is Stake
+2021-09-26T05:38:01.293Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Claim
+2021-09-26T05:38:01.435Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 and eventName is Claim
+2021-09-26T05:38:01.453Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80 and eventName is UnStake
+2021-09-26T05:38:01.474Z [__UNIFARM__] error: there is something wrong went with polygon chain. it will trying again. reason null value in column "unStakedTokenAddress" of relation "unstake" violates not-null constraint
+2021-09-26T05:38:01.515Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 and eventName is ReferralEarn
+2021-09-26T05:38:01.530Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x207c678457617bc8c8ab06f9088efc1dcd45887c and eventName is UnStake
+2021-09-26T05:38:01.544Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 and eventName is Claim
+2021-09-26T05:38:01.552Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason null value in column "unStakedTokenAddress" of relation "unstake" violates not-null constraint
+2021-09-26T05:38:01.692Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 and eventName is UnStake
+2021-09-26T05:38:01.705Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason null value in column "unStakedTokenAddress" of relation "unstake" violates not-null constraint
+2021-09-26T05:38:01.799Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is UnStake
+2021-09-26T05:38:01.820Z [__UNIFARM__] error: there is something wrong went with polygon chain. it will trying again. reason null value in column "unStakedTokenAddress" of relation "unstake" violates not-null constraint
+2021-09-26T05:38:01.923Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 and eventName is ReferralEarn
+2021-09-26T05:38:01.936Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 and eventName is Claim
+2021-09-26T05:38:01.970Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 and eventName is Stake
+2021-09-26T05:38:02.023Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 and eventName is Stake
+2021-09-26T05:38:02.181Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is UnStake
+2021-09-26T05:38:02.203Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason null value in column "unStakedTokenAddress" of relation "unstake" violates not-null constraint
+2021-09-26T05:38:02.240Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x207c678457617bc8c8ab06f9088efc1dcd45887c and eventName is Claim
+2021-09-26T05:38:02.292Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xAf414C28FB7a33f736E5E55e102eB7954e95868C and eventName is ReferralEarn
+2021-09-26T05:38:02.297Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x207c678457617bc8c8ab06f9088efc1dcd45887c and eventName is ReferralEarn
+2021-09-26T05:38:02.299Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x50572512c65DbC570634926309BF61fB19C2364c and eventName is UnStake
+2021-09-26T05:38:02.303Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason null value in column "unStakedTokenAddress" of relation "unstake" violates not-null constraint
+2021-09-26T05:38:02.325Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F and eventName is Claim
+2021-09-26T05:38:02.338Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 and eventName is UnStake
+2021-09-26T05:38:02.351Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F and eventName is ReferralEarn
+2021-09-26T05:38:02.354Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason null value in column "unStakedTokenAddress" of relation "unstake" violates not-null constraint
+2021-09-26T05:38:02.366Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 and eventName is Stake
+2021-09-26T05:38:02.382Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 and eventName is Stake
+2021-09-26T05:38:02.435Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 and eventName is UnStake
+2021-09-26T05:38:02.439Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason null value in column "unStakedTokenAddress" of relation "unstake" violates not-null constraint
+2021-09-26T05:38:02.456Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for bsc chain.
+2021-09-26T05:38:02.467Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 and eventName is ReferralEarn
+2021-09-26T05:38:02.487Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x920a203e0C9F55d747F6b7Ea76ff96715725335a and eventName is ReferralEarn
+2021-09-26T05:38:02.488Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 and eventName is ReferralEarn
+2021-09-26T05:38:02.489Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 and eventName is Claim
+2021-09-26T05:38:02.508Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F and eventName is UnStake
+2021-09-26T05:38:02.511Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 and eventName is Claim
+2021-09-26T05:38:02.522Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason null value in column "unStakedTokenAddress" of relation "unstake" violates not-null constraint
+2021-09-26T05:38:02.591Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 and eventName is ReferralEarn
+2021-09-26T05:38:02.642Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E and eventName is Claim
+2021-09-26T05:38:02.664Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E and eventName is ReferralEarn
+2021-09-26T05:38:02.685Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x50572512c65DbC570634926309BF61fB19C2364c for bsc chain.
+2021-09-26T05:38:02.693Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x2c09B8eA4606247Bf5AEC77B063c894334C6d205 and eventName is ReferralEarn
+2021-09-26T05:38:02.704Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x920a203e0C9F55d747F6b7Ea76ff96715725335a and eventName is UnStake
+2021-09-26T05:38:02.708Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason null value in column "unStakedTokenAddress" of relation "unstake" violates not-null constraint
+2021-09-26T05:38:02.715Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E and eventName is UnStake
+2021-09-26T05:38:02.730Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 and eventName is UnStake
+2021-09-26T05:38:02.735Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason null value in column "unStakedTokenAddress" of relation "unstake" violates not-null constraint
+2021-09-26T05:38:02.739Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason null value in column "unStakedTokenAddress" of relation "unstake" violates not-null constraint
+2021-09-26T05:38:02.764Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x2c09B8eA4606247Bf5AEC77B063c894334C6d205 and eventName is UnStake
+2021-09-26T05:38:02.775Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason null value in column "unStakedTokenAddress" of relation "unstake" violates not-null constraint
+2021-09-26T05:38:02.800Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xAf414C28FB7a33f736E5E55e102eB7954e95868C and eventName is UnStake
+2021-09-26T05:38:02.808Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 and eventName is UnStake
+2021-09-26T05:38:02.817Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason null value in column "unStakedTokenAddress" of relation "unstake" violates not-null constraint
+2021-09-26T05:38:02.823Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason null value in column "unStakedTokenAddress" of relation "unstake" violates not-null constraint
+2021-09-26T05:38:02.858Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x50572512c65DbC570634926309BF61fB19C2364c and eventName is Claim
+2021-09-26T05:38:02.869Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x920a203e0C9F55d747F6b7Ea76ff96715725335a and eventName is Claim
+2021-09-26T05:38:02.879Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x2c09B8eA4606247Bf5AEC77B063c894334C6d205 and eventName is Claim
+2021-09-26T05:38:02.973Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xAf414C28FB7a33f736E5E55e102eB7954e95868C and eventName is Claim
+2021-09-26T05:38:03.177Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Claim
+2021-09-26T05:38:03.362Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x207c678457617bc8c8ab06f9088efc1dcd45887c and eventName is Stake
+2021-09-26T05:38:03.400Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 and eventName is Stake
+2021-09-26T05:44:19.267Z [__UNIFARM__] info: OK
+2021-09-26T05:44:28.047Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-26T05:44:28.145Z [__UNIFARM__] info: connection established to unifarm
+2021-09-26T05:48:49.708Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-09-26T05:48:49.838Z [__UNIFARM__] info: connection established to unifarm
+2021-09-26T05:49:00.676Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is ReferralEarn
+2021-09-26T05:49:00.711Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80 and eventName is ReferralEarn
+2021-09-26T05:49:00.777Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x96537bac94c8adc38fd17d70077ebcb958c1362f for polygon chain.
+2021-09-26T05:49:00.835Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0x96537bac94c8adc38fd17d70077ebcb958c1362f and eventName is UnStake
+2021-09-26T05:49:00.878Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0x96537bac94c8adc38fd17d70077ebcb958c1362f and eventName is Claim
+2021-09-26T05:49:01.059Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Claim
+2021-09-26T05:49:01.104Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 and eventName is ReferralEarn
+2021-09-26T05:49:01.207Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Stake
+2021-09-26T05:49:01.302Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 and eventName is UnStake
+2021-09-26T05:49:01.459Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0x96537bac94c8adc38fd17d70077ebcb958c1362f and eventName is Stake
+2021-09-26T05:49:01.537Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Claim
+2021-09-26T05:49:01.615Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80 and eventName is Claim
+2021-09-26T05:49:01.728Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80 and eventName is UnStake
+2021-09-26T05:49:01.755Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is UnStake
+2021-09-26T05:49:01.786Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is ReferralEarn
+2021-09-26T05:49:01.823Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 and eventName is ReferralEarn
+2021-09-26T05:49:01.827Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E and eventName is ReferralEarn
+2021-09-26T05:49:01.827Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F and eventName is ReferralEarn
+2021-09-26T05:49:01.837Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 and eventName is UnStake
+2021-09-26T05:49:01.853Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 and eventName is UnStake
+2021-09-26T05:49:01.891Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is UnStake
+2021-09-26T05:49:02.013Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 and eventName is Stake
+2021-09-26T05:49:02.121Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xAf414C28FB7a33f736E5E55e102eB7954e95868C and eventName is ReferralEarn
+2021-09-26T05:49:02.125Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 and eventName is ReferralEarn
+2021-09-26T05:49:02.135Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x207c678457617bc8c8ab06f9088efc1dcd45887c and eventName is ReferralEarn
+2021-09-26T05:49:02.145Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 and eventName is UnStake
+2021-09-26T05:49:02.160Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F and eventName is UnStake
+2021-09-26T05:49:02.165Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x50572512c65DbC570634926309BF61fB19C2364c and eventName is UnStake
+2021-09-26T05:49:02.200Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 and eventName is Claim
+2021-09-26T05:49:02.246Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 and eventName is Stake
+2021-09-26T05:49:02.286Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F and eventName is Claim
+2021-09-26T05:49:02.321Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E and eventName is Claim
+2021-09-26T05:49:02.433Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 and eventName is ReferralEarn
+2021-09-26T05:49:02.438Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x920a203e0C9F55d747F6b7Ea76ff96715725335a and eventName is UnStake
+2021-09-26T05:49:02.494Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x50572512c65DbC570634926309BF61fB19C2364c for bsc chain.
+2021-09-26T05:49:02.502Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x2c09B8eA4606247Bf5AEC77B063c894334C6d205 and eventName is ReferralEarn
+2021-09-26T05:49:02.543Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xAf414C28FB7a33f736E5E55e102eB7954e95868C and eventName is UnStake
+2021-09-26T05:49:02.561Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 and eventName is Stake
+2021-09-26T05:49:02.582Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x920a203e0C9F55d747F6b7Ea76ff96715725335a and eventName is Claim
+2021-09-26T05:49:02.615Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x920a203e0C9F55d747F6b7Ea76ff96715725335a and eventName is ReferralEarn
+2021-09-26T05:49:02.650Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 and eventName is UnStake
+2021-09-26T05:49:02.659Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 and eventName is Claim
+2021-09-26T05:49:02.690Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x207c678457617bc8c8ab06f9088efc1dcd45887c and eventName is Claim
+2021-09-26T05:49:02.703Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x207c678457617bc8c8ab06f9088efc1dcd45887c and eventName is Stake
+2021-09-26T05:49:02.856Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 and eventName is ReferralEarn
+2021-09-26T05:49:02.869Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 and eventName is Claim
+2021-09-26T05:49:02.879Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x50572512c65DbC570634926309BF61fB19C2364c and eventName is Claim
+2021-09-26T05:49:02.941Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 and eventName is Claim
+2021-09-26T05:49:02.955Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 and eventName is Claim
+2021-09-26T05:49:03.076Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xAf414C28FB7a33f736E5E55e102eB7954e95868C and eventName is Claim
+2021-09-26T05:49:03.091Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x207c678457617bc8c8ab06f9088efc1dcd45887c and eventName is UnStake
+2021-09-26T05:49:03.180Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 and eventName is Stake
+2021-09-26T05:49:03.237Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x2c09B8eA4606247Bf5AEC77B063c894334C6d205 and eventName is UnStake
+2021-09-26T05:49:03.323Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 and eventName is Stake
+2021-09-26T05:49:03.406Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E and eventName is UnStake
+2021-09-26T05:49:03.517Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Stake
+2021-09-26T05:49:03.551Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x2c09B8eA4606247Bf5AEC77B063c894334C6d205 and eventName is Claim
+2021-09-26T05:50:00.465Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 for bsc chain.
+2021-09-26T05:50:00.466Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 for bsc chain.
+2021-09-26T05:50:00.467Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x2c09B8eA4606247Bf5AEC77B063c894334C6d205 for bsc chain.
+2021-09-26T05:50:00.516Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x96537bac94c8adc38fd17d70077ebcb958c1362f for polygon chain.
+2021-09-26T05:50:00.625Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for bsc chain.
+2021-09-26T05:50:00.632Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80 for polygon chain.
+2021-09-26T05:50:00.636Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x96537bac94c8adc38fd17d70077ebcb958c1362f for polygon chain.
+2021-09-26T05:50:00.639Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x96537bac94c8adc38fd17d70077ebcb958c1362f for polygon chain.
+2021-09-26T05:50:00.654Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80 for polygon chain.
+2021-09-26T05:50:00.659Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x96537bac94c8adc38fd17d70077ebcb958c1362f for polygon chain.
+2021-09-26T05:50:00.674Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for polygon chain.
+2021-09-26T05:50:00.685Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80 and eventName is Claim
+2021-09-26T05:50:00.766Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Claim
+2021-09-26T05:50:01.103Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Stake
+2021-09-26T05:50:01.158Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for polygon chain.
+2021-09-26T05:50:01.664Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 and eventName is Stake
+2021-09-26T05:50:01.702Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 for bsc chain.
+2021-09-26T05:50:01.769Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 and eventName is Claim
+2021-09-26T05:50:01.977Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x50572512c65DbC570634926309BF61fB19C2364c for bsc chain.
+2021-09-26T05:50:01.980Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x50572512c65DbC570634926309BF61fB19C2364c for bsc chain.
+2021-09-26T05:50:01.981Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xAf414C28FB7a33f736E5E55e102eB7954e95868C for bsc chain.
+2021-09-26T05:50:02.027Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x207c678457617bc8c8ab06f9088efc1dcd45887c for bsc chain.
+2021-09-26T05:50:02.071Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x920a203e0C9F55d747F6b7Ea76ff96715725335a for bsc chain.
+2021-09-26T05:50:02.118Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 for bsc chain.
+2021-09-26T05:50:02.123Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x50572512c65DbC570634926309BF61fB19C2364c for bsc chain.
+2021-09-26T05:50:02.192Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 for bsc chain.
+2021-09-26T05:50:02.221Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 for bsc chain.
+2021-09-26T05:50:02.221Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x920a203e0C9F55d747F6b7Ea76ff96715725335a for bsc chain.
+2021-09-26T05:50:02.243Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x207c678457617bc8c8ab06f9088efc1dcd45887c and eventName is UnStake
+2021-09-26T05:50:02.347Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 and eventName is Stake
+2021-09-26T05:50:02.379Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F for bsc chain.
+2021-09-26T05:50:02.379Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 for bsc chain.
+2021-09-26T05:50:02.443Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 and eventName is Stake
+2021-09-26T05:50:02.470Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 for bsc chain.
+2021-09-26T05:50:02.486Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 for bsc chain.
+2021-09-26T05:50:02.495Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 and eventName is Claim
+2021-09-26T05:50:02.501Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x207c678457617bc8c8ab06f9088efc1dcd45887c and eventName is Stake
+2021-09-26T05:50:02.515Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xAf414C28FB7a33f736E5E55e102eB7954e95868C for bsc chain.
+2021-09-26T05:50:02.516Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 for bsc chain.
+2021-09-26T05:50:02.516Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x2c09B8eA4606247Bf5AEC77B063c894334C6d205 for bsc chain.
+2021-09-26T05:50:02.559Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E for bsc chain.
+2021-09-26T05:50:02.566Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F for bsc chain.
+2021-09-26T05:50:02.567Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 and eventName is UnStake
+2021-09-26T05:50:02.635Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 and eventName is Stake
+2021-09-26T05:50:02.657Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x207c678457617bc8c8ab06f9088efc1dcd45887c and eventName is Claim
+2021-09-26T05:50:02.676Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x920a203e0C9F55d747F6b7Ea76ff96715725335a for bsc chain.
+2021-09-26T05:50:02.686Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 and eventName is Claim
+2021-09-26T05:50:02.705Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Stake
+2021-09-26T05:50:02.722Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xAf414C28FB7a33f736E5E55e102eB7954e95868C and eventName is Claim
+2021-09-26T05:50:02.762Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E for bsc chain.
+2021-09-26T05:50:02.814Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F for bsc chain.
+2021-09-26T05:50:02.863Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Claim
+2021-09-26T05:50:02.890Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 for bsc chain.
+2021-09-26T05:50:02.907Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is UnStake
+2021-09-26T05:50:02.929Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 and eventName is Claim
+2021-09-26T05:50:03.036Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x2c09B8eA4606247Bf5AEC77B063c894334C6d205 and eventName is Claim
+2021-09-26T05:50:03.049Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E and eventName is Claim
+2021-09-26T05:51:00.481Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x920a203e0C9F55d747F6b7Ea76ff96715725335a for bsc chain.
+2021-09-26T05:51:00.482Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x96537bac94c8adc38fd17d70077ebcb958c1362f for polygon chain.
+2021-09-26T05:51:00.482Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 for bsc chain.
+2021-09-26T05:51:00.482Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x96537bac94c8adc38fd17d70077ebcb958c1362f for polygon chain.
+2021-09-26T05:51:00.482Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x96537bac94c8adc38fd17d70077ebcb958c1362f for polygon chain.
+2021-09-26T05:51:00.554Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for polygon chain.
+2021-09-26T05:51:00.555Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80 for polygon chain.
+2021-09-26T05:51:00.555Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x50572512c65DbC570634926309BF61fB19C2364c for bsc chain.
+2021-09-26T05:51:00.555Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for polygon chain.
+2021-09-26T05:51:00.555Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80 for polygon chain.
+2021-09-26T05:51:00.582Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x207c678457617bc8c8ab06f9088efc1dcd45887c and eventName is Claim
+2021-09-26T05:51:00.629Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for polygon chain.
+2021-09-26T05:51:00.630Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x96537bac94c8adc38fd17d70077ebcb958c1362f for polygon chain.
+2021-09-26T05:51:00.630Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for polygon chain.
+2021-09-26T05:51:00.810Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80 and eventName is Claim
+2021-09-26T05:51:00.908Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 for bsc chain.
+2021-09-26T05:51:01.507Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Stake
+2021-09-26T05:51:01.526Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 for bsc chain.
+2021-09-26T05:51:01.567Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xAf414C28FB7a33f736E5E55e102eB7954e95868C for bsc chain.
+2021-09-26T05:51:01.582Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 for bsc chain.
+2021-09-26T05:51:01.595Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xAf414C28FB7a33f736E5E55e102eB7954e95868C for bsc chain.
+2021-09-26T05:51:01.907Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E for bsc chain.
+2021-09-26T05:51:01.907Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 for bsc chain.
+2021-09-26T05:51:01.956Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x920a203e0C9F55d747F6b7Ea76ff96715725335a for bsc chain.
+2021-09-26T05:51:01.964Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x207c678457617bc8c8ab06f9088efc1dcd45887c for bsc chain.
+2021-09-26T05:51:02.034Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 for bsc chain.
+2021-09-26T05:51:02.036Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E for bsc chain.
+2021-09-26T05:51:02.044Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x920a203e0C9F55d747F6b7Ea76ff96715725335a for bsc chain.
+2021-09-26T05:51:02.045Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for bsc chain.
+2021-09-26T05:51:02.047Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x2c09B8eA4606247Bf5AEC77B063c894334C6d205 for bsc chain.
+2021-09-26T05:51:02.079Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 for bsc chain.
+2021-09-26T05:51:02.083Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x2c09B8eA4606247Bf5AEC77B063c894334C6d205 and eventName is Claim
+2021-09-26T05:51:02.117Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 for bsc chain.
+2021-09-26T05:51:02.117Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 for bsc chain.
+2021-09-26T05:51:02.137Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b and eventName is Claim
+2021-09-26T05:51:02.185Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x2c09B8eA4606247Bf5AEC77B063c894334C6d205 for bsc chain.
+2021-09-26T05:51:02.217Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x50572512c65DbC570634926309BF61fB19C2364c for bsc chain.
+2021-09-26T05:51:02.237Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 for bsc chain.
+2021-09-26T05:51:02.244Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x50572512c65DbC570634926309BF61fB19C2364c for bsc chain.
+2021-09-26T05:51:02.260Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F for bsc chain.
+2021-09-26T05:51:02.261Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 for bsc chain.
+2021-09-26T05:51:02.289Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 and eventName is Claim
+2021-09-26T05:51:02.309Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 for bsc chain.
+2021-09-26T05:51:02.311Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for bsc chain.
+2021-09-26T05:51:02.321Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F for bsc chain.
+2021-09-26T05:51:02.341Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 for bsc chain.
+2021-09-26T05:51:02.406Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E and eventName is Claim
+2021-09-26T05:51:02.411Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xAf414C28FB7a33f736E5E55e102eB7954e95868C for bsc chain.
+2021-09-26T05:51:02.489Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 for bsc chain.
+2021-09-26T05:51:02.490Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x207c678457617bc8c8ab06f9088efc1dcd45887c and eventName is Stake
+2021-09-26T05:51:02.519Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 for bsc chain.
+2021-09-26T05:51:02.580Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x207c678457617bc8c8ab06f9088efc1dcd45887c for bsc chain.
+2021-09-26T05:51:02.583Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 for bsc chain.
+2021-09-26T05:51:02.590Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 for bsc chain.
+2021-09-26T05:51:02.593Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F for bsc chain.
+2021-09-26T05:51:02.733Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 and eventName is Stake
+2021-09-26T05:51:02.764Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 and eventName is Stake
+2021-09-26T05:52:00.490Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80 for polygon chain.
+2021-09-26T05:52:00.493Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x96537bac94c8adc38fd17d70077ebcb958c1362f for polygon chain.
+2021-09-26T05:52:00.697Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for polygon chain.
+2021-09-26T05:52:00.699Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x96537bac94c8adc38fd17d70077ebcb958c1362f for polygon chain.
+2021-09-26T05:52:00.699Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x96537bac94c8adc38fd17d70077ebcb958c1362f for polygon chain.
+2021-09-26T05:52:00.700Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for polygon chain.
+2021-09-26T05:52:00.700Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x96537bac94c8adc38fd17d70077ebcb958c1362f for polygon chain.
+2021-09-26T05:52:00.700Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80 for polygon chain.
+2021-09-26T05:52:00.705Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for polygon chain.
+2021-09-26T05:52:00.706Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for polygon chain.
+2021-09-26T05:52:00.883Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80 and eventName is Claim
+2021-09-26T05:52:01.507Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 for bsc chain.
+2021-09-26T05:52:01.508Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E for bsc chain.
+2021-09-26T05:52:01.510Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F for bsc chain.
+2021-09-26T05:52:01.530Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 for bsc chain.
+2021-09-26T05:52:01.547Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 for bsc chain.
+2021-09-26T05:52:01.651Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x2c09B8eA4606247Bf5AEC77B063c894334C6d205 for bsc chain.
+2021-09-26T05:52:01.652Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for bsc chain.
+2021-09-26T05:52:01.685Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x207c678457617bc8c8ab06f9088efc1dcd45887c for bsc chain.
+2021-09-26T05:52:01.731Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for bsc chain.
+2021-09-26T05:52:01.764Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x207c678457617bc8c8ab06f9088efc1dcd45887c for bsc chain.
+2021-09-26T05:52:01.822Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x920a203e0C9F55d747F6b7Ea76ff96715725335a for bsc chain.
+2021-09-26T05:52:01.854Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 for bsc chain.
+2021-09-26T05:52:01.860Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x207c678457617bc8c8ab06f9088efc1dcd45887c and eventName is Stake
+2021-09-26T05:52:01.889Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 for bsc chain.
+2021-09-26T05:52:01.889Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x920a203e0C9F55d747F6b7Ea76ff96715725335a for bsc chain.
+2021-09-26T05:52:01.898Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for bsc chain.
+2021-09-26T05:52:01.958Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 for bsc chain.
+2021-09-26T05:52:01.996Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for bsc chain.
+2021-09-26T05:52:01.999Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 for bsc chain.
+2021-09-26T05:52:02.039Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 for bsc chain.
+2021-09-26T05:52:02.063Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E for bsc chain.
+2021-09-26T05:52:02.072Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xAf414C28FB7a33f736E5E55e102eB7954e95868C for bsc chain.
+2021-09-26T05:52:02.090Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 for bsc chain.
+2021-09-26T05:52:02.097Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 and eventName is Stake
+2021-09-26T05:52:02.101Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x207c678457617bc8c8ab06f9088efc1dcd45887c for bsc chain.
+2021-09-26T05:52:02.156Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x2c09B8eA4606247Bf5AEC77B063c894334C6d205 for bsc chain.
+2021-09-26T05:52:02.178Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 for bsc chain.
+2021-09-26T05:52:02.216Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 for bsc chain.
+2021-09-26T05:52:02.221Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x50572512c65DbC570634926309BF61fB19C2364c for bsc chain.
+2021-09-26T05:52:02.242Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 for bsc chain.
+2021-09-26T05:52:02.256Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 for bsc chain.
+2021-09-26T05:52:02.281Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x50572512c65DbC570634926309BF61fB19C2364c for bsc chain.
+2021-09-26T05:52:02.320Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x50572512c65DbC570634926309BF61fB19C2364c for bsc chain.
+2021-09-26T05:52:02.335Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 for bsc chain.
+2021-09-26T05:52:02.349Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 for bsc chain.
+2021-09-26T05:52:02.392Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 for bsc chain.
+2021-09-26T05:52:02.470Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xAf414C28FB7a33f736E5E55e102eB7954e95868C for bsc chain.
+2021-09-26T05:52:02.483Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x920a203e0C9F55d747F6b7Ea76ff96715725335a for bsc chain.
+2021-09-26T05:52:02.485Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F for bsc chain.
+2021-09-26T05:52:02.487Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F for bsc chain.
+2021-09-26T05:52:02.500Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E for bsc chain.
+2021-09-26T05:52:02.507Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 and eventName is Claim
+2021-09-26T05:52:02.525Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 for bsc chain.
+2021-09-26T05:52:02.560Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 for bsc chain.
+2021-09-26T05:52:02.564Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xAf414C28FB7a33f736E5E55e102eB7954e95868C for bsc chain.
+2021-09-26T05:52:02.567Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0x2c09B8eA4606247Bf5AEC77B063c894334C6d205 and eventName is Claim
+2021-09-26T05:53:00.498Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80 for polygon chain.
+2021-09-26T05:53:00.499Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 for bsc chain.
+2021-09-26T05:53:00.546Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xAf414C28FB7a33f736E5E55e102eB7954e95868C for bsc chain.
+2021-09-26T05:53:00.571Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x96537bac94c8adc38fd17d70077ebcb958c1362f for polygon chain.
+2021-09-26T05:53:00.574Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for polygon chain.
+2021-09-26T05:53:00.581Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for polygon chain.
+2021-09-26T05:53:00.607Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x96537bac94c8adc38fd17d70077ebcb958c1362f for polygon chain.
+2021-09-26T05:53:00.638Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x920a203e0C9F55d747F6b7Ea76ff96715725335a for bsc chain.
+2021-09-26T05:53:00.665Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x96537bac94c8adc38fd17d70077ebcb958c1362f for polygon chain.
+2021-09-26T05:53:00.679Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80 for polygon chain.
+2021-09-26T05:53:00.710Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x96537bac94c8adc38fd17d70077ebcb958c1362f for polygon chain.
+2021-09-26T05:53:00.711Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for polygon chain.
+2021-09-26T05:53:00.711Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for polygon chain.
+2021-09-26T05:53:00.714Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for polygon chain. cohortId is 0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80 and eventName is Claim
+2021-09-26T05:53:01.000Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 for bsc chain.
+2021-09-26T05:53:01.306Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for bsc chain.
+2021-09-26T05:53:01.358Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E for bsc chain.
+2021-09-26T05:53:01.427Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F for bsc chain.
+2021-09-26T05:53:01.440Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x207c678457617bc8c8ab06f9088efc1dcd45887c for bsc chain.
+2021-09-26T05:53:01.589Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x207c678457617bc8c8ab06f9088efc1dcd45887c for bsc chain.
+2021-09-26T05:53:01.657Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F for bsc chain.
+2021-09-26T05:53:01.689Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 for bsc chain.
+2021-09-26T05:53:01.753Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x50572512c65DbC570634926309BF61fB19C2364c for bsc chain.
+2021-09-26T05:53:01.885Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 for bsc chain.
+2021-09-26T05:53:01.927Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 for bsc chain.
+2021-09-26T05:53:01.964Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x920a203e0C9F55d747F6b7Ea76ff96715725335a for bsc chain.
+2021-09-26T05:53:01.983Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 for bsc chain.
+2021-09-26T05:53:01.984Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 for bsc chain.
+2021-09-26T05:53:01.996Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x50572512c65DbC570634926309BF61fB19C2364c for bsc chain.
+2021-09-26T05:53:02.012Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x207c678457617bc8c8ab06f9088efc1dcd45887c for bsc chain.
+2021-09-26T05:53:02.018Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 for bsc chain.
+2021-09-26T05:53:02.029Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x207c678457617bc8c8ab06f9088efc1dcd45887c for bsc chain.
+2021-09-26T05:53:02.030Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F for bsc chain.
+2021-09-26T05:53:02.068Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x920a203e0C9F55d747F6b7Ea76ff96715725335a for bsc chain.
+2021-09-26T05:53:02.110Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 for bsc chain.
+2021-09-26T05:53:02.123Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 for bsc chain.
+2021-09-26T05:53:02.159Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E for bsc chain.
+2021-09-26T05:53:02.160Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 for bsc chain.
+2021-09-26T05:53:02.169Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 for bsc chain.
+2021-09-26T05:53:02.170Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for bsc chain.
+2021-09-26T05:53:02.178Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for bsc chain.
+2021-09-26T05:53:02.180Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xfd70c4a2280731fa7c63ee720d8da58898322ab7 for bsc chain.
+2021-09-26T05:53:02.189Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b for bsc chain.
+2021-09-26T05:53:02.197Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 for bsc chain.
+2021-09-26T05:53:02.217Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x2c09B8eA4606247Bf5AEC77B063c894334C6d205 for bsc chain.
+2021-09-26T05:53:02.226Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 for bsc chain.
+2021-09-26T05:53:02.231Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E for bsc chain.
+2021-09-26T05:53:02.234Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2 for bsc chain.
+2021-09-26T05:53:02.245Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x2c09B8eA4606247Bf5AEC77B063c894334C6d205 for bsc chain.
+2021-09-26T05:53:02.246Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 for bsc chain.
+2021-09-26T05:53:02.258Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x2c09B8eA4606247Bf5AEC77B063c894334C6d205 for bsc chain.
+2021-09-26T05:53:02.269Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x8Fd3298c3981Df23a94DDaa4b1325c7087661568 for bsc chain.
+2021-09-26T05:53:02.291Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x69B63a145597F39Ed1703f6aeEB2B832BB92f670 for bsc chain.
+2021-09-26T05:53:02.331Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x1c14eb2f2bf443557fc131b3f6f4e929c0081346 for bsc chain.
+2021-09-26T05:53:02.339Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xAf414C28FB7a33f736E5E55e102eB7954e95868C for bsc chain.
+2021-09-26T05:53:02.339Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0x50572512c65DbC570634926309BF61fB19C2364c for bsc chain.
+2021-09-26T05:53:02.348Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xAf414C28FB7a33f736E5E55e102eB7954e95868C for bsc chain.
+2021-09-26T05:53:59.740Z [__UNIFARM__] info: Jobs Stopped Successfully all data syned from moralis.
+2021-09-26T05:57:25.779Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-26T05:57:25.868Z [__UNIFARM__] info: connection established to unifarm
+2021-09-26T06:04:45.595Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-26T06:04:45.710Z [__UNIFARM__] info: connection established to unifarm
+2021-09-26T06:05:16.794Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-26T06:05:16.930Z [__UNIFARM__] info: connection established to unifarm
+2021-09-26T06:05:37.779Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-26T06:05:37.910Z [__UNIFARM__] info: connection established to unifarm
+2021-09-26T06:11:13.959Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-26T06:11:14.086Z [__UNIFARM__] info: connection established to unifarm
+2021-09-26T06:16:49.018Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-26T06:16:49.134Z [__UNIFARM__] info: connection established to unifarm
+2021-09-26T06:34:34.904Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-26T06:34:35.007Z [__UNIFARM__] info: connection established to unifarm
+2021-09-26T06:36:22.061Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-26T06:36:22.166Z [__UNIFARM__] info: connection established to unifarm
+2021-09-26T06:37:21.659Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-26T06:37:21.768Z [__UNIFARM__] info: connection established to unifarm
+2021-09-26T06:37:30.415Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-26T06:37:30.496Z [__UNIFARM__] info: connection established to unifarm
+2021-09-26T06:37:48.331Z [__UNIFARM__] info: Event listener for ethereum chain has been activated.
+2021-09-26T06:41:24.391Z [__UNIFARM__] info: Event listener for ethereum chain has been activated.
+2021-09-26T06:45:07.927Z [__UNIFARM__] info: Event listener for ethereum chain has been activated.
+2021-09-26T06:53:16.525Z [__UNIFARM__] info: Event listener for ethereum chain has been activated.
+2021-09-26T07:26:20.012Z [__UNIFARM__] info: Listers activated for all proxies cohorts
+2021-09-26T07:26:41.927Z [__UNIFARM__] info: Listers activated for all proxies cohorts
+2021-09-26T08:06:53.413Z [__UNIFARM__] info: subscription successfully 0x1feed340c2282ee49f011f3bf9c4686a
+2021-09-26T09:23:22.320Z [__UNIFARM__] info: Listers activated for all proxies cohorts
+2021-09-26T09:23:36.909Z [__UNIFARM__] info: Listers activated for all proxies cohorts
+2021-09-26T09:26:54.593Z [__UNIFARM__] info: Listers activated for all proxies cohorts
+2021-09-26T09:59:25.869Z [__UNIFARM__] info: subscription successfully 0x1feed340d20cd6ee7f5ac2932f6f6444
+2021-09-26T10:02:25.041Z [__UNIFARM__] info: subscription successfully 0xa608e49be93a733a884dc6d6facf459
+2021-09-26T10:29:28.430Z [__UNIFARM__] info: subscription successfully 0xf1aed08a64c7046f79505e6e63cd3e3f
+2021-09-26T10:29:43.288Z [__UNIFARM__] info: Listers activated for all proxies cohorts
+2021-09-26T10:32:04.516Z [__UNIFARM__] info: Listers activated for all proxies cohorts
+2021-09-26T10:32:16.422Z [__UNIFARM__] info: Listers activated for all proxies cohorts
+2021-09-26T10:36:50.742Z [__UNIFARM__] info: Listers activated for all proxies cohorts
+2021-09-26T10:47:53.652Z [__UNIFARM__] info: Listers activated for all proxies cohorts
+2021-09-26T11:06:25.961Z [__UNIFARM__] info: Listers activated for all proxies cohorts
+2021-09-26T11:07:42.987Z [__UNIFARM__] info: Listers activated for all proxies cohorts
+2021-09-26T11:09:13.714Z [__UNIFARM__] info: Listers activated for all proxies cohorts
+2021-09-26T11:11:20.451Z [__UNIFARM__] info: Listers activated for all proxies cohorts
+2021-09-26T11:12:27.811Z [__UNIFARM__] info: Listers activated for all proxies cohorts
+2021-09-26T11:20:06.401Z [__UNIFARM__] info: Listers activated for all proxies cohorts
+2021-09-26T11:30:42.861Z [__UNIFARM__] info: ActivateListener:: listners activated successfully subscription id is 0x1feed340f90b76df13472c00f1804fc2
+2021-09-26T11:33:50.963Z [__UNIFARM__] info: ActivateListener:: listners activated successfully subscription id is 0x1feed3406941c674c155facbf70d7289
+2021-09-26T11:35:12.641Z [__UNIFARM__] info: ActivateListener:: listners activated successfully subscription id is 0x1feed340dc8edea0c9f250292e31c3bc
+2021-09-26T11:44:32.563Z [__UNIFARM__] info: ActivateListener:: listners activated successfully subscription id is 0x1feed340c6bb0cdccaca32d4439ef899
+2021-09-26T11:48:34.097Z [__UNIFARM__] info: ActivateListener:: listners activated successfully subscription id is 0x1feed340cf91424998fb9658b901e5b3
+2021-09-26T11:49:17.003Z [__UNIFARM__] info: ActivateListener:: listners activated successfully subscription id is 0x1feed340213aa6787e070afdfb20e7d0
+2021-09-26T11:55:26.865Z [__UNIFARM__] info: ActivateListener:: listners activated successfully subscription id is 0x1feed3402478f3b96945ad6004ae634c
+2021-09-26T11:58:23.751Z [__UNIFARM__] info: ActivateListener:: listners activated successfully subscription id is 0x1feed34090526f1cffe3841fe9555a70
+2021-09-26T11:58:41.891Z [__UNIFARM__] info: ActivateListener:: listners activated successfully subscription id is 0x43430178ea54431b7339529fb001f99
+2021-09-26T12:02:10.456Z [__UNIFARM__] info: ActivateListener:: listners activated successfully subscription id is 0x4d37220a142e974581bb455e4cfe0f3e
+2021-09-26T12:08:53.032Z [__UNIFARM__] info: ActivateListener:: listners activated successfully subscription id is 0x5de0ec41af03ed96a87c9b379a53687c

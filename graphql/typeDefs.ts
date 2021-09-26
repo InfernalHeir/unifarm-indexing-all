@@ -39,6 +39,7 @@ export const typeDefs = gql`
       id: ID!
       tokenId: String!
       decimals: String!
+      userMinStake: String!
       userMaxStake: String!
       totalStakeLimit: String!
       lockableDays: String!
@@ -50,6 +51,11 @@ export const typeDefs = gql`
       chainId: Int!
    }
 
+   type Pool {
+      token: Token!
+      cohort: Cohort!
+   }
+
    type Query {
       cohort(where: CohortInputs!): Cohort
       allCohorts(
@@ -57,7 +63,7 @@ export const typeDefs = gql`
          chainId: Int!
          orderDirection: OrderDirection
       ): [Cohort]!
-      getPools(where: PoolInputs): [Token!]!
+      getPools(where: PoolInputs): [Pool!]!
       getTokens(where: PoolInputs): [Token!]!
    }
 `;

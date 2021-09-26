@@ -20,6 +20,7 @@
       "flush:all-offsets": "export NODE_ENV=dev && nodemon --ext '.ts' cron/flushAll.ts"
    },
    "dependencies": {
+      "@ethersproject/abi": "^5.4.1",
       "@ethersproject/address": "^5.4.0",
       "@ethersproject/contracts": "^5.4.1",
       "@ethersproject/providers": "^5.4.5",
