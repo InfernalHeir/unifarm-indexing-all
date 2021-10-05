@@ -12,7 +12,7 @@ import _ from "lodash";
 
 //appBoot();
 
-async function allClaimEvents(fetchOptions: AllEventsSync) {
+export async function allClaimEvents(fetchOptions: AllEventsSync) {
    const latestBlockNumber = await ethProvider.getBlockNumber();
 
    var events;

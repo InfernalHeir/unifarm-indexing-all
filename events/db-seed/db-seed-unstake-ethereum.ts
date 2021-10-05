@@ -9,7 +9,7 @@ import { insertUnstakeEvent } from "../../db/hooks/insertation";
 import { ethProvider } from "../../providers/provider";
 import { AllEventsSync } from "../../types/type";
 
-async function allUnStakeEvents(fetchOptions: AllEventsSync) {
+export async function allUnStakeEvents(fetchOptions: AllEventsSync) {
    const latestBlockNumber = await ethProvider.getBlockNumber();
 
    var events: any;
