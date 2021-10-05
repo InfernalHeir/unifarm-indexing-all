@@ -9,7 +9,7 @@ import { CohortsEvents } from "../events";
 import { insertStakeEvent } from "../../db/hooks/insertation";
 import { ethProvider } from "../../providers/provider";
 
-async function insertAllStakeEvents() {
+export async function insertAllStakeEvents() {
    const latestBlockNumber = await ethProvider.getBlockNumber();
 
    const events = await readAllCohortsEvents({

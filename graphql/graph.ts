@@ -2,7 +2,6 @@ import { ApolloServer } from "apollo-server-express";
 import express from "express";
 import { logger } from "../log";
 import { resolvers } from "./resolvers";
-import fs from "fs";
 import { typeDefs } from "./typeDefs";
 import { DocumentNode } from "graphql";
 import { appBoot } from "../db/createConnection";

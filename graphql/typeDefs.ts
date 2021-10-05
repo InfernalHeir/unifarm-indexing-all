@@ -6,6 +6,12 @@ export const typeDefs = gql`
       DESC
    }
 
+   input GlobalContext {
+      orderDir: OrderDirection
+      limit: Int
+      offset: Int
+   }
+
    input CohortInputs {
       chainId: Int!
       cohortAddress: String!
@@ -46,7 +52,7 @@ export const typeDefs = gql`
       optionableStatus: String!
       tokenSequenceList: [String!]!
       tokenDailyDistribution: [String!]!
-      cohortId: String!
+      cohortId: String
       rewardCap: String
       chainId: Int!
    }
@@ -54,6 +60,33 @@ export const typeDefs = gql`
    type Pool {
       token: Token!
       cohort: Cohort!
+   }
+
+   type Stake {
+      id: ID!
+      userAddress: String!
+      tokenId: String!
+      cohortId: String!
+      stakeId: String
+      referrerAddress: String
+      stakedAmount: String!
+      time: String!
+      hash: String!
+      block: String!
+      chainId: Int!
+   }
+
+   type Unstake {
+      id: ID!
+      userAddress: String!
+      cohortId: String!
+      unStakedTokenAddress: String!
+      unStakedAmount: String!
+      stakeId: String
+      time: String!
+      hash: String!
+      block: String!
+      chainId: Int!
    }
 
    type Query {
@@ -65,5 +98,7 @@ export const typeDefs = gql`
       ): [Cohort]!
       getPools(where: PoolInputs): [Pool!]!
       getTokens(where: PoolInputs): [Token!]!
+      getAllStakes(chainId: Int!, cohortId: String!): [Stake!]!
+      getAllUnstakes(chainId: Int!, cohortId: String!): [Unstake!]!
    }
 `;

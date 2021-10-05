@@ -22,7 +22,7 @@ export interface JobList {
 }
 
 export const jobList: JobList[] = [
-   {
+   /* {
       chainId: BSC_CHAIN,
       eventName: CohortsEvents.STAKE,
       cohortId: "0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b",
@@ -301,7 +301,7 @@ export const jobList: JobList[] = [
       cohortId: "0x50572512c65DbC570634926309BF61fB19C2364c",
       ABI: JSON.stringify(REFFERAL_CLAIM_ABI),
       topic: REFFERAL_EARN_TOPIC,
-   },
+   }, */
    {
       chainId: BSC_CHAIN,
       eventName: CohortsEvents.UNSTAKE,
@@ -322,7 +322,7 @@ export const jobList: JobList[] = [
       cohortId: "0xe4Be53c29c852e474ffdBE5555dE64BF143B613E",
       ABI: JSON.stringify(REFFERAL_CLAIM_ABI),
       topic: REFFERAL_EARN_TOPIC,
-   },
+   } /* ,
    {
       chainId: BSC_CHAIN,
       eventName: CohortsEvents.UNSTAKE,
@@ -420,5 +420,5 @@ export const jobList: JobList[] = [
       cohortId: "0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80",
       ABI: JSON.stringify(REFFERAL_CLAIM_ABI),
       topic: REFFERAL_EARN_TOPIC,
-   },
+   }, */,
 ];

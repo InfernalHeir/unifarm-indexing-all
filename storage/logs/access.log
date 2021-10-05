@@ -1212,3 +1212,181 @@
 2021-09-26T11:58:41.891Z [__UNIFARM__] info: ActivateListener:: listners activated successfully subscription id is 0x43430178ea54431b7339529fb001f99
 2021-09-26T12:02:10.456Z [__UNIFARM__] info: ActivateListener:: listners activated successfully subscription id is 0x4d37220a142e974581bb455e4cfe0f3e
 2021-09-26T12:08:53.032Z [__UNIFARM__] info: ActivateListener:: listners activated successfully subscription id is 0x5de0ec41af03ed96a87c9b379a53687c
+2021-09-29T10:46:28.101Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T10:46:28.240Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T10:49:58.005Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T10:49:58.129Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T10:51:50.628Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T10:51:50.760Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T10:54:55.645Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T10:54:55.750Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T11:04:54.947Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T11:04:55.072Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T11:05:44.380Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T11:05:44.468Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T11:07:34.078Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T11:07:34.162Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T11:08:00.551Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T11:08:00.639Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T11:11:20.184Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T11:11:20.317Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T11:13:26.391Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T11:13:26.485Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T11:14:49.972Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T11:14:50.066Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T14:00:36.640Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T14:00:36.793Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T14:01:59.250Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T14:01:59.345Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T14:04:25.496Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T14:04:25.592Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T14:05:13.655Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T14:05:13.737Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T14:05:19.560Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T14:05:19.630Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T14:08:36.448Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T14:08:36.552Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T14:09:01.380Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T14:09:01.455Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T14:10:27.422Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T14:10:27.505Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T14:32:39.866Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T14:32:39.976Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T14:33:12.804Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T14:33:12.880Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T14:35:24.786Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T14:35:24.894Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T14:36:47.549Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T14:36:47.628Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T14:43:39.065Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T14:43:39.155Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T14:43:43.755Z [__UNIFARM__] error: AllStakes:: Stakes cannot found.
+2021-09-29T14:44:20.809Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T14:44:20.908Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T14:44:22.297Z [__UNIFARM__] error: AllStakes:: Stakes cannot found.
+2021-09-29T14:44:42.535Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T14:44:42.608Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T14:44:52.053Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T14:44:52.119Z [__UNIFARM__] info: connection established to unifarm
+2021-09-29T14:47:49.303Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-09-29T14:47:49.404Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T07:01:39.105Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T07:01:48.503Z [__UNIFARM__] info: readAllProxiesState: UnStake event fetch successfully
+2021-10-04T07:01:48.544Z [__UNIFARM__] info: insertation has been done for Unstake Entity. Unstake entity last block fetch is 13351145
+2021-10-04T07:03:41.680Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T07:03:52.060Z [__UNIFARM__] info: readAllProxiesState: Claim event fetch successfully
+2021-10-04T07:03:52.109Z [__UNIFARM__] info: total claims in ethereum cohorts 655. last block fetch for Claim Entity 13351159
+2021-10-04T07:05:35.682Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T07:05:44.207Z [__UNIFARM__] info: readAllProxiesState: ReferralEarn event fetch successfully
+2021-10-04T07:05:44.216Z [__UNIFARM__] info: total refferral claim in ethereum cohorts 0. last block fetch Refferal Claim Entity 13351166
+2021-10-04T07:11:22.763Z [__UNIFARM__] info: OK
+2021-10-04T07:11:55.510Z [__UNIFARM__] info: All Jobs will be booted on 10 seconds.
+2021-10-04T07:11:55.615Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T07:12:00.808Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E and eventName is ReferralEarn
+2021-10-04T07:12:00.889Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E and eventName is UnStake
+2021-10-04T07:12:01.018Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E and eventName is Claim
+2021-10-04T07:13:00.381Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E for bsc chain.
+2021-10-04T07:13:00.430Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E for bsc chain.
+2021-10-04T07:13:00.627Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E and eventName is Claim
+2021-10-04T07:14:00.355Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E for bsc chain.
+2021-10-04T07:14:00.355Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E for bsc chain.
+2021-10-04T07:14:00.483Z [__UNIFARM__] info: PROCESSOR:: Sync Happens for bsc chain. cohortId is 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E and eventName is Claim
+2021-10-04T07:15:00.356Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E for bsc chain.
+2021-10-04T07:15:00.440Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E for bsc chain.
+2021-10-04T07:15:00.467Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E for bsc chain.
+2021-10-04T07:16:00.348Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E for bsc chain.
+2021-10-04T07:16:00.367Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E for bsc chain.
+2021-10-04T07:16:00.408Z [__UNIFARM__] info: Job Successfully completed and now this will be stop forever 0xe4Be53c29c852e474ffdBE5555dE64BF143B613E for bsc chain.
+2021-10-04T07:18:00.276Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-04T07:18:00.381Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T08:03:14.224Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-04T08:03:14.366Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T08:04:04.628Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-04T08:04:04.709Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T08:05:15.802Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T08:08:20.506Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T08:08:37.297Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T08:08:49.065Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-04T08:08:49.144Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T08:30:08.297Z [__UNIFARM__] error: AllStakes:: Stakes cannot found.
+2021-10-04T08:30:43.728Z [__UNIFARM__] error: AllStakes:: Stakes cannot found.
+2021-10-04T08:33:22.029Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-04T08:33:22.152Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T08:33:25.624Z [__UNIFARM__] error: AllStakes:: Stakes cannot found.
+2021-10-04T08:33:55.010Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-04T08:33:55.126Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T08:34:19.945Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-04T08:34:20.026Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T08:35:31.742Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-04T08:35:31.854Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T08:35:42.918Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-04T08:35:43.001Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T08:49:29.782Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-04T08:49:29.904Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T08:49:55.116Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-04T08:49:55.197Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T08:50:09.694Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-04T08:50:09.774Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T08:53:01.611Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-04T08:53:01.711Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T08:53:32.549Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-04T08:53:32.662Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T08:53:42.384Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-04T08:53:42.482Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T08:53:50.729Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-04T08:53:50.798Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T08:53:57.697Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-04T08:53:57.797Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T09:19:09.472Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-04T09:19:09.605Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T09:20:05.501Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-04T09:20:05.600Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T09:20:06.744Z [__UNIFARM__] error: AllStakes:: Stakes cannot found.
+2021-10-04T09:21:50.908Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-04T09:21:50.997Z [__UNIFARM__] info: connection established to unifarm
+2021-10-04T09:23:38.813Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-04T09:23:38.911Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T07:48:32.508Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T07:48:32.606Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T08:47:07.100Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T08:47:07.207Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T09:35:25.390Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T09:35:25.494Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T09:38:07.344Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T09:38:07.445Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T09:42:14.513Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T09:42:14.681Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T09:43:47.838Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T09:43:47.953Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T09:47:09.934Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T09:47:10.042Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T09:47:14.973Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T09:47:15.058Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T09:49:11.741Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T09:49:11.838Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T09:51:20.997Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T09:51:21.113Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T09:51:30.868Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T09:51:30.939Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T09:51:58.075Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T09:51:58.160Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T09:52:20.391Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T09:52:20.472Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T09:53:25.308Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T09:53:25.429Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T09:53:54.267Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T09:53:54.355Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T09:57:26.344Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T09:57:26.456Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T09:58:21.701Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T09:58:21.810Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T09:58:34.910Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T09:58:35.012Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T10:00:25.582Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T10:00:25.730Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T10:01:02.685Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T10:01:02.785Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T10:04:46.538Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T10:04:46.670Z [__UNIFARM__] info: connection established to unifarm
+2021-10-05T10:05:20.374Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:4000/graphql
+2021-10-05T10:05:20.460Z [__UNIFARM__] info: connection established to unifarm

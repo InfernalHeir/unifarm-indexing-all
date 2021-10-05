@@ -1,6 +1,8 @@
 import { logger } from "../../log";
 import {
    getAllCohorts,
+   getAllStakes,
+   getAllUnstakes,
    getCohort,
    getPoolInformation,
    getTokens,
@@ -45,6 +47,26 @@ export const resolvers = {
          } catch (err) {
             logger.error(`Tokens:: Tokens Fetched Failed`);
             throw new Error(`Tokens:: ${err.message}`);
+         }
+      },
+      getAllStakes: async (_parent, args, _context, _info) => {
+         try {
+            const chainId = args.chainId;
+            const cohortId = args.cohortId;
+            return await getAllStakes(chainId, cohortId);
+         } catch (err) {
+            logger.error(`AllStakes:: Stakes cannot found.`);
+            throw new Error(`AllStakes:: ${err.message}`);
+         }
+      },
+      getAllUnstakes: async (_parent, args, _context, _info) => {
+         try {
+            const chainId = args.chainId;
+            const cohortId = args.cohortId;
+            return await getAllUnstakes(chainId, cohortId);
+         } catch (err) {
+            logger.error(`AllStakes:: Stakes cannot found.`);
+            throw new Error(`AllStakes:: ${err.message}`);
          }
       },
    },

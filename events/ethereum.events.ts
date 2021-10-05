@@ -14,7 +14,7 @@ interface EventsFetcherOptions {
    chainId: number;
    eventName: string;
    eventParams: Mixin;
-   cohort?: string | null;
+   cohorts?: string[] | undefined;
    toBlock?: number;
    fromBlock?: number;
 }
@@ -64,29 +64,6 @@ export async function readAllCohortsEvents(opts: EventsFetcherOptions) {
    }
 }
 
-// single contract fetch
-export async function readSpecficCohortAllEvents(
-   opts: EventsFetcherOptions
-): Promise<Event[] | undefined> {
-   try {
-      const contract = getCohorts(opts.chainId);
-      if (!contract) return undefined;
-      const instance = contract(String(opts.cohort));
-      if (!instance) return undefined;
-      const events = await queryEvents(
-         instance,
-         opts.eventName,
-         opts.eventParams,
-         opts.chainId
-      );
-      logger.info(`Cohort ${opts.eventName} event fetched`);
-      return events;
-   } catch (err) {
-      logger.error(`err found ${err.message}`);
-      return undefined;
-   }
-}
-
 export async function readAllProxiesState(opts: EventsFetcherOptions) {
    try {
       var proxies = [];
@@ -107,6 +84,10 @@ export async function readAllProxiesState(opts: EventsFetcherOptions) {
       if (!proxyCohort) return undefined;
 
       var eventPromise = [];
+
+      if (opts.cohorts !== undefined) {
+         proxies = opts.cohorts;
+      }
 
       for (var e = 0; e < proxies.length; e++) {
          //console.log(proxies[e]);

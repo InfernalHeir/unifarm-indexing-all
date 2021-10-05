@@ -128,3 +128,9 @@
 2021-09-26T05:38:02.775Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason null value in column "unStakedTokenAddress" of relation "unstake" violates not-null constraint
 2021-09-26T05:38:02.817Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason null value in column "unStakedTokenAddress" of relation "unstake" violates not-null constraint
 2021-09-26T05:38:02.823Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason null value in column "unStakedTokenAddress" of relation "unstake" violates not-null constraint
+2021-09-29T14:43:43.755Z [__UNIFARM__] error: AllStakes:: Stakes cannot found.
+2021-09-29T14:44:22.297Z [__UNIFARM__] error: AllStakes:: Stakes cannot found.
+2021-10-04T08:30:08.297Z [__UNIFARM__] error: AllStakes:: Stakes cannot found.
+2021-10-04T08:30:43.728Z [__UNIFARM__] error: AllStakes:: Stakes cannot found.
+2021-10-04T08:33:25.624Z [__UNIFARM__] error: AllStakes:: Stakes cannot found.
+2021-10-04T09:20:06.744Z [__UNIFARM__] error: AllStakes:: Stakes cannot found.

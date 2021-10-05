@@ -29,7 +29,7 @@ function execution() {
    }
 }
 
-function startAllJobs() {
+export function startAllJobs() {
    // first execute the object
    execution();
 
@@ -48,7 +48,7 @@ function startAllJobs() {
    });
 }
 
-function stopAllTheJobsAfterTenMinuates() {
+export function stopAllTheJobsAfterTenMinuates() {
    setTimeout(() => {
       for (var c = 0; c < jobList.length; c++) {
          const items = jobList[c];
@@ -58,7 +58,7 @@ function stopAllTheJobsAfterTenMinuates() {
    }, 310000);
 }
 
-startAllJobs();
-stopAllTheJobsAfterTenMinuates();
+//startAllJobs();
+//stopAllTheJobsAfterTenMinuates();
 
 export default jobs;
