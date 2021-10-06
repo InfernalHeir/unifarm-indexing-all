@@ -16,71 +16,133 @@ services:
             max_replicas_per_node: 2
          restart_policy:
             condition: on-failure
-   db:
-      image: postgres:9.4
-      environment:
-         POSTGRES_USER: "postgres"
-         POSTGRES_PASSWORD: "postgres"
+   graph:
+      image: graph:latest
+      env_file: "./env.prod"
       volumes:
-         - db-data:/var/lib/postgresql/data
-      networks:
-         - backend
-      deploy:
-         placement:
-            constraints: [node.role == manager]
-   vote:
-      image: dockersamples/examplevotingapp_vote:before
+         - graph:/graph
       ports:
-         - 5000:80
+         - "8080:8080"
+         - "8443:8443"
       networks:
-         - frontend
-      depends_on:
-         - redis
+         - unifarm
+      command: npm run graph:start   
       deploy:
-         replicas: 1
-         update_config:
-            parallelism: 2
+         mode: "replicated"
+         replicas: 3
+         placement:
+            max_replicas_per_node: 1
          restart_policy:
             condition: on-failure
-   result:
-      image: dockersamples/examplevotingapp_result:before
+   eth-events-sync:
+      image: events-listener:latest
+      env_file: "./env.prod"
+      environment:
+         - CHAIN_ID=1
+      volumes:
+         - eth_events:/events
       ports:
-         - 5001:80
+         - "9385:9385"
       networks:
-         - backend
-      depends_on:
-         - db
+         - unifarm
+      command: npm run listener-server:start   
       deploy:
-         replicas: 1
-         update_config:
-            parallelism: 2
-            delay: 10s
+         mode: "replicated"
+         replicas: 2
+         placement:
+            max_replicas_per_node: 1
+         restart_policy:
+            condition: on-failure
+   bsc-events-sync:
+      image: events-listener:latest
+      env_file: "./env.prod"
+      environment:
+         - CHAIN_ID=56
+      volumes:
+         - bsc_events:/events
+      ports:
+         - "9385:9385"
+      networks:
+         - unifarm
+      command: npm run listener-server:start    
+      deploy:
+         mode: "replicated"
+         replicas: 2
+         placement:
+            max_replicas_per_node: 1
          restart_policy:
             condition: on-failure
 
-   worker:
-      image: dockersamples/examplevotingapp_worker
+   polygon-events-sync:
+      image: events-listener:latest
+      env_file: "./env.prod"
+      environment:
+         - CHAIN_ID=137
+      volumes:
+         - polygon_events:/events
+      ports:
+         - "9385:9385"
       networks:
-         - frontend
-         - backend
-      depends_on:
-         - db
-         - redis
+         - unifarm
+      command: npm run listener-server:start    
       deploy:
-         mode: replicated
-         replicas: 1
-         labels: [APP=VOTING]
+         mode: "replicated"
+         replicas: 2
+         placement:
+            max_replicas_per_node: 1
          restart_policy:
             condition: on-failure
-            delay: 10s
-            max_attempts: 3
-            window: 120s
+   redis:
+      image: redis:latest
+      volumes:
+         - redis:/data
+      ports:
+         - "6379:6379"
+      networks:
+         - unifarm
+      deploy:
+         mode: "replicated"
+         replicas: 1
          placement:
-            constraints: [node.role == manager]
+            constraints:
+               - ["node.role == manager"]
+         restart_policy:
+            condition: on-failure
 
+   graph_nginx:
+       image: nginx:latest
+       ports:
+         - "80:80"
+         - "443:443"
+       networks:
+         - unifarm
+       volumes:
+         - /nginx/graph.unifarm.co.conf:/etc/nginx/conf.d
+         - certbot-etc:/etc/letsencrypt
+         - certbot-var:/var/lib/letsencrypt
+         - dhparam:/etc/ssl/certs  
+       deploy:
+         mode: "replicated"
+         restart_policy:
+            condition: on-failure
+
+   certbot:
+    image: certbot/certbot
+    volumes:
+      - certbot-etc:/etc/letsencrypt
+      - certbot-var:/var/lib/letsencrypt
+    depends_on:
+      - graph_nginx
+    command: certonly --dry-run -m bhupendra.bisht@oropocket.com --agree-tos --no-eff-email -d graph.unifarm.co --nginx
+         
 networks:
    unifarm:
-   backend:
-
 volumes:
-   db-data:
+   postgres:
+   graph:
+   eth_events:
+   bsc_events:
+   polygon_events:
+   certbot-etc:
+   certbot-var:
+   dhparam:         
