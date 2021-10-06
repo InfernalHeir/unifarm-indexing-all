@@ -4,3 +4,6 @@ node_modules
 .vscode
 .DS_STORE
 .tmp
+storage
+graphql/build
+events/build
