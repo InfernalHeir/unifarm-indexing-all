@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:latest as builder
 
 LABEL MAINTAINER Bhupendra Bisht "<bhupendra.bisht@oropocket.com>"
 LABEL ORGANIZATION="<Unifarm>"
@@ -7,24 +7,27 @@ WORKDIR /graph-server
 
 RUN node -v \
     npm -v \
-    npm install -g yarn \
-    yarn -v \
-    yarn global add pm2 \
+    npm install -g pm2 \
     mkdir /graph-server/storage
 
-COPY ./package.json /graph-server/package.json
+ADD ./package.json /graph-server/package.json
+ADD ./graphql /graph-server/graphql
+ADD ./db /graph-server/db
+ADD ./log /graph-server/log
 
-ADD ./ /graph-server/
-ADD ../db /graph-server/
-ADD ../log /graph-server/
+RUN npm install 
+RUN npm run graph:build
 
-RUN yarn install \   
-    chmod 755 /graph-server
+FROM node:14-alpine
 
-VOLUME ["/graph-server"]
+WORKDIR /graph
 
-ENTRYPOINT [ "yarn" ]
-CMD ["graph:build"]
+COPY --from=builder /graph-server/graphql/build ./
 
-EXPOSE 80
-EXPOSE 443 
+VOLUME ["/graph"]
+
+ENTRYPOINT [ "npm" ]
+CMD ["graph:start"]
+
+EXPOSE 8080
+EXPOSE 8443
