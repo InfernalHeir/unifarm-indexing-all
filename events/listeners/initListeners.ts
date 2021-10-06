@@ -1,4 +1,3 @@
-import { logger } from "../../log";
 import { activateListener } from "../events-helpers/pubsub";
 import { listeners } from "./listeners-config/listenster.config";
 import { getWsProviders } from "../../providers/provider";
@@ -21,6 +20,6 @@ export async function start(eventOpts: InitListenersOptions) {
    activateListener(web3, cohorts);
 }
 
-/* start({
-   chainId: Number(process.env.CHAIN_ID),
-}); */
+start({
+   chainId: process.env.CHAIN_ID ? Number(process.env.CHAIN_ID) : undefined,
+});

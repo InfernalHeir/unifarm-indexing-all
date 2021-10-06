@@ -7,13 +7,13 @@
       "create-rewards": "ts-node scripts/create-reward-cap.ts",
       "start:seeders": "ts-node ./index.ts",
       "start:dev:graph-server": "export NODE_ENV=dev && nodemon ./graphql/build/graphql/graph.js",
-      "start:dev:all-listerners": "export NODE_ENV=dev && nodemon --ext '.ts' events/listeners/index.ts",
+      "start:dev:all-listerners": "export NODE_ENV=dev && export CHAIN_ID=1 && nodemon events/build/events/listeners/initListeners.js",
       "graph:clean": "rimraf ./graphql/build",
       "graph:build": "babel ./ --extensions '.ts' --config-file ./graphql/babel.config.js --out-dir ./graphql/build",
       "graph:start": "pm2 start ./graphql/build/graphql.js --name graph",
-      "server:clean": "rimraf ./events/build",
-      "server:build": "babel ./ --extensions '.ts' --config-file ./events/babel.config.js --out-dir ./events/build",
-      "server:start": "pm2 start ./events/build/listeners/initListeners.js --name listener"
+      "listener-server:clean": "rimraf ./events/build",
+      "listener-server:build": "babel ./ --extensions '.ts' --config-file ./events/babel.config.js --out-dir ./events/build --no-copy-ignored",
+      "listener-server:start": "pm2 start ./events/build/listeners/initListeners.js --name listener"
    },
    "dependencies": {
       "@babel/cli": "^7.15.7",
@@ -28,6 +28,7 @@
       "apollo-server": "^3.3.0",
       "apollo-server-core": "^3.3.0",
       "apollo-server-express": "^3.3.0",
+      "babel-plugin-inline-json-import": "^0.3.2",
       "babel-polyfill": "^6.26.0",
       "bluebird": "^3.7.2",
       "colors": "^1.4.0",

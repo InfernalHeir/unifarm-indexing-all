@@ -12,5 +12,5 @@
     "experimentalDecorators": true,
     "strictPropertyInitialization": false
   },
-  "exclude": ["node_modules", "dist","./graphql/babel.config.js","./graphql/build", "./events/build"]
+  "exclude": ["node_modules", "dist","./graphql/babel.config.js","./graphql/build","./events/babel.config.js", "./events/build"]
 }
