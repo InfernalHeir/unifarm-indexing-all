@@ -4,7 +4,6 @@ import {
    bscRPCUrl,
    ethereumRPCUrl,
    polygonRPCUrl,
-   rinkebyRPCUrl,
    wsBscRPCUrl,
    wsEthRPCUrl,
    wsPolygonRPCUrl,
@@ -12,6 +11,7 @@ import {
 import BscCohortABI from "../constants/bsc/ABI.json";
 import PolygonCohortABI from "../constants/polygon/ABI.json";
 import { ethSwitch } from "./switch";
+import Web3 from "web3";
 
 import { V1PROXY } from "../constants";
 
@@ -27,17 +27,11 @@ export const bscProvider = new JsonRpcProvider(bscRPCUrl);
 
 export const polygonProvider = new JsonRpcProvider(polygonRPCUrl);
 
-export const wsEthProvider = new WebSocketProvider(rinkebyRPCUrl);
+export const wsEthProvider = new Web3(wsEthRPCUrl);
 
-export const wsBscProvider = new WebSocketProvider(
-   String(wsBscRPCUrl),
-   "mainnet"
-);
+export const wsBscProvider = new Web3(wsBscRPCUrl);
 
-export const wsPolygonProvider = new WebSocketProvider(
-   String(wsPolygonRPCUrl),
-   "mainnet"
-);
+export const wsPolygonProvider = new Web3(wsPolygonRPCUrl);
 
 export const ethereumCohorts = (cohortAddress: string) => {
    return ethSwitch(cohortAddress, ethProvider);
@@ -49,18 +43,6 @@ export const bscCohorts = (cohortAddress: string) => {
 
 export const polygonCohorts = (cohortAddress: string) => {
    return new Contract(cohortAddress, PolygonCohortABI, polygonProvider);
-};
-
-export const wsEthereumCohorts = (cohortAddress: string) => {
-   return ethSwitch(cohortAddress, wsEthProvider);
-};
-
-export const wsBscCohorts = (cohortAddress: string) => {
-   return new Contract(cohortAddress, BscCohortABI, wsBscProvider);
-};
-
-export const wsPolygonCohorts = (cohortAddress: string) => {
-   return new Contract(cohortAddress, PolygonCohortABI, wsPolygonProvider);
 };
 
 // Proxy Instances
@@ -87,19 +69,6 @@ export const getCohorts = (chainId: number) => {
          return bscCohorts;
       case 137:
          return polygonCohorts;
-      default:
-         return null;
-   }
-};
-
-export const getWsCohorts = (chainId: number) => {
-   switch (chainId) {
-      case 1:
-         return wsEthereumCohorts;
-      case 56:
-         return wsBscCohorts;
-      case 137:
-         return wsPolygonCohorts;
       default:
          return null;
    }

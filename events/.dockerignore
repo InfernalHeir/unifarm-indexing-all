@@ -1,0 +1,16 @@
+../actions
+../commands
+../cron
+../docker
+../graphql
+../node_modules
+../storage
+../.eslintrc
+../.gitignore
+../.prettierrc
+../docker-compose.yml
+../docker.sh
+../index.ts
+../README.md
+../yarn.lock
+

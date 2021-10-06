@@ -48,6 +48,6 @@ export function activateListener(provider: Web3, addresses: string[]) {
       })
       .on("error", (err) => {
          logger.error(`ActivateListener:: ${err.message}`);
-         throw new Error(`App Error: Application Terminated Trying Again.`);
+         throw new Error(`Sync Error: Application Terminated Trying Again.`);
       });
 }

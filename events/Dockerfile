@@ -3,28 +3,25 @@ FROM node:latest
 LABEL MAINTAINER Bhupendra Bisht "<bhupendra.bisht@oropocket.com>"
 LABEL ORGANIZATION="<Unifarm>"
 
-WORKDIR /graph-server
+WORKDIR /unifarm-events
 
 RUN node -v \
     npm -v \
     npm install -g yarn \
     yarn -v \
     yarn global add pm2 \
-    mkdir /graph-server/storage
+    mkdir /unifarm-events/storage
 
-COPY ./package.json /graph-server/package.json
+COPY ./package.json /unifarm-events/package.json
 
-ADD ./ /graph-server/
-ADD ../db /graph-server/
-ADD ../log /graph-server/
+ADD ../ /unifarm-events/
 
 RUN yarn install \   
-    chmod 755 /graph-server
+    chmod 755 /unifarm-events
 
-VOLUME ["/graph-server"]
+VOLUME ["/unifarm-events"]
 
 ENTRYPOINT [ "yarn" ]
 CMD ["graph:build"]
 
-EXPOSE 80
-EXPOSE 443 
+EXPOSE 9385 
