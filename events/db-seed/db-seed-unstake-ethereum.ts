@@ -90,11 +90,11 @@ export async function allUnStakeEvents(fetchOptions: AllEventsSync) {
    );
 }
 
-appBoot().then(() => {
+/* appBoot().then(() => {
    setTimeout(async () => {
       await allUnStakeEvents({
          // if PROXY Fetching events please enable it
          isProxy: process.env.PROXY === "yes" ? true : false,
       });
    }, 5000);
-});
+}); */

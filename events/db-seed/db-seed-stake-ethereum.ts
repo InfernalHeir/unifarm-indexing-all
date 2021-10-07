@@ -66,8 +66,8 @@ export async function insertAllStakeEvents() {
    );
 }
 
-appBoot().then(() => {
+/* appBoot().then(() => {
    setTimeout(async () => {
       await insertAllStakeEvents();
    }, 5000);
-});
+}); */

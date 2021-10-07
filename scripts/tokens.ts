@@ -167,10 +167,10 @@ export async function allTokens(opts: CohortOptions) {
    }
 }
 
-appBoot().then(() => {
+/* appBoot().then(() => {
    setTimeout(async () => {
       await allTokens({
          chainId: 137,
       });
    }, 4000);
-});
+}); */

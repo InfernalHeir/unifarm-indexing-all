@@ -75,18 +75,18 @@ export async function allClaimEvents(fetchOptions: AllEventsSync) {
 
    await insertClaimEvent(claimEvents);
 
-   console.log(claimEvents);
+   //console.log(claimEvents);
 
    logger.info(
       `total claims in ethereum cohorts ${claimEvents.length}. last block fetch for Claim Entity ${latestBlockNumber}`
    );
 }
 
-appBoot().then(() => {
+/* appBoot().then(() => {
    setTimeout(() => {
       allClaimEvents({
          // if PROXY Fetching events please enable it
          isProxy: process.env.PROXY === "yes" ? true : false,
       });
    }, 5000);
-});
+}); */

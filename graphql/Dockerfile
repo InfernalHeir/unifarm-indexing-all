@@ -30,4 +30,3 @@ ENTRYPOINT [ "npm" ]
 CMD ["graph:start"]
 
 EXPOSE 8080
-EXPOSE 8443

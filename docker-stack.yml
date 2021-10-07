@@ -23,7 +23,6 @@ services:
          - graph:/graph
       ports:
          - "8080:8080"
-         - "8443:8443"
       networks:
          - unifarm
       command: npm run graph:start   
@@ -133,7 +132,7 @@ services:
       - certbot-var:/var/lib/letsencrypt
     depends_on:
       - graph_nginx
-    command: certonly --dry-run -m bhupendra.bisht@oropocket.com --agree-tos --no-eff-email -d graph.unifarm.co --nginx
+    command: certonly --dry-run -m bhupendra.bisht@oropocket.com --agree-tos --no-eff-email -d graph.unifarm.co
          
 networks:
    unifarm:

@@ -4,9 +4,8 @@
    "main": "index.ts",
    "license": "MIT",
    "scripts": {
-      "create-rewards": "ts-node scripts/create-reward-cap.ts",
       "start:seeders": "ts-node ./index.ts",
-      "start:dev:graph-server": "export NODE_ENV=dev && nodemon ./graphql/build/graphql/graph.js",
+      "start:dev:graph-server": "export NODE_ENV=dev && nodemon --ext '.ts' ./graphql/graph.ts",
       "start:dev:all-listerners": "export NODE_ENV=dev && export CHAIN_ID=1 && nodemon events/build/events/listeners/initListeners.js",
       "graph:clean": "rimraf ./graphql/build",
       "graph:build": "babel ./ --extensions '.ts' --config-file ./graphql/babel.config.js --out-dir ./graphql/build",

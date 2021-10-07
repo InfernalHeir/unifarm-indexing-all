@@ -67,11 +67,11 @@ export async function allRefferalEvents(fetchOptions: AllEventsSync) {
    );
 }
 
-appBoot().then(() => {
+/* appBoot().then(() => {
    setTimeout(() => {
       allRefferalEvents({
          // if PROXY Fetching events please enable it
          isProxy: process.env.PROXY === "yes" ? true : false,
       });
    }, 5000);
-});
+}); */

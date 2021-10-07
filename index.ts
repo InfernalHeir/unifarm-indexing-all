@@ -6,7 +6,9 @@ import { allClaimEvents } from "./events/db-seed/db-seed-claim-ethereum";
 import { allRefferalEvents } from "./events/db-seed/db-seed-refferal-claim-ethereum";
 import { insertAllStakeEvents } from "./events/db-seed/db-seed-stake-ethereum";
 import { allUnStakeEvents } from "./events/db-seed/db-seed-unstake-ethereum";
+import { logger } from "./log";
 import { allCohortInsertation } from "./scripts/cohort";
+import { createRewardCap } from "./scripts/create-reward-cap";
 import { allTokens } from "./scripts/tokens";
 
 function timeOut(callback: () => void, time: number) {
@@ -14,6 +16,8 @@ function timeOut(callback: () => void, time: number) {
 }
 
 async function main() {
+   // create the reward cap
+   createRewardCap();
    // cohort seed for eth
    timeOut(async () => {
       await allCohortInsertation({ chainId: ETH_CHAIN });
@@ -105,6 +109,7 @@ async function main() {
 }
 
 appBoot().then(() => {
+   logger.info(`All Scripts will be run after 10 seconds`);
    setTimeout(async () => {
       await main();
    }, 10000);
