@@ -1,20 +1,86 @@
 import { gql } from "apollo-server-express";
 
 export const typeDefs = gql`
-   "Cohort Input for cohort query"
-   input CohortInputs {
-      "Chain id eg : 1 | 56 | 137"
-      chainId: Int!
-      "Specfic Cohort Address"
-      cohortAddress: String!
-   }
-
    "Pool input for pool query"
    input PoolInputs {
       "Chain id eg : 1 | 56 | 137"
       chainId: Int!
       "Specfic Token Address"
       tokenAddress: String!
+   }
+
+   "Order Direction ASC | DESC"
+   enum OrderDirection {
+      ASC
+      DESC
+   }
+
+   "Data Filteration"
+   input Filter {
+      "Limit - how many entites you want to take ?"
+      limit: Int!
+      "Offset - how many entities have to skip."
+      offset: Int
+      "Order Direction ASC | DESC"
+      orderDirection: OrderDirection
+   }
+
+   "Cohort Input for cohort query"
+   input CohortWhereClause {
+      "Chain id eg : 1 | 56 | 137"
+      chainId: Int!
+      "Specfic Cohort Address"
+      cohortAddress: String!
+   }
+
+   " Cohort Group wise Fetch Input"
+   input CohortGroupWhereClause {
+      "Chain id eg : 1 | 56 | 137"
+      chainId: Int!
+   }
+
+   "Pool Group Fetching"
+   input PoolsGroupWhereClause {
+      "Chain id eg : 1 | 56 | 137"
+      chainId: Int!
+   }
+
+   "V1 Supports Specfic Pool Where Condition this is helpful for query the Staking Data"
+   input SpecficPoolsWhere {
+      "Chain id eg : 1 | 56 | 137"
+      chainId: Int!
+      "Define Specfic Tokens"
+      tokens: [String!]!
+      "Define Specfic Cohorts"
+      cohorts: [String!]!
+   }
+
+   input StakesWhere {
+      "Chain id eg : 1 | 56 | 137"
+      chainId: Int!
+      "cohort address"
+      cohortId: String
+   }
+
+   input UnStakeWhere {
+      "Chain id eg : 1 | 56 | 137"
+      chainId: Int!
+      "user wallet address"
+      userAddress: String!
+   }
+
+   input ClaimWhere {
+      "Chain id eg : 1 | 56 | 137"
+      chainId: Int!
+      "user wallet address"
+      userAddress: String!
+   }
+
+   input ReferralEarnWhere {
+      "Chain id eg : 1 | 56 | 137"
+      chainId: Int!
+      "user wallet address"
+      userAddress: String!
    }
 
    "Cohort Data Defination"
@@ -93,6 +159,13 @@ export const typeDefs = gql`
       cohort: Cohort!
    }
 
+   type Pools {
+      "available pools"
+      pools: [Pool!]!
+      "total pools"
+      total_pools: Int!
+   }
+
    "Supports V1 User Staking Data"
    type Stake {
       "Refernce stake id just for relation."
@@ -143,13 +216,93 @@ export const typeDefs = gql`
       chainId: Int!
    }
 
+   "Supports V1 User Reward Claim Data"
+   type Claim {
+      "relation id for user"
+      id: ID!
+      "unstaker address."
+      userAddress: String!
+      "cohort address where token got unstaked."
+      cohortId: String!
+      "staked token address ?? | eg - 0x12"
+      stakedTokenAddress: String!
+      "reward token address which have been claimed a particular address."
+      rewardTokenAddress: String!
+      "how much claimed token was ?"
+      claimedRewards: String
+      "unstake epoch when was unstaking happens basically."
+      time: String!
+      "hash of unstaking transaction."
+      hash: String!
+      "blocknumber when unstaked."
+      block: String!
+      "Chain id eg : 1 | 56 | 137"
+      chainId: Int!
+   }
+
+   "Supports V1 User Refferarl Reward Claim Data"
+   type RefferalEarn {
+      "relation id for user"
+      id: ID!
+      "unstaker address."
+      userAddress: String!
+      "cohort address where token got unstaked."
+      cohortId: String!
+      "refree address who have been refered ?? | eg - 0x12"
+      refreeAddress: String!
+      "reward token address which have been claimed a particular address."
+      rewardTokenAddress: String!
+      "how much refferral reward token was ?"
+      rewardAmount: String
+      "unstake epoch when was unstaking happens basically."
+      time: String!
+      "hash of unstaking transaction."
+      hash: String!
+      "blocknumber when unstaked."
+      block: String!
+      "Chain id eg : 1 | 56 | 137"
+      chainId: Int!
+   }
+
+   "cohorts group fetching"
+   type Cohorts {
+      "list of cohorts."
+      cohorts: [Cohort]!
+      "total number of cohorts."
+      total_cohorts: Int!
+   }
+
+   type CohortProxyGroupedAddresses {
+      "cohort contract address."
+      cohortAddress: String!
+      "cohort proxies address."
+      proxies: [String]!
+   }
+
    type Query {
-      "fetch specfic cohort"
-      cohort(where: CohortInputs!): Cohort
-      allCohorts(first: Int!, chainId: Int!): [Cohort]!
-      getPools(where: PoolInputs): [Pool!]!
+      "fetch specfic cohort with cohort id and chainid"
+      getCohort(where: CohortWhereClause!): Cohort
+      "fetch all cohorts by chainId and global context"
+      allCohorts(where: CohortGroupWhereClause!, filter: Filter!): Cohorts!
+      "fetch all cohorts and proxies addresses"
+      allCohortsAndProxies(
+         where: CohortGroupWhereClause!
+      ): [CohortProxyGroupedAddresses!]!
+      "fetch all pools by chainId"
+      allPools(where: PoolsGroupWhereClause!, filter: Filter!): Pools!
+      "Fetch specfic token which is available in particular cohort."
       getTokens(where: PoolInputs): [Token!]!
-      getAllStakes(chainId: Int!, cohortId: String!): [Stake!]!
-      getAllUnstakes(chainId: Int!, cohortId: String!): [Unstake!]!
+      "Fetch Specfic Pools Just Defined The tokenAddress"
+      getSpecficPools(where: SpecficPoolsWhere!): [Pool!]!
+      "Fetch All Stakes in specfic chain"
+      getAllStakes(where: StakesWhere!, filter: Filter!): [Stake!]!
+      "Fetch All Unstakes in specfic chain by particular user wallet address."
+      getAllUnstakes(where: UnStakeWhere): [Unstake]!
+      "Fetch All Rewards Claims By a user"
+      getAllClaimsByUser(where: ClaimWhere): [Claim]!
+      "Fetch All the Refferral Address a user refered to anyone"
+      getAllTheReferedUser(where: ReferralEarnWhere): [Stake!]
+      "Fetch all the referral claim"
+      getReferralClaimByUser(where: ReferralEarnWhere): [RefferalEarn!]
    }
 `;
