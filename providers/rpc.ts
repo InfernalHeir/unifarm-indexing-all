@@ -1,6 +1,6 @@
 import { config } from "dotenv";
 
-config({ path: `./.env.${process.env.NODE_ENV}` });
+config({ path: `./.env.testnet` });
 
 export const ethereumRPCUrl = process.env.ETHEREUM_RPC;
 

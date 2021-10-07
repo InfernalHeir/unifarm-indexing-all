@@ -63,11 +63,11 @@ export const polygonCohortsProxy = (cohortAddress: string) => {
 
 export const getCohorts = (chainId: number) => {
    switch (chainId) {
-      case 1:
+      case 4:
          return ethereumCohorts;
-      case 56:
+      case 97:
          return bscCohorts;
-      case 137:
+      case 80001:
          return polygonCohorts;
       default:
          return null;
@@ -76,11 +76,11 @@ export const getCohorts = (chainId: number) => {
 
 export const getProxiesCohorts = (chainId: number) => {
    switch (chainId) {
-      case 1:
+      case 4:
          return ethCohortsProxy;
-      case 56:
+      case 97:
          return bscCohortsProxy;
-      case 137:
+      case 80001:
          return polygonCohortsProxy;
       default:
          return null;
@@ -89,11 +89,11 @@ export const getProxiesCohorts = (chainId: number) => {
 
 export const getProviders = (chainId: number) => {
    switch (chainId) {
-      case 1:
+      case 4:
          return ethProvider;
-      case 56:
+      case 97:
          return bscProvider;
-      case 137:
+      case 80001:
          return polygonProvider;
       default:
          return null;
@@ -102,11 +102,11 @@ export const getProviders = (chainId: number) => {
 
 export const getWsProviders = (chainId: number) => {
    switch (chainId) {
-      case 1:
+      case 4:
          return wsEthProvider;
-      case 56:
+      case 97:
          return wsBscProvider;
-      case 137:
+      case 80001:
          return wsPolygonProvider;
       default:
          return null;

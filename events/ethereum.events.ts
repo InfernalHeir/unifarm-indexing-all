@@ -5,7 +5,7 @@ import { Promise } from "bluebird";
 import { logger } from "../log";
 import { Event } from "ethers";
 import { CohortsEvents } from "./events";
-import { chainNameById } from "../constants";
+import { chainNameById, ETH_CHAIN } from "../constants";
 // GLOBAL
 
 type Mixin = any[];
@@ -28,7 +28,7 @@ export async function readAllCohortsEvents(opts: EventsFetcherOptions) {
       var cohorts = yaml.cohorts;
 
       // refferal event not exist in V1 thats why
-      if (opts.chainId === 1 && opts.eventName === CohortsEvents.REFERRALEARN) {
+      if (opts.chainId === ETH_CHAIN && opts.eventName === CohortsEvents.REFERRALEARN) {
          cohorts = cohorts.slice(3, cohorts.length);
       }
 
@@ -76,7 +76,7 @@ export async function readAllProxiesState(opts: EventsFetcherOptions) {
          }
       }
 
-      if (opts.chainId === 1 && opts.eventName === CohortsEvents.REFERRALEARN) {
+      if (opts.chainId === ETH_CHAIN && opts.eventName === CohortsEvents.REFERRALEARN) {
          proxies = proxies.slice(1, proxies.length);
       }
 
@@ -116,19 +116,13 @@ export async function readAllProxiesState(opts: EventsFetcherOptions) {
          }
       }
 
-      logger.info(
-         `readAllProxiesState: ${opts.eventName} event fetch successfully`
-      );
+      logger.info(`readAllProxiesState: ${opts.eventName} event fetch successfully`);
 
       return allEvents;
    } catch (err) {
       logger.error(
          `readAllProxiesState: Error event sync failed please try again reason ${err.message}`
       );
-      throw new Error(
-         `failed to fetch the events for the ${
-            chainNameById[opts.chainId]
-         } chain.`
-      );
+      throw new Error(`failed to fetch the events for the ${chainNameById[opts.chainId]} chain.`);
    }
 }

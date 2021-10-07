@@ -35,8 +35,6 @@ export const getOffset = async (
    eventName: string,
    chainId: number
 ): Promise<number> => {
-   const offset = await getAsync(
-      `Offset_${cohortId}_${eventName}_${chainNameById[chainId]}`
-   );
+   const offset = await getAsync(`Offset_${cohortId}_${eventName}_${chainNameById[chainId]}`);
    return Number(offset);
 };

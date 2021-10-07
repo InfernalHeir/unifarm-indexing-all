@@ -3,143 +3,121 @@ version: "1.0.0"
 services:
   ethereum:
     abi: "./constants/ethereum/ABI.json"
-    chainId: 1
+    chainId: 4
     cohorts:
       - 
         version: "V1"
-        address: "0xd426037bCf28fc4eA3730525Ff8B3d2DE412257d"
+        address: "0x082bE801D9f4dd195Ac3328AbdEDF4cE23b9fef4"
       - 
         version: "V2"
-        address: "0x207C678457617bC8c8Ab06F9088EFC1DCD45887c"
+        address: "0x0E148d2A9c0d1DbE7ee3B4772D31289c0098012F"
       - 
         version: "V3"
-        address: "0x349d55f12fb166a926214ca0195a07a16fa4ccb1"
+        address: "0xf7cc8bf44289f6b57bbf968115ea4048bbe39c0f"
       - 
         version: "V4"
-        address: "0xab6FfA6A5D5589378A21dbb30dF2940E0320d1Cd"
+        address: "0x305A83c506F7c4EDF58D7904dEC16De81ef396Cb"
       - 
         version: "V6"
-        address: "0xfc0962c00efa1a1d7c51e68f7de865119219cec9"
+        address: "0x131302Bf35823ABd83124Bb31f68B7F97e2D99Cf"
       - 
         version: "V8"
-        address: "0x50E90d8E1c012A98fB4bA3246447f27035A8780A"
+        address: "0xF10fab3C6B7c813CE5438C24A570F00Bd09d2DC1"
       - 
         version: "V9"
-        address: "0x4460788bc43dab5f4e530ec9dfa1dd8c483f188c"
+        address: "0x2d038D5a999F38A2caCe2b7Ad5c14EfE857239eB"
       - 
         version: "V11"
-        address: "0xC364572a61b05Ce0095F5Ca91F762eBeF7ab9494"
+        address: "0x9093c6DCA2CFE1A18784c06693db41F3A6528c96"
       - 
         version: "V12"
-        address: "0x80d0540C7971922bDe062e434AD7618bc2aC50bB"
+        address: "0x866BE8D43F438ffD607E2B9172a9d1710f4Da30A"
       - 
         version: "V15"
-        address: "0x3d41675d0e5b610cfea98998129780753bd664b5"
+        address: "0xC4F941800bee65cCDC4A7d766E1825d33E30Afa4"
       - 
         version: "V16"
-        address: "0x53fe82a7334c6f3683d5b39f49f0f7be19823a64"
+        address: "0x2D72B4bae73269f51d07692cf6c9f02545944875"
       - 
         version: "V18"
-        address: "0x6fd0bbf295965db381f1d5b353ff3e523c771dd6"
+        address: "0x2e47fd3D73F95e1B0d20Ef07cA2E4aD15Cc092B5"
       - 
         version: "ORO-WETH"
-        address: "0x1c14Eb2f2bf443557fC131b3f6F4e929C0081346"
+        address: "0xCADcA4d47828b74b3ab48a9F1f3cA30e70C850b7"
       - 
         version: "UFARM-USDC"
-        address: "0x32D72D6CC98436EF983BE7f5288ab2Ca63480fE4"
+        address: "0x34e823351A0F0148819cF0602ec6Eead803d5461"
       - 
         version: "V20"
-        address: "0x2d168651d85fe8b16aebf42272a9b64f24ac3603"
+        address: "0x28d4FE0f4433252895e714E53a6CE97E07Abc3D3"
       - 
         version: "V22"
-        address: "0x17cf1f7abe02e2cefea0c9c1bd812b2cf8121f2b"
+        address: "0x82F89e5bF18EA6A8b5a573D6D1F1BE5F77A27C28"
       -
         version: "UFARM-CTR DUAL FARM"
-        address: "0xcedf01ea298f90df54f01878b324300b091b7a56"    
+        address: "0xeee8901f7152C7337664E89B5e829c12Aa341CAb"    
     proxies:
         -
-         - "0xe8369CA802f89b16A968ccb24431A7A412F41f27"
-         - "0x0862eD7f6B2bc350508B29542511249b7E11A0a0"
+         - "0xFDa2eb3CB5b289Ed62ADfCdcc218a8C999DC54A5"
+         - "0x344524ABE57e510C33C0F7768C2E4bDce4375bDE"
         -
-         - "0xdb6cf8acca5031eb42e283fa441a4c9ada5cc8d9"
-         - "0x152A8d34c5C4540645443A63Bd8C1d395543BdC2"
-         - "0x652862b61C71C8D955cCBd973d2830C68e46CE78"
+         - "0xc0c3625448751096aEcb6074F7a04B3Abb15cBa6"
+         - "0x3F985C2be61224b489A1500cA7d7eb43Ab827507"
+         - "0x91543C3f2C81924c28118760Ce9873DeBb26650c"
         - 
-         - "0x559CD5B11Ca882CEDda823Ac06275558A92b7064"
-         - "0xeae5ce18fe34d1ee46c67f326c4a7f2038e6bd78"
-         - "0xd04dde065fe872adb6517b4bb0c11eaf49ce26a5"
+         - "0x3B576Efb5674F26cEAE8D21DcA89c57024c25245"
+         - "0x8DDB4dD9624b879BC669Cb7D6B38d754ABB4215b"
+         - "0xE7d7f96588676c87E5f4e4e7B156002173850530"
         - 
-         - "0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F"
+         - "0xea2524bf1ee9097Cc6A86694c9356378925f90f2"
         - 
-         - "0x2c09B8eA4606247Bf5AEC77B063c894334C6d205"
-        - 
-         - "0xAf414C28FB7a33f736E5E55e102eB7954e95868C"
-        -
-         - "0xe4Be53c29c852e474ffdBE5555dE64BF143B613E"
-        - 
-         - "0x50572512c65DbC570634926309BF61fB19C2364c"
-        - 
-         - "0xD6Ce88C332a8168724b69A3A03e23DDf6Ac40408"
-        - 
-         - "0x920a203e0C9F55d747F6b7Ea76ff96715725335a"
-        - 
-         - "0x0F525981710E9d627f880D1e04C1F432317c84FF"
-        - 
-         - "0x4d1cEC3f30aD9b1a7f69e510016a5D790cFA6fC0"           
+         - "0xbCf88f9F1748371152aa862eB84DB70E2EAc2913"           
   bsc:
     abi: "./constant/bsc/ABI.json"
-    chainId: 56
+    chainId: 97
     cohorts:
       - 
         version: "V5"
-        address: "0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b"
+        address: "0x1DaAc9596647c7D4f0046C10B35F53D85F2DC2cA"
       - 
         version: "V7"
-        address: "0x207c678457617bc8c8ab06f9088efc1dcd45887c"
+        address: "0x964b4effA85Fc38CFE90f6663122A9E57A3e4b27"
       - 
         version: "V10"
-        address: "0x8Fd3298c3981Df23a94DDaa4b1325c7087661568"
+        address: "0xe3BCDfa7b770F724358f5e25D7223ae6328248A5"
       - 
-        version: "UNIFARM-BUSD"
-        address: "0xfd70c4a2280731fa7c63ee720d8da58898322ab7"
+        version: "UFARM-BUSD"
+        address: "0x7285F2d898682B41549d6391F2115D048dC19fAB"
       - 
         version: "V14"
-        address: "0x69B63a145597F39Ed1703f6aeEB2B832BB92f670"
+        address: "0x8e90Ae93B15634dA76D04e05B688f94bd74260aC"
       - 
         version: "V17"
-        address: "0x02e5de0ae2fc71e79dbd9e81c39edaca06ff4de2"
+        address: "0xd54B6e5cDC11145eD4c51DC0d3E787B96F026402"
       - 
         version: "V19"
-        address: "0x1c14eb2f2bf443557fc131b3f6f4e929c0081346"
+        address: "0x2ab62e1dc5c7df8bb01bf3cf73fa0a83384065ba"
       - 
         version: "V23"
-        address: "0xd5F119145bdF66998F3c33ae0fE529aD546c67F5" 
+        address: "0x03d6D1992c8a4C90364fc60cecD67B0B5De8D9d3" 
     proxies:
       -
-       - "0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F"
+       - 
       - 
-       - "0x2c09B8eA4606247Bf5AEC77B063c894334C6d205"
-      - 
-       - "0xAf414C28FB7a33f736E5E55e102eB7954e95868C"
-      -
-       - "0x50572512c65DbC570634926309BF61fB19C2364c"
-      -
-       - "0xe4Be53c29c852e474ffdBE5555dE64BF143B613E"
-      - 
-       - "0x920a203e0C9F55d747F6b7Ea76ff96715725335a"        
+       - "0xb8df26d3fb1fa1c53510baa73b8f5a15bc0094fe"        
   polygon:
     abi: "./constant/polygon/ABI.json"
-    chainId: 137
+    chainId: 80001
     cohorts:
       - 
         version: "V13"
-        address: "0xeE32c30C1fAa0364d3022B6Ca2456363DadAF71b"
+        address: "0xa5c10cb94086470d4194D81c0B8197fa65e5ff90"
       - 
         version: "V21"
-        address: "0x96537bac94c8adc38fd17d70077ebcb958c1362f"
+        address: "0xEc9cA0c1666103758b2dc2B0eDc924feE7f7F08C"
       - 
         version: "V24"
-        address: "0xf4f079e8834ff38be9b719c70b4a4195ad6199e5"  
+        address: "0x3b522c0a50A369B1056608bb2A8ec224c369955C"  
     proxies:
       -
-       - "0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80"    
+       - "0x80647e5fa09AABDE6680D76D65f2df96f5d04a2f"    

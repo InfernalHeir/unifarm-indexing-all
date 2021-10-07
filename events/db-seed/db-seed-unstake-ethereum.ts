@@ -19,7 +19,7 @@ export async function allUnStakeEvents(fetchOptions: AllEventsSync) {
          chainId: ETH_CHAIN,
          eventName: CohortsEvents.UNSTAKE,
          eventParams: [null, null, null, null, null],
-         cohorts: ["0xD6Ce88C332a8168724b69A3A03e23DDf6Ac40408"],
+         //cohorts: ["0xD6Ce88C332a8168724b69A3A03e23DDf6Ac40408"],
       });
    } else {
       events = await readAllCohortsEvents({
@@ -72,15 +72,9 @@ export async function allUnStakeEvents(fetchOptions: AllEventsSync) {
    });
 
    if (fetchOptions.isProxy) {
-      fs.writeFileSync(
-         "./.tmp/events/proxy/ethereum-unstakes.json",
-         JSON.stringify(unStakeEvents)
-      );
+      fs.writeFileSync("./.tmp/events/proxy/ethereum-unstakes.json", JSON.stringify(unStakeEvents));
    } else {
-      fs.writeFileSync(
-         "./.tmp/events/ethereum-unstakes.json",
-         JSON.stringify(unStakeEvents)
-      );
+      fs.writeFileSync("./.tmp/events/ethereum-unstakes.json", JSON.stringify(unStakeEvents));
    }
 
    await insertUnstakeEvent(unStakeEvents);
