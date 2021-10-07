@@ -45,11 +45,17 @@ services:
         version: "ORO-WETH"
         address: "0x1c14Eb2f2bf443557fC131b3f6F4e929C0081346"
       - 
-        version: "UNIFARM-USDC"
+        version: "UFARM-USDC"
         address: "0x32D72D6CC98436EF983BE7f5288ab2Ca63480fE4"
       - 
         version: "V20"
         address: "0x2d168651d85fe8b16aebf42272a9b64f24ac3603"
+      - 
+        version: "V22"
+        address: "0x17cf1f7abe02e2cefea0c9c1bd812b2cf8121f2b"
+      -
+        version: "UFARM-CTR DUAL FARM"
+        address: "0xcedf01ea298f90df54f01878b324300b091b7a56"    
     proxies:
         -
          - "0xe8369CA802f89b16A968ccb24431A7A412F41f27"
@@ -105,6 +111,9 @@ services:
       - 
         version: "V19"
         address: "0x1c14eb2f2bf443557fc131b3f6f4e929c0081346"
+      - 
+        version: "V23"
+        address: "0xd5F119145bdF66998F3c33ae0fE529aD546c67F5" 
     proxies:
       -
        - "0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F"
@@ -128,6 +137,9 @@ services:
       - 
         version: "V21"
         address: "0x96537bac94c8adc38fd17d70077ebcb958c1362f"
+      - 
+        version: "V24"
+        address: "0xf4f079e8834ff38be9b719c70b4a4195ad6199e5"  
     proxies:
       -
        - "0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80"    
