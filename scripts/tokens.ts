@@ -6,17 +6,12 @@ import { getCohorts } from "../providers/provider";
 import { CohortOptions } from "../types/Cohorts";
 import { Promise } from "bluebird";
 import { defaultTokenActions } from "../actions/TokenActions";
-import {
-   getRewardCap,
-   getTokenDailyDistribution,
-   getTokenSequenceList,
-   locking,
-} from "../helpers";
+import { getRewardCap, getTokenDailyDistribution, getTokenSequenceList, locking } from "../helpers";
 import { TokenDetails, TokenMetaData } from "../types/Tokens";
 //import fs from "fs";
 import { getConnection } from "typeorm";
 import { Token } from "../db/entity/Token";
-import { chainNameById } from "../constants";
+import { BSC_CHAIN, chainNameById, POLYGON_CHAIN } from "../constants";
 
 export async function allTokens(opts: CohortOptions) {
    // totally automatic
@@ -29,16 +24,11 @@ export async function allTokens(opts: CohortOptions) {
       var n = 0;
       var contract = getCohorts(opts.chainId);
 
-      if (!contract)
-         throw new Error(
-            `Fatal Error Contract Not found for the related ChainId`
-         );
+      if (!contract) throw new Error(`Fatal Error Contract Not found for the related ChainId`);
 
       var multiTokensPromise = [];
       while (n < cohorts.length) {
-         multiTokensPromise.push(
-            getTokensFromDatabase(cohorts[n].address, opts.chainId)
-         );
+         multiTokensPromise.push(getTokensFromDatabase(cohorts[n].address, opts.chainId));
          n++;
       }
 
@@ -62,17 +52,14 @@ export async function allTokens(opts: CohortOptions) {
       }
 
       const tokensMetaData = await Promise.map(TokenPromise, async (values) => {
-         const tokens = await Promise.map(
-            values.tokenMetaData,
-            (items: TokenDetails) => {
-               return {
-                  ...items,
-                  cohortId: values.cohortId,
-                  tokenId: values.tokenId,
-                  tokens: values.tokens,
-               };
-            }
-         );
+         const tokens = await Promise.map(values.tokenMetaData, (items: TokenDetails) => {
+            return {
+               ...items,
+               cohortId: values.cohortId,
+               tokenId: values.tokenId,
+               tokens: values.tokens,
+            };
+         });
          return tokens;
       });
 
@@ -116,36 +103,26 @@ export async function allTokens(opts: CohortOptions) {
 
       var rewards = await Promise.map(oneDayReward, (values) => values);
 
-      var tokenMetaInformation: TokenMetaData[] = tokensInformation.map(
-         (items, i) => {
-            const lockableDays = locking(
-               items.cohortId,
-               items.lockableDays,
-               opts.chainId
-            );
+      var tokenMetaInformation: TokenMetaData[] = tokensInformation.map((items, i) => {
+         const lockableDays = locking(items.cohortId, items.lockableDays, opts.chainId);
 
-            const rewardCap = getRewardCap(
-               opts.chainId,
-               items.cohortId,
-               items.tokenId
-            );
+         const rewardCap = getRewardCap(opts.chainId, items.cohortId, items.tokenId);
 
-            return {
-               tokenId: items.tokenId,
-               decimals: items.decimals,
-               userMinStake: items.userMinStake,
-               userMaxStake: items.userMaxStake,
-               totalStakeLimit: items.totalStakeLimit,
-               lockableDays,
-               optionableStatus: items.optionableStatus,
-               tokenSequenceList: tokenSequence[i],
-               tokenDailyDistribution: rewards[i],
-               cohortId: String(items.cohortId),
-               rewardCap,
-               chainId: opts.chainId,
-            };
-         }
-      );
+         return {
+            tokenId: items.tokenId,
+            decimals: items.decimals,
+            userMinStake: items.userMinStake,
+            userMaxStake: items.userMaxStake,
+            totalStakeLimit: items.totalStakeLimit,
+            lockableDays,
+            optionableStatus: items.optionableStatus,
+            tokenSequenceList: tokenSequence[i],
+            tokenDailyDistribution: rewards[i],
+            cohortId: String(items.cohortId),
+            rewardCap,
+            chainId: opts.chainId,
+         };
+      });
 
       /* console.log(tokenMetaInformation);
 
@@ -170,7 +147,7 @@ export async function allTokens(opts: CohortOptions) {
 /* appBoot().then(() => {
    setTimeout(async () => {
       await allTokens({
-         chainId: 137,
+         chainId: BSC_CHAIN,
       });
    }, 4000);
 }); */

@@ -46,7 +46,7 @@ export function stopAllTheJobsAfterTenMinuates() {
          jobs[`${items.chainId}_${items.eventName}_${items.cohortId}`].stop();
       }
       logger.info(`Jobs Stopped Successfully all data syned from moralis.`);
-   }, 310000);
+   }, 210000);
 }
 
 //startAllJobs();

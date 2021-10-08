@@ -46,7 +46,11 @@ export const deriveStakeDuration = async (
 export const getNoOfPools = async (instance: Contract, chainId: number): Promise<number> => {
    if (instance.address.toLowerCase() === V1.toLowerCase() && chainId === ETH_CHAIN) {
       return 5;
-   } else if (instance.address.toLowerCase() === V2.toLowerCase() && chainId === ETH_CHAIN) {
+   } else if (
+      (instance.address.toLowerCase() === V2.toLowerCase() ||
+         instance.address.toLowerCase() === V3.toLowerCase()) &&
+      chainId === ETH_CHAIN
+   ) {
       return 6;
    }
    const noOfPools = await instance.viewTokensCount();
@@ -66,7 +70,11 @@ export const getIntervalDays = async (
 ): Promise<string[]> => {
    const promises = [];
 
-   if (instance.address.toLowerCase() === V3.toLowerCase() && chainId === ETH_CHAIN) {
+   if (
+      (instance.address.toLowerCase() === V3.toLowerCase() ||
+         instance.address.toLowerCase() === V2.toLowerCase()) &&
+      chainId === ETH_CHAIN
+   ) {
       return ["1", "8", "15", "22", "29", "36"];
    }
 

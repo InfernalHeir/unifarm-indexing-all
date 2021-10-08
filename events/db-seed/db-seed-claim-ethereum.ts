@@ -49,11 +49,11 @@ export async function allClaimEvents(fetchOptions: AllEventsSync) {
       }
    });
 
-   if (fetchOptions.isProxy) {
+   /* if (fetchOptions.isProxy) {
       fs.writeFileSync("./.tmp/events/proxy/ethereum-claim.json", JSON.stringify(claimEvents));
    } else {
       fs.writeFileSync("./.tmp/events/ethereum-claim.json", JSON.stringify(claimEvents));
-   }
+   } */
 
    if (fetchOptions.isProxy) {
       const chunks = _.chunk(claimEvents, 4000);

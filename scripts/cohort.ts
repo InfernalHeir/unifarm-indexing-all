@@ -6,7 +6,7 @@ import { cohortActions } from "../actions/CohortActions";
 import { Promise as BluePromise } from "bluebird";
 import { actionsProperties } from "../actions";
 import { getTag } from "../helpers";
-import { DAYS, ETH_CHAIN, HOURS } from "../constants/index";
+import { BSC_CHAIN, DAYS, ETH_CHAIN, HOURS, POLYGON_CHAIN } from "../constants/index";
 import { getConnection } from "typeorm";
 import { Cohort } from "../db/entity/Cohort";
 import { updateChainId } from "../db/hooks/update";
@@ -14,6 +14,10 @@ import { appBoot } from "../db/createConnection";
 
 export async function allCohortInsertation(opts: CohortOptions) {
    try {
+      if (opts.chainId === undefined) {
+         throw new Error("please provide chainId");
+      }
+
       const manifest = yamlParser(opts.chainId);
 
       const cohorts = manifest.cohorts;
@@ -115,7 +119,7 @@ export async function allCohortInsertation(opts: CohortOptions) {
       logger.info(`Database Sync Successfully for the ${opts.chainId}`);
 
       // close the connection
-      await getConnection("unifarm").close();
+      // await getConnection("unifarm").close();
    } catch (err) {
       console.log(err);
       return;
@@ -131,12 +135,10 @@ async function updaterOfChainId() {
    }
 }
 
-/* allCohortInsertation({
-   chainId: ETH_CHAIN,
-}); */
-
 /* appBoot().then(() => {
-  setTimeout(async () => {
-    await updaterOfChainId();
-  }, 4000);
+   setTimeout(async () => {
+      allCohortInsertation({
+         chainId: Number(process.env.CHAIN_ID),
+      });
+   }, 4000);
 }); */

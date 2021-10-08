@@ -96,7 +96,7 @@ services:
         address: "0xd54B6e5cDC11145eD4c51DC0d3E787B96F026402"
       - 
         version: "V19"
-        address: "0x2ab62e1dc5c7df8bb01bf3cf73fa0a83384065ba"
+        address: "0x328778ee66757955551a71c9e33ced7174196b74"
       - 
         version: "V23"
         address: "0x03d6D1992c8a4C90364fc60cecD67B0B5De8D9d3" 
