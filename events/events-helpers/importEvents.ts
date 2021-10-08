@@ -6,12 +6,7 @@ import {
    insertUnstakeEvent,
 } from "../../db/hooks/insertation";
 import { logger } from "../../log";
-import {
-   ClaimEvent,
-   RefferalClaimEvent,
-   StakeEvent,
-   UnStakeEvent,
-} from "../../types/events";
+import { ClaimEvent, RefferalClaimEvent, StakeEvent, UnStakeEvent } from "../../types/events";
 import { CohortsEvents } from "../events";
 
 const CHAIN_ID = Number(process.env.CHAIN_ID);
@@ -25,8 +20,7 @@ interface ImportEventOptions {
 
 export async function importEvents(importOptions: ImportEventOptions) {
    try {
-      const { transactionHash, blockNumber, address, eventlogs } =
-         importOptions;
+      const { transactionHash, blockNumber, address, eventlogs } = importOptions;
       if (!transactionHash || !blockNumber || !address || !eventlogs) {
          throw new Error(
             `failed to import ${eventlogs.name} event. it will restart service and omitted this block.`
@@ -91,7 +85,7 @@ export async function importEvents(importOptions: ImportEventOptions) {
          return;
       }
    } catch (err) {
-      logger.error(`Something wrong went insertation failed`);
+      logger.error(`Something wrong went insertation failed ${err.message}`);
       return;
    }
 }

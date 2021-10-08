@@ -1,7 +1,7 @@
 name: "indexers"
 version: "1.0.0"
 services:
-  ethereum:
+  rinkeby:
     abi: "./constants/ethereum/ABI.json"
     chainId: 4
     cohorts:
@@ -72,7 +72,7 @@ services:
          - "0xea2524bf1ee9097Cc6A86694c9356378925f90f2"
         - 
          - "0xbCf88f9F1748371152aa862eB84DB70E2EAc2913"           
-  bsc:
+  bsc testnet:
     abi: "./constant/bsc/ABI.json"
     chainId: 97
     cohorts:
@@ -105,7 +105,7 @@ services:
        - 
       - 
        - "0xb8df26d3fb1fa1c53510baa73b8f5a15bc0094fe"        
-  polygon:
+  mumbai:
     abi: "./constant/polygon/ABI.json"
     chainId: 80001
     cohorts:
