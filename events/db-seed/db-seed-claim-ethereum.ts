@@ -21,7 +21,7 @@ export async function allClaimEvents(fetchOptions: AllEventsSync) {
          chainId: ETH_CHAIN,
          eventName: CohortsEvents.CLAIM,
          eventParams: [null, null, null, null, null],
-         cohorts: ["0xD6Ce88C332a8168724b69A3A03e23DDf6Ac40408"],
+         //cohorts: ["0xD6Ce88C332a8168724b69A3A03e23DDf6Ac40408"],
       });
    } else {
       events = await readAllCohortsEvents({
