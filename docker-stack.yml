@@ -4,9 +4,9 @@ services:
       image: postgres:latest
       env_file: "./postgres/.env.file"
       volumes:
-              - postgres:/var/lib/postgresql/data
+         - postgres-data:/data/postgres
       ports:
-         - "5432:5432"
+          - "0.0.0.0:5432:5432"
       networks:
          - unifarm
       deploy:
@@ -18,14 +18,16 @@ services:
             condition: on-failure
    graph:
       image: graph:latest
-      env_file: "./.env.testnet"
+      env_file: "./.env.prod"
       volumes:
          - graph:/graph
       ports:
-         - "8080:8080"   
+         - "0.0.0.0:8080:8080"   
       networks:
          - unifarm
-      command: ["run","graph:start"]   
+      command: ["run","graph:start"]
+      depends_on:
+         - postgres   
       deploy:
          mode: "replicated"
          replicas: 3
@@ -35,14 +37,16 @@ services:
             condition: on-failure
    eth-events-sync:
       image: events-listener:latest
-      env_file: "./.env.testnet"
+      env_file: "./.env.prod"
       environment:
          - CHAIN_ID=4
       volumes:
          - eth_events:/events
       networks:
          - unifarm
-      command: ["run","listener-server:start"]    
+      command: ["run","listener-server:start"]
+      depends_on:
+         - postgres      
       deploy:
          mode: "replicated"
          replicas: 2
@@ -50,9 +54,10 @@ services:
             max_replicas_per_node: 1
          restart_policy:
             condition: on-failure
+      restart: "on-failure"      
    bsc-events-sync:
       image: events-listener:latest
-      env_file: "./.env.testnet"
+      env_file: "./.env.prod"
       environment:
          - CHAIN_ID=97
       volumes:
@@ -60,6 +65,8 @@ services:
       networks:
          - unifarm
       command: ["run","listener-server:start"]    
+      depends_on:
+         - postgres
       deploy:
          mode: "replicated"
          replicas: 2
@@ -70,14 +77,16 @@ services:
 
    polygon-events-sync:
       image: events-listener:latest
-      env_file: "./.env.testnet"
+      env_file: "./.env.prod"
       environment:
          - CHAIN_ID=80001
       volumes:
          - polygon_events:/events
       networks:
          - unifarm
-      command: ["run","listener-server:start"]     
+      command: ["run","listener-server:start"]
+      depends_on:
+         - postgres     
       deploy:
          mode: "replicated"
          replicas: 2
@@ -101,44 +110,13 @@ services:
             constraints:
                - "node.role==manager"
          restart_policy:
-            condition: on-failure
-
-   graph_nginx:
-       image: nginx:latest
-       ports:
-         - "80:80"
-         - "443:443"
-       networks:
-         - unifarm
-       command: ["nginx", "-g", "daemon off;"]  
-       volumes:
-         - /nginx/dev.graph.unifarm.co.conf:/etc/nginx/conf.d
-         - certbot-etc:/etc/letsencrypt
-         - certbot-var:/var/lib/letsencrypt
-         - dhparam:/etc/ssl/certs  
-       deploy:
-         mode: "replicated"
-         restart_policy:
-            condition: on-failure
-
-   certbot:
-    image: certbot/certbot
-    volumes:
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
-    depends_on:
-      - graph_nginx
-    command: certonly --dry-run -m bhupendra.bisht@oropocket.com --agree-tos --no-eff-email -d dev.graph.unifarm.co
-         
+            condition: on-failure        
 networks:
    unifarm:
 volumes:
-   postgres:
+   postgres-data:
    graph:
    eth_events:
    bsc_events:
    polygon_events:
-   redis-data:        
-   certbot-etc:
-   certbot-var:
-   dhparam:
+   redis-data:

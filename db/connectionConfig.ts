@@ -8,7 +8,7 @@ import { Token } from "./entity/Token";
 import { Unstake } from "./entity/Unstake";
 
 // config
-dotenv.config({ path: `.env.testnet` });
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 
 // client options
 type ClientOptions = ConnectionOptions;

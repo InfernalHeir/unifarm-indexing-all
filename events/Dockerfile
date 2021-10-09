@@ -1,30 +1,20 @@
-FROM node:latest as builder
+FROM node:14-alpine
 
 LABEL MAINTAINER Bhupendra Bisht "<bhupendra.bisht@oropocket.com>"
 LABEL ORGANIZATION="<Unifarm>"
 
-WORKDIR /unifarm-events
+WORKDIR /events
 
-RUN node -v \
-    npm -v \
-    npm install -g pm2 \
-    mkdir /unifarm-events/storage
+COPY ./package.json /events/package.json
 
-COPY ./package.json /unifarm-events/package.json
-
-ADD ./ /unifarm-events/
+ADD ./ /events/
 
 RUN npm install
 RUN npm run listener-server:build
-
-FROM node:14-alpine
-
-WORKDIR /events 
-
-COPY --from=builder /unifarm-events/package.json ./package.json
-COPY --from=builder /unifarm-events/events/build ./build
+RUN npm global add pm2
 
 VOLUME ["/events"]
 
 ENTRYPOINT [ "npm" ]
-CMD ["listener-server:start"]
+
+CMD ["run","listener-server:start"]

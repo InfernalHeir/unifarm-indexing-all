@@ -6,8 +6,9 @@ import { typeDefs } from "./typeDefs";
 import { DocumentNode } from "graphql";
 import { appBoot } from "../db/createConnection";
 import { config } from "dotenv";
+import { hostname } from "os";
 
-config({ path: ".env.testnet" });
+config({ path: `.env.${process.env.NODE_ENV}` });
 
 async function startApolloServer(typeDefs: DocumentNode, resolvers: any) {
    const app = express();
@@ -25,7 +26,9 @@ async function startApolloServer(typeDefs: DocumentNode, resolvers: any) {
    server.applyMiddleware({ app, cors: true });
 
    app.listen(process.env.GRAPH_PORT, () => {
-      logger.info(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`);
+      logger.info(
+         `🚀 Server ready at http://${hostname()}:${process.env.GRAPH_PORT}/${server.graphqlPath}`
+      );
    });
 }
 
