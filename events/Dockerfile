@@ -27,5 +27,3 @@ VOLUME ["/events"]
 
 ENTRYPOINT [ "npm" ]
 CMD ["listener-server:start"]
-
-EXPOSE 9385 
