@@ -4,9 +4,9 @@ services:
       image: postgres:latest
       env_file: "./postgres/.env.file"
       volumes:
-              - postgres:/var/lib/postgresql/data
+              - postgres-data:/data/postgres
       ports:
-         - "5432:5432"
+          - "0.0.0.0:5432:5432"
       networks:
          - unifarm
       deploy:
@@ -22,10 +22,12 @@ services:
       volumes:
          - graph:/graph
       ports:
-         - "8080:8080"   
+         - "0.0.0.0:8080:8080"   
       networks:
          - unifarm
-      command: ["run","graph:start"]   
+      command: ["run","graph:start"]
+      depends_on:
+              - postgres   
       deploy:
          mode: "replicated"
          replicas: 3
@@ -42,7 +44,9 @@ services:
          - eth_events:/events
       networks:
          - unifarm
-      command: ["run","listener-server:start"]    
+      command: ["run","listener-server:start"]
+      depends_on:
+              - postgres      
       deploy:
          mode: "replicated"
          replicas: 2
@@ -60,6 +64,8 @@ services:
       networks:
          - unifarm
       command: ["run","listener-server:start"]    
+      depends_on:
+              - postgres
       deploy:
          mode: "replicated"
          replicas: 2
@@ -111,11 +117,6 @@ services:
        networks:
          - unifarm
        command: ["nginx", "-g", "daemon off;"]  
-       volumes:
-         - /nginx/dev.graph.unifarm.co.conf:/etc/nginx/conf.d
-         - certbot-etc:/etc/letsencrypt
-         - certbot-var:/var/lib/letsencrypt
-         - dhparam:/etc/ssl/certs  
        deploy:
          mode: "replicated"
          restart_policy:
@@ -133,7 +134,7 @@ services:
 networks:
    unifarm:
 volumes:
-   postgres:
+   postgres-data:
    graph:
    eth_events:
    bsc_events:
