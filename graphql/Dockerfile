@@ -12,7 +12,7 @@ ADD ./log /graph/log
 
 RUN npm install
 RUN npm run graph:build
-RUN npm global add pm2
+RUN npm install -g pm2
 RUN mkdir /graph/storage
 RUN mkdir /graph/storage/logs
 

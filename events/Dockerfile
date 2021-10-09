@@ -11,7 +11,7 @@ ADD ./ /events/
 
 RUN npm install
 RUN npm run listener-server:build
-RUN npm global add pm2
+RUN npm install -g pm2
 
 VOLUME ["/events"]
 
