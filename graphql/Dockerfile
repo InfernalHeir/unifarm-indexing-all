@@ -22,6 +22,7 @@ FROM node:14-alpine
 
 WORKDIR /graph
 
+COPY --from=builder /graph-server/package.json ./
 COPY --from=builder /graph-server/graphql/build ./
 
 VOLUME ["/graph"]

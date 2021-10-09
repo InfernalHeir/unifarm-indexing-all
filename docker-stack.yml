@@ -110,6 +110,7 @@ services:
          - "443:443"
        networks:
          - unifarm
+       command: ["nginx", "-g", "daemon off;"]  
        volumes:
          - /nginx/graph.unifarm.co.conf:/etc/nginx/conf.d
          - certbot-etc:/etc/letsencrypt
@@ -140,4 +141,4 @@ volumes:
    redis-data:        
    certbot-etc:
    certbot-var:
-   dhparam:         
+   dhparam:
