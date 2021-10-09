@@ -1,4 +1,4 @@
-FROM node:14-alpine
+FROM node:latest
 
 LABEL MAINTAINER Bhupendra Bisht "<bhupendra.bisht@oropocket.com>"
 LABEL ORGANIZATION="<Unifarm>"
