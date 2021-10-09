@@ -30,7 +30,7 @@ services:
          mode: "replicated"
          replicas: 3
          placement:
-            max_replicas_per_node: 1
+            max_replicas_per_node: 2
          restart_policy:
             condition: on-failure
    eth-events-sync:
@@ -112,7 +112,7 @@ services:
          - unifarm
        command: ["nginx", "-g", "daemon off;"]  
        volumes:
-         - /nginx/graph.unifarm.co.conf:/etc/nginx/conf.d
+         - /nginx/dev.graph.unifarm.co.conf:/etc/nginx/conf.d
          - certbot-etc:/etc/letsencrypt
          - certbot-var:/var/lib/letsencrypt
          - dhparam:/etc/ssl/certs  
@@ -128,7 +128,7 @@ services:
       - certbot-var:/var/lib/letsencrypt
     depends_on:
       - graph_nginx
-    command: certonly --dry-run -m bhupendra.bisht@oropocket.com --agree-tos --no-eff-email -d graph.unifarm.co
+    command: certonly --dry-run -m bhupendra.bisht@oropocket.com --agree-tos --no-eff-email -d dev.graph.unifarm.co
          
 networks:
    unifarm:
