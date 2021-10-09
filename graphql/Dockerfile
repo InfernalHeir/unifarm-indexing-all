@@ -1,20 +1,28 @@
-FROM node:14-alpine
+FROM node:latest as builder
 
 LABEL MAINTAINER Bhupendra Bisht "<bhupendra.bisht@oropocket.com>"
 LABEL ORGANIZATION="<Unifarm>"
 
-WORKDIR /graph
+WORKDIR /graphql-server
 
-ADD ./package.json /graph/package.json
-ADD ./graphql /graph/graphql
-ADD ./db /graph/db
-ADD ./log /graph/log
+ADD ./package.json /graphql-server/package.json
+ADD ./graphql /graphql-server/graphql
+ADD ./db /graphql-server/db
+ADD ./log /graphql-server/log
 
 RUN npm install
 RUN npm run graph:build
-RUN npm install -g pm2
+
+FROM node:14-alpine
+
+WORKDIR /graph
+
 RUN mkdir /graph/storage
 RUN mkdir /graph/storage/logs
+
+COPY --from=builder /graphql-server/graphql/build ./build
+COPY --from=builder /graphql-server/package.json ./package.json
+COPY --from=builder /graphql-server/node_modules ./node_modules
 
 VOLUME ["/graph"]
 
