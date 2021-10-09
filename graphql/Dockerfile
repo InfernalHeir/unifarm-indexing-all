@@ -5,8 +5,6 @@ LABEL ORGANIZATION="<Unifarm>"
 
 WORKDIR /graph
 
-RUN yarn -v 
-
 ADD ./package.json /graph/package.json
 ADD ./graphql /graph/graphql
 ADD ./db /graph/db
