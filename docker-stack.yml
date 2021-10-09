@@ -21,8 +21,6 @@ services:
       env_file: "./env.prod"
       volumes:
          - graph:/graph
-      ports:
-         - "8080:8080"
       networks:
          - unifarm
       command: npm run graph:start   
@@ -37,11 +35,9 @@ services:
       image: events-listener:latest
       env_file: "./env.prod"
       environment:
-         - CHAIN_ID=1
+         - CHAIN_ID=4
       volumes:
          - eth_events:/events
-      ports:
-         - "9385:9385"
       networks:
          - unifarm
       command: npm run listener-server:start   
@@ -56,11 +52,9 @@ services:
       image: events-listener:latest
       env_file: "./env.prod"
       environment:
-         - CHAIN_ID=56
+         - CHAIN_ID=97
       volumes:
          - bsc_events:/events
-      ports:
-         - "9385:9385"
       networks:
          - unifarm
       command: npm run listener-server:start    
@@ -76,11 +70,9 @@ services:
       image: events-listener:latest
       env_file: "./env.prod"
       environment:
-         - CHAIN_ID=137
+         - CHAIN_ID=80001
       volumes:
          - polygon_events:/events
-      ports:
-         - "9385:9385"
       networks:
          - unifarm
       command: npm run listener-server:start    
@@ -99,12 +91,13 @@ services:
          - "6379:6379"
       networks:
          - unifarm
+      command: redis-server --appendonly yes  --requirepass ${REDIS_PASSWORD}   
       deploy:
          mode: "replicated"
          replicas: 1
          placement:
             constraints:
-               - ["node.role == manager"]
+               - "node.role==manager"
          restart_policy:
             condition: on-failure
 
