@@ -21,8 +21,8 @@ FROM node:14-alpine
 
 WORKDIR /events 
 
-COPY --from=builder /unifarm-events/package.json ./
-COPY --from=builder /unifarm-events/events/build ./
+COPY --from=builder /unifarm-events/package.json ./package.json
+COPY --from=builder /unifarm-events/events/build ./build
 
 VOLUME ["/events"]
 
