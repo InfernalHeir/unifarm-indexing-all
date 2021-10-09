@@ -4,7 +4,7 @@ services:
       image: postgres:latest
       env_file: "./postgres/.env.file"
       volumes:
-         - postgres:/data/postgres
+              - postgres:/var/lib/postgresql/data
       ports:
          - "5432:5432"
       networks:
@@ -18,14 +18,14 @@ services:
             condition: on-failure
    graph:
       image: graph:latest
-      env_file: "./env.prod"
+      env_file: "./.env.testnet"
       volumes:
          - graph:/graph
       ports:
          - "8080:8080"   
       networks:
          - unifarm
-      command: npm run graph:start   
+      command: ["run","graph:start"]   
       deploy:
          mode: "replicated"
          replicas: 3
@@ -35,14 +35,14 @@ services:
             condition: on-failure
    eth-events-sync:
       image: events-listener:latest
-      env_file: "./env.prod"
+      env_file: "./.env.testnet"
       environment:
          - CHAIN_ID=4
       volumes:
          - eth_events:/events
       networks:
          - unifarm
-      command: npm run listener-server:start   
+      command: ["run","listener-server:start"]    
       deploy:
          mode: "replicated"
          replicas: 2
@@ -52,14 +52,14 @@ services:
             condition: on-failure
    bsc-events-sync:
       image: events-listener:latest
-      env_file: "./env.prod"
+      env_file: "./.env.testnet"
       environment:
          - CHAIN_ID=97
       volumes:
          - bsc_events:/events
       networks:
          - unifarm
-      command: npm run listener-server:start    
+      command: ["run","listener-server:start"]    
       deploy:
          mode: "replicated"
          replicas: 2
@@ -70,14 +70,14 @@ services:
 
    polygon-events-sync:
       image: events-listener:latest
-      env_file: "./env.prod"
+      env_file: "./.env.testnet"
       environment:
          - CHAIN_ID=80001
       volumes:
          - polygon_events:/events
       networks:
          - unifarm
-      command: npm run listener-server:start    
+      command: ["run","listener-server:start"]     
       deploy:
          mode: "replicated"
          replicas: 2
@@ -88,7 +88,7 @@ services:
    redis:
       image: redis:latest
       volumes:
-         - redis:/data
+         - redis-data:/data
       ports:
          - "6379:6379"
       networks:
@@ -137,6 +137,7 @@ volumes:
    eth_events:
    bsc_events:
    polygon_events:
+   redis-data:        
    certbot-etc:
    certbot-var:
    dhparam:         
