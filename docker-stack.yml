@@ -21,6 +21,8 @@ services:
       env_file: "./env.prod"
       volumes:
          - graph:/graph
+      ports:
+         - "8080:8080"   
       networks:
          - unifarm
       command: npm run graph:start   
