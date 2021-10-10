@@ -112,18 +112,18 @@ services:
             condition: on-failure
    graph-nginx:
       image: jonasal/nginx-certbot:latest
-      restart: unless-stopped
       environment:
          - CERTBOT_EMAIL=bhupendra.bisht@oropocket.com
       env_file:
          - ./nginx/nginx-certbot.env
       ports:
-         - 80:80
-         - 443:443
+         - "80:80"
+         - "443:443"
       volumes:
          - nginx_secrets:/etc/letsencrypt
-         - ./nginx/dev.graph.unifarm.co.conf:/etc/nginx/user_conf.d
-      command: ["nginx", "-g", "daemon off;"]  
+         - ${pwd}/nginx/user_conf.d:/etc/nginx/user_conf.d:ro
+      networks:
+         - unifarm     
       deploy:
          mode: "replicated"
          replicas: 2
