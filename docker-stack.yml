@@ -12,8 +12,6 @@ services:
       deploy:
          mode: "replicated"
          replicas: 3
-         placement:
-            max_replicas_per_node: 2
          restart_policy:
             condition: on-failure
    graph:
@@ -31,8 +29,6 @@ services:
       deploy:
          mode: "replicated"
          replicas: 3
-         placement:
-            max_replicas_per_node: 2
          restart_policy:
             condition: on-failure
    eth-events-sync:
@@ -50,8 +46,6 @@ services:
       deploy:
          mode: "replicated"
          replicas: 2
-         placement:
-            max_replicas_per_node: 1
          restart_policy:
             condition: on-failure     
    bsc-events-sync:
@@ -69,8 +63,6 @@ services:
       deploy:
          mode: "replicated"
          replicas: 2
-         placement:
-            max_replicas_per_node: 1
          restart_policy:
             condition: on-failure
 
@@ -89,8 +81,6 @@ services:
       deploy:
          mode: "replicated"
          replicas: 2
-         placement:
-            max_replicas_per_node: 1
          restart_policy:
             condition: on-failure
    redis:
@@ -109,27 +99,6 @@ services:
             constraints:
                - "node.role==manager"
          restart_policy:
-            condition: on-failure
-   graph-nginx:
-      image: jonasal/nginx-certbot:latest
-      restart: unless-stopped
-      environment:
-         - CERTBOT_EMAIL=bhupendra.bisht@oropocket.com
-      env_file:
-         - ./nginx/nginx-certbot.env
-      ports:
-         - 80:80
-         - 443:443
-      volumes:
-         - nginx_secrets:/etc/letsencrypt
-         - ./nginx/dev.graph.unifarm.co.conf:/etc/nginx/user_conf.d
-      command: ["nginx", "-g", "daemon off;"]  
-      deploy:
-         mode: "replicated"
-         replicas: 2
-         placement:
-            max_replicas_per_node: 1
-         restart_policy:
             condition: on-failure                 
 networks:
    unifarm:
@@ -139,5 +108,4 @@ volumes:
    eth_events:
    bsc_events:
    polygon_events:
-   redis-data:
-   nginx_secrets:        
+   redis-data:      
