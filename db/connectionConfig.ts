@@ -1,14 +1,14 @@
 import dotenv from "dotenv";
 import { ConnectionOptions } from "typeorm";
+import { Claim } from "./entity/Claim";
+import { Cohort } from "./entity/Cohort";
+import { RefferralClaim } from "./entity/RefferalClaim";
+import { Stake } from "./entity/Stake";
+import { Token } from "./entity/Token";
+import { Unstake } from "./entity/Unstake";
 
 // config
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
-
-var entities = "./db/entity/*.ts";
-
-if (process.env.NODE_ENV === "prod") {
-   entities = "./build/db/entity/*.js";
-}
 
 // client options
 type ClientOptions = ConnectionOptions;
@@ -22,7 +22,7 @@ export const clientOps: ClientOptions = {
    database: String(process.env.DB_NAME),
    synchronize: true,
    logging: false,
-   entities: [entities],
+   entities: [Cohort, Token, Stake, Unstake, Claim, RefferralClaim],
    logNotifications: true,
    name: "unifarm",
 };
