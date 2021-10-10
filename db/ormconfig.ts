@@ -32,4 +32,4 @@ const clientOps: ClientOptions = {
    name: "unifarm",
 };
 
-export = clientOps;
+export default clientOps;
