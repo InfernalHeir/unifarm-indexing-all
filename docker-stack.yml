@@ -114,13 +114,14 @@ networks:
    unifarm:
 volumes:
    postgres-data:
-      driver: "gfs"
+      driver: "glusterfs"
    graph:
-      driver: "gfs"
+      driver: "glusterfs"
    eth_events:
-      driver: "gfs"
+      driver: "glusterfs"
    bsc_events:
-      driver: "gfs"
+      driver: "glusterfs"
    polygon_events:
-      driver: "gfs"
-   redis-data:      
+      driver: "glusterfs"
+   redis-data:
+      driver: "glusterfs"      
