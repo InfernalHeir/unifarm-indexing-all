@@ -4,7 +4,7 @@ services:
       image: postgres:latest
       env_file: "./postgres/.env.file"
       volumes:
-         - postgres-data:/data/postgres
+         - postgres-data:/var/lib/postgresql/data
       ports:
           - "0.0.0.0:5432:5432"
       networks:
@@ -123,6 +123,7 @@ services:
       volumes:
          - nginx_secrets:/etc/letsencrypt
          - ./nginx/dev.graph.unifarm.co.conf:/etc/nginx/user_conf.d
+      command: ["nginx", "-g", "daemon off;"]  
       deploy:
          mode: "replicated"
          replicas: 2
