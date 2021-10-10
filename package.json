@@ -4,7 +4,7 @@
    "main": "index.ts",
    "license": "MIT",
    "scripts": {
-      "seed:all:cohorts": "export NODE_ENV=dev && nodemon --ext '.ts' ./scripts/sync-all-cohorts.ts",
+      "seed:all:cohorts": "export NODE_ENV=dev && ts-node ./scripts/sync-all-cohorts.ts",
       "seed:all:tokens": "export NODE_ENV=dev && nodemon --ext '.ts' ./scripts/seed-all-tokens.ts",
       "seed:all:events": "export NODE_ENV=dev && nodemon --ext '.ts' ./index.ts",
       "start:dev:graph-server": "export NODE_ENV=dev && nodemon --ext '.ts' ./graphql/graph.ts",

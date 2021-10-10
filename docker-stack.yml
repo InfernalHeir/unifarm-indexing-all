@@ -12,6 +12,8 @@ services:
       deploy:
          mode: "replicated"
          replicas: 3
+         placement:
+            max_replicas_per_node: 2
          restart_policy:
             condition: on-failure
    graph:
@@ -29,6 +31,8 @@ services:
       deploy:
          mode: "replicated"
          replicas: 3
+         placement:
+            max_replicas_per_node: 2
          restart_policy:
             condition: on-failure
    eth-events-sync:
@@ -46,6 +50,8 @@ services:
       deploy:
          mode: "replicated"
          replicas: 2
+         placement:
+            max_replicas_per_node: 1
          restart_policy:
             condition: on-failure     
    bsc-events-sync:
@@ -63,6 +69,8 @@ services:
       deploy:
          mode: "replicated"
          replicas: 2
+         placement:
+            max_replicas_per_node: 2
          restart_policy:
             condition: on-failure
 
@@ -81,6 +89,8 @@ services:
       deploy:
          mode: "replicated"
          replicas: 2
+         placement:
+            max_replicas_per_node: 2
          restart_policy:
             condition: on-failure
    redis:
@@ -99,4 +109,13 @@ services:
             constraints:
                - "node.role==manager"
          restart_policy:
-            condition: on-failure      
+            condition: on-failure                 
+networks:
+   unifarm:
+volumes:
+   postgres-data:
+   graph:
+   eth_events:
+   bsc_events:
+   polygon_events:
+   redis-data:      

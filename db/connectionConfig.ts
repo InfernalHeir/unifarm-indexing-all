@@ -20,7 +20,7 @@ export const clientOps: ClientOptions = {
    username: String(process.env.DB_USERNAME),
    password: String(process.env.DB_PASSWORD),
    database: String(process.env.DB_NAME),
-   synchronize: true,
+   synchronize: false,
    logging: false,
    entities: [Cohort, Token, Stake, Unstake, Claim, RefferralClaim],
    logNotifications: true,
