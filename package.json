@@ -4,6 +4,10 @@
    "main": "index.ts",
    "license": "MIT",
    "scripts": {
+      "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js --config ./db/ormconfig.ts -c unifarm",
+      "migration:generate": "yarn typeorm migration:generate -n UnifarmInit",
+      "migration:up": "yarn typeorm migration:run",
+      "migration:down": "yarn typeorm migration:revert",
       "seed:all:cohorts": "export NODE_ENV=dev && ts-node ./scripts/sync-all-cohorts.ts",
       "seed:all:tokens": "export NODE_ENV=dev && nodemon --ext '.ts' ./scripts/seed-all-tokens.ts",
       "seed:all:events": "export NODE_ENV=dev && nodemon --ext '.ts' ./index.ts",
@@ -48,6 +52,7 @@
       "redis": "^3.1.2",
       "reflect-metadata": "^0.1.13",
       "rimraf": "^3.0.2",
+      "tsconfig-paths": "^3.11.0",
       "typeorm": "^0.2.37",
       "web3": "^1.5.3",
       "winston": "^3.3.3",

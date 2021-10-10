@@ -13,7 +13,7 @@ dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 // client options
 type ClientOptions = ConnectionOptions;
 
-export const clientOps: ClientOptions = {
+const clientOps: ClientOptions = {
    type: "postgres",
    host: String(process.env.DB_HOSTNAME),
    port: Number(process.env.PORT),
@@ -23,6 +23,13 @@ export const clientOps: ClientOptions = {
    synchronize: false,
    logging: false,
    entities: [Cohort, Token, Stake, Unstake, Claim, RefferralClaim],
+   migrations: [`${process.env.PWD}/db/migrations/*.ts`],
+   cli: {
+      entitiesDir: `./db/entities`,
+      migrationsDir: `./db/migrations`,
+   },
    logNotifications: true,
    name: "unifarm",
 };
+
+export = clientOps;

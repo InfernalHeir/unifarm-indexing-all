@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import { logger } from "../log/index";
 import { Connection, getConnectionManager } from "typeorm";
-import { clientOps } from "./connectionConfig";
+import clientOps from "./ormconfig";
 
 export async function bootstarp(): Promise<Connection | undefined> {
    try {

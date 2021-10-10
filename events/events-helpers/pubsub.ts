@@ -18,7 +18,9 @@ export function activateListener(provider: Web3, addresses: string[]) {
       })
       .on("connected", (subscriptionId) => {
          logger.info(
-            `ActivateListener:: listners activated successfully subscription id is ${subscriptionId}`
+            `ActivateListener:: listners activated successfully subscription id is ${subscriptionId} for chainId ${
+               chainNameById[Number(process.env.CHAIN_ID)]
+            }`
          );
       })
       .on("data", async (event) => {
@@ -33,9 +35,9 @@ export function activateListener(provider: Web3, addresses: string[]) {
                logger.info(
                   `Db sync succesfully for ${event.address} for ${
                      chainNameById[Number(process.env.CHAIN_ID)]
-                  } chain. event name is ${
-                     logs.name
-                  } and last fetched block is ${event.blockNumber}.`
+                  } chain. event name is ${logs.name} and last fetched block is ${
+                     event.blockNumber
+                  }.`
                );
             })
             .catch((err) => {
@@ -44,7 +46,7 @@ export function activateListener(provider: Web3, addresses: string[]) {
             });
       })
       .on("changed", (event) => {
-         console.log(event);
+         //
       })
       .on("error", (err) => {
          logger.error(`ActivateListener:: ${err.message}`);

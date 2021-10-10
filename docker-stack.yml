@@ -114,8 +114,13 @@ networks:
    unifarm:
 volumes:
    postgres-data:
+      driver: "gfs"
    graph:
+      driver: "gfs"
    eth_events:
+      driver: "gfs"
    bsc_events:
+      driver: "gfs"
    polygon_events:
+      driver: "gfs"
    redis-data:      
