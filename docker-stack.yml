@@ -99,4 +99,20 @@ services:
             constraints:
                - "node.role==manager"
          restart_policy:
-            condition: on-failure      
+            condition: on-failure
+networks:
+   unifarm:
+       external: true    
+volumes:
+   postgres-data:
+       external: true    
+   graph:
+       external: true    
+   eth_events:
+       external: true
+   bsc_events:
+       external: true
+   polygon_events:
+       external: true
+   redis-data:
+       external: true           
