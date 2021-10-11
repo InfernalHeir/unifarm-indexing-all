@@ -23,6 +23,7 @@ RUN mkdir /graph/storage/logs
 COPY --from=builder /graphql-server/graphql/build ./build
 COPY --from=builder /graphql-server/package.json ./package.json
 COPY --from=builder /graphql-server/node_modules ./node_modules
+COPY --from=builder /graphql-server/db/ca-certificate.crt ./ca-certificate.crt
 
 VOLUME ["/graph"]
 

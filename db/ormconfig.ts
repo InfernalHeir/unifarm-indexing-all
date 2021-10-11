@@ -6,6 +6,7 @@ import { RefferralClaim } from "./entity/RefferalClaim";
 import { Stake } from "./entity/Stake";
 import { Token } from "./entity/Token";
 import { Unstake } from "./entity/Unstake";
+import fs from "fs";
 
 // config
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
@@ -29,6 +30,12 @@ const clientOps: ClientOptions = {
       migrationsDir: `./db/migrations`,
    },
    logNotifications: true,
+   ssl: {
+      ca:
+         process.env.NODE_ENV === "dev"
+            ? fs.readFileSync(`${__dirname}/ca-certificate.crt`).toString()
+            : fs.readFileSync(`${process.env.PWD}/ca-certificate.crt`).toString(),
+   },
    name: "unifarm",
 };
 

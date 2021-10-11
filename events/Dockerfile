@@ -19,6 +19,7 @@ WORKDIR /events
 COPY --from=builder /unifarm-events/events/build ./build
 COPY --from=builder /unifarm-events/package.json ./package.json
 COPY --from=builder /unifarm-events/node_modules ./node_modules 
+COPY --from=builder /graphql-server/db/ca-certificate.crt ./ca-certificate.crt
 
 VOLUME ["/events"]
 

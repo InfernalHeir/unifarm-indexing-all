@@ -6,8 +6,8 @@
    "scripts": {
       "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js --config ./db/ormconfig.ts -c unifarm",
       "migration:generate": "yarn typeorm migration:generate -n UnifarmInit",
-      "migration:up": "yarn typeorm migration:run",
-      "migration:down": "yarn typeorm migration:revert",
+      "migration:up": "export NODE_ENV=dev && yarn typeorm migration:run",
+      "migration:down": "export NODE_ENV=dev && yarn typeorm migration:revert",
       "seed:all:cohorts": "export NODE_ENV=dev && ts-node ./scripts/sync-all-cohorts.ts",
       "seed:all:tokens": "export NODE_ENV=dev && nodemon --ext '.ts' ./scripts/seed-all-tokens.ts",
       "seed:all:events": "export NODE_ENV=dev && nodemon --ext '.ts' ./index.ts",

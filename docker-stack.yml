@@ -1,33 +1,15 @@
 version: "3.8"
 services:
-   postgres:
-      image: postgres:latest
-      env_file: "./postgres/.env.file"
-      volumes:
-         - postgres-data:/var/lib/postgresql/data
-      ports:
-          - "5432:5432"
-      networks:
-         - unifarm
-      deploy:
-         mode: "replicated"
-         replicas: 3
-         placement:
-            max_replicas_per_node: 2
-         restart_policy:
-            condition: on-failure
    graph:
       image: graph:latest
       env_file: "./.env.prod"
       volumes:
          - graph:/graph
       ports:
-         - "0.0.0.0:8080:8080"   
+         - "8080:8080"   
       networks:
          - unifarm
-      command: ["run","graph:start"]
-      depends_on:
-         - postgres   
+      command: ["run","graph:start"]   
       deploy:
          mode: "replicated"
          replicas: 3
@@ -44,14 +26,9 @@ services:
          - eth_events:/events
       networks:
          - unifarm
-      command: ["run","listener-server:start"]
-      depends_on:
-         - postgres      
+      command: ["run","listener-server:start"]     
       deploy:
          mode: "replicated"
-         replicas: 2
-         placement:
-            max_replicas_per_node: 1
          restart_policy:
             condition: on-failure     
    bsc-events-sync:
@@ -63,14 +40,9 @@ services:
          - bsc_events:/events
       networks:
          - unifarm
-      command: ["run","listener-server:start"]    
-      depends_on:
-         - postgres
+      command: ["run","listener-server:start"]
       deploy:
          mode: "replicated"
-         replicas: 2
-         placement:
-            max_replicas_per_node: 2
          restart_policy:
             condition: on-failure
 
@@ -83,14 +55,9 @@ services:
          - polygon_events:/events
       networks:
          - unifarm
-      command: ["run","listener-server:start"]
-      depends_on:
-         - postgres     
+      command: ["run","listener-server:start"]     
       deploy:
          mode: "replicated"
-         replicas: 2
-         placement:
-            max_replicas_per_node: 2
          restart_policy:
             condition: on-failure
    redis:
@@ -113,15 +80,8 @@ services:
 networks:
    unifarm:
 volumes:
-   postgres-data:
-      driver: "glusterfs"
    graph:
-      driver: "glusterfs"
    eth_events:
-      driver: "glusterfs"
    bsc_events:
-      driver: "glusterfs"
    polygon_events:
-      driver: "glusterfs"
-   redis-data:
-      driver: "glusterfs"      
+   redis-data:      
