@@ -6,7 +6,6 @@ import { typeDefs } from "./typeDefs";
 import { DocumentNode } from "graphql";
 import { appBoot } from "../db/createConnection";
 import { config } from "dotenv";
-import helmet from "helmet";
 import { ApolloServerPluginCacheControl } from "apollo-server-core";
 
 config({ path: `.env.${process.env.NODE_ENV}` });
@@ -16,9 +15,6 @@ async function startApolloServer(typeDefs: DocumentNode, resolvers: any) {
 
    // take connection from database
    await appBoot();
-
-   // configure helmet
-   app.use(helmet());
 
    const server = new ApolloServer({
       typeDefs,
@@ -35,7 +31,7 @@ async function startApolloServer(typeDefs: DocumentNode, resolvers: any) {
 
    await server.start();
 
-   server.applyMiddleware({ app, cors: true });
+   server.applyMiddleware({ app, cors: false });
 
    app.listen(process.env.GRAPH_PORT, () => {
       logger.info(
