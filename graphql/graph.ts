@@ -31,7 +31,7 @@ async function startApolloServer(typeDefs: DocumentNode, resolvers: any) {
 
    await server.start();
 
-   server.applyMiddleware({ app, cors: false });
+   server.applyMiddleware({ app, cors: true });
 
    app.listen(process.env.GRAPH_PORT, () => {
       logger.info(
