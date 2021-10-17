@@ -144,3 +144,4 @@
 2021-10-07T09:31:45.960Z [__UNIFARM__] error: Tokens:: Tokens Fetched Failed
 2021-10-07T10:22:12.370Z [__UNIFARM__] error: AllStakes:: Stakes cannot found.
 2021-10-07T10:23:01.141Z [__UNIFARM__] error: AllStakes:: Stakes cannot found.
+2021-10-17T11:14:26.566Z [__UNIFARM__] error: no pg_hba.conf entry for host "103.248.35.181", user "unifarm_testnet", database "unifarm_testnet_indexing", SSL off
