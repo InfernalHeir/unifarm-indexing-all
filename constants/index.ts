@@ -1,3 +1,4 @@
+   
 import { Chain } from "../types/type";
 
 export const DAYS = 86400;

@@ -6,7 +6,7 @@ import { cohortActions } from "../actions/CohortActions";
 import { Promise as BluePromise } from "bluebird";
 import { actionsProperties } from "../actions";
 import { getTag } from "../helpers";
-import { DAYS, HOURS } from "../constants/index";
+import { BSC_CHAIN, DAYS, ETH_CHAIN, HOURS, POLYGON_CHAIN } from "../constants/index";
 import { getConnection } from "typeorm";
 import { Cohort } from "../db/entity/Cohort";
 import { updateChainId } from "../db/hooks/update";
@@ -14,6 +14,10 @@ import { appBoot } from "../db/createConnection";
 
 export async function allCohortInsertation(opts: CohortOptions) {
    try {
+      if (opts.chainId === undefined) {
+         throw new Error("please provide chainId");
+      }
+
       const manifest = yamlParser(opts.chainId);
 
       const cohorts = manifest.cohorts;
@@ -26,10 +30,7 @@ export async function allCohortInsertation(opts: CohortOptions) {
 
       var contract = getCohorts(opts.chainId);
 
-      if (!contract)
-         throw new Error(
-            `Fatal Error Contract Not found for the related ChainId`
-         );
+      if (!contract) throw new Error(`Fatal Error Contract Not found for the related ChainId`);
 
       var multiPromise = [];
 
@@ -52,8 +53,7 @@ export async function allCohortInsertation(opts: CohortOptions) {
          var cohortDetails: any = {};
          for (var k = 0; k < cohorts.length; k++) {
             var properties = actionsProperties(cohortActions[k]);
-            if (!properties)
-               throw Error(`No Action Proptery Found Illegal term`);
+            if (!properties) throw Error(`No Action Proptery Found Illegal term`);
             cohortDetails[properties] = cohorts[k];
          }
          mapBasicDetails.push(cohortDetails);
@@ -68,10 +68,7 @@ export async function allCohortInsertation(opts: CohortOptions) {
          const instance = contract(address);
          const tokensCount = mapBasicDetails[e].tokensCount;
          multiverse.push(
-            multicall(
-               ["getIntervalDays", "getTokens"],
-               [instance, tokensCount, opts.chainId]
-            )
+            multicall(["getIntervalDays", "getTokens"], [instance, tokensCount, opts.chainId])
          );
       }
 
@@ -85,11 +82,8 @@ export async function allCohortInsertation(opts: CohortOptions) {
          const cohorts = multiResponse[e];
          var cohortDetails: any = {};
          for (var k = 0; k < cohorts.length; k++) {
-            var properties = actionsProperties(
-               ["getIntervalDays", "getTokens"][k]
-            );
-            if (!properties)
-               throw Error(`No Action Proptery Found Illegal term`);
+            var properties = actionsProperties(["getIntervalDays", "getTokens"][k]);
+            if (!properties) throw Error(`No Action Proptery Found Illegal term`);
             cohortDetails[properties] = cohorts[k];
          }
          mapIntervalDaysAndTokens.push(cohortDetails);
@@ -125,7 +119,7 @@ export async function allCohortInsertation(opts: CohortOptions) {
       logger.info(`Database Sync Successfully for the ${opts.chainId}`);
 
       // close the connection
-      await getConnection("unifarm").close();
+      // await getConnection("unifarm").close();
    } catch (err) {
       console.log(err);
       return;
@@ -141,12 +135,10 @@ async function updaterOfChainId() {
    }
 }
 
-/* allCohortInsertation({
-  chainId: 81,
-}); */
-
 /* appBoot().then(() => {
-  setTimeout(async () => {
-    await updaterOfChainId();
-  }, 4000);
+   setTimeout(async () => {
+      allCohortInsertation({
+         chainId: Number(process.env.CHAIN_ID),
+      });
+   }, 4000);
 }); */

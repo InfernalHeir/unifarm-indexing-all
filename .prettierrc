@@ -1,5 +1,5 @@
 {
-  "semi": true,
-  "printWidth": 80,
-  "tabWidth": 3
+   "semi": true,
+   "printWidth": 100,
+   "tabWidth": 3
 }

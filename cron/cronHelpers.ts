@@ -4,11 +4,11 @@ import { promisify } from "util";
 import { chainNameById } from "../constants";
 import { chain } from "lodash";
 
-config();
+config({ path: ".env.testnet" });
 
 export const client = redis.createClient({
    host: process.env.REDIS_HOSTNAME,
-   //password: process.env.REDIS_PASSWORD,
+   password: process.env.REDIS_PASSWORD,
    port: 6379,
 });
 
@@ -35,8 +35,6 @@ export const getOffset = async (
    eventName: string,
    chainId: number
 ): Promise<number> => {
-   const offset = await getAsync(
-      `Offset_${cohortId}_${eventName}_${chainNameById[chainId]}`
-   );
+   const offset = await getAsync(`Offset_${cohortId}_${eventName}_${chainNameById[chainId]}`);
    return Number(offset);
 };

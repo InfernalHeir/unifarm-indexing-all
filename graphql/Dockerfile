@@ -3,30 +3,31 @@ FROM node:latest as builder
 LABEL MAINTAINER Bhupendra Bisht "<bhupendra.bisht@oropocket.com>"
 LABEL ORGANIZATION="<Unifarm>"
 
-WORKDIR /graph-server
+WORKDIR /graphql-server
 
-RUN node -v \
-    npm -v \
-    npm install -g pm2 \
-    mkdir /graph-server/storage
+ADD ./package.json /graphql-server/package.json
+ADD ./graphql /graphql-server/graphql
+ADD ./db /graphql-server/db
+ADD ./log /graphql-server/log
 
-ADD ./package.json /graph-server/package.json
-ADD ./graphql /graph-server/graphql
-ADD ./db /graph-server/db
-ADD ./log /graph-server/log
-
-RUN npm install 
+RUN npm install
 RUN npm run graph:build
 
 FROM node:14-alpine
 
 WORKDIR /graph
 
-COPY --from=builder /graph-server/graphql/build ./
+RUN mkdir /graph/storage
+RUN mkdir /graph/storage/logs
+
+COPY --from=builder /graphql-server/graphql/build ./build
+COPY --from=builder /graphql-server/package.json ./package.json
+COPY --from=builder /graphql-server/node_modules ./node_modules
+COPY --from=builder /graphql-server/db/ca-certificate.crt ./ca-certificate.crt
 
 VOLUME ["/graph"]
 
 ENTRYPOINT [ "npm" ]
-CMD ["graph:start"]
+CMD ["run","graph:start"]
 
 EXPOSE 8080

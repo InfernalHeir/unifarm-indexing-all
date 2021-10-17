@@ -10,22 +10,15 @@ var jobs = {};
 function execution() {
    for (var c = 0; c < jobList.length; c++) {
       const items = jobList[c];
-      jobs[`${items.chainId}_${items.eventName}_${items.cohortId}`] =
-         new CronJob(
-            "* * * * *",
-            async () => {
-               await processor(
-                  items.chainId,
-                  items.eventName,
-                  items.cohortId,
-                  items.ABI,
-                  items.topic
-               );
-            },
-            null,
-            true,
-            "Asia/Kolkata"
-         );
+      jobs[`${items.chainId}_${items.eventName}_${items.cohortId}`] = new CronJob(
+         "* * * * *",
+         async () => {
+            await processor(items.chainId, items.eventName, items.cohortId, items.ABI, items.topic);
+         },
+         null,
+         true,
+         "Asia/Kolkata"
+      );
    }
 }
 
@@ -40,9 +33,7 @@ export function startAllJobs() {
       setTimeout(() => {
          for (var c = 0; c < jobList.length; c++) {
             const items = jobList[c];
-            jobs[
-               `${items.chainId}_${items.eventName}_${items.cohortId}`
-            ].start();
+            jobs[`${items.chainId}_${items.eventName}_${items.cohortId}`].start();
          }
       }, 10000);
    });
@@ -55,7 +46,7 @@ export function stopAllTheJobsAfterTenMinuates() {
          jobs[`${items.chainId}_${items.eventName}_${items.cohortId}`].stop();
       }
       logger.info(`Jobs Stopped Successfully all data syned from moralis.`);
-   }, 310000);
+   }, 410000);
 }
 
 //startAllJobs();

@@ -5,11 +5,6 @@ LABEL ORGANIZATION="<Unifarm>"
 
 WORKDIR /unifarm-events
 
-RUN node -v \
-    npm -v \
-    npm install -g pm2 \
-    mkdir /unifarm-events/storage
-
 COPY ./package.json /unifarm-events/package.json
 
 ADD ./ /unifarm-events/
@@ -19,13 +14,15 @@ RUN npm run listener-server:build
 
 FROM node:14-alpine
 
-WORKDIR /events 
+WORKDIR /events
 
-COPY --from=builder /unifarm-events/events/build ./
+COPY --from=builder /unifarm-events/events/build ./build
+COPY --from=builder /unifarm-events/package.json ./package.json
+COPY --from=builder /unifarm-events/node_modules ./node_modules 
+COPY --from=builder /unifarm-events/db/ca-certificate.crt ./ca-certificate.crt
 
 VOLUME ["/events"]
 
 ENTRYPOINT [ "npm" ]
-CMD ["listener-server:start"]
 
-EXPOSE 9385 
+CMD ["run","listener-server:start"]

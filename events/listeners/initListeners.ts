@@ -1,6 +1,7 @@
 import { activateListener } from "../events-helpers/pubsub";
 import { listeners } from "./listeners-config/listenster.config";
 import { getWsProviders } from "../../providers/provider";
+import { appBoot } from "../../db/createConnection";
 
 interface InitListenersOptions {
    chainId: number;
@@ -20,6 +21,10 @@ export async function start(eventOpts: InitListenersOptions) {
    activateListener(web3, cohorts);
 }
 
-start({
-   chainId: process.env.CHAIN_ID ? Number(process.env.CHAIN_ID) : undefined,
+appBoot().then(() => {
+   setTimeout(() => {
+      start({
+         chainId: process.env.CHAIN_ID ? Number(process.env.CHAIN_ID) : undefined,
+      });
+   }, 5000);
 });

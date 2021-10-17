@@ -48,7 +48,7 @@ interface Listeners {
 }
 
 export const listeners: Listeners = {
-   1: ethListeners,
-   56: bscListeners,
-   137: polygonListeners,
+   4: ethListeners,
+   97: bscListeners,
+   80001: polygonListeners,
 };

@@ -71,17 +71,11 @@ export async function allUnStakeEvents(fetchOptions: AllEventsSync) {
       };
    });
 
-   if (fetchOptions.isProxy) {
-      fs.writeFileSync(
-         "./.tmp/events/proxy/ethereum-unstakes.json",
-         JSON.stringify(unStakeEvents)
-      );
+   /* if (fetchOptions.isProxy) {
+      fs.writeFileSync("./.tmp/events/proxy/ethereum-unstakes.json", JSON.stringify(unStakeEvents));
    } else {
-      fs.writeFileSync(
-         "./.tmp/events/ethereum-unstakes.json",
-         JSON.stringify(unStakeEvents)
-      );
-   }
+      fs.writeFileSync("./.tmp/events/ethereum-unstakes.json", JSON.stringify(unStakeEvents));
+   } */
 
    await insertUnstakeEvent(unStakeEvents);
 

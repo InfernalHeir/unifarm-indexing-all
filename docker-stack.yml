@@ -1,14 +1,15 @@
 version: "3.8"
 services:
-   postgres:
-      image: postgres:latest
-      env_file: "./postgres/.env.file"
+   graph:
+      image: graph-mainnet:latest
+      env_file: "./.env.prod"
       volumes:
-         - postgres:/data/postgres
+         - graph:/graph
       ports:
-         - "5432:5432"
+         - "8080:8080"   
       networks:
          - unifarm
+      command: ["run","graph:start"]   
       deploy:
          mode: "replicated"
          replicas: 3
@@ -16,132 +17,71 @@ services:
             max_replicas_per_node: 2
          restart_policy:
             condition: on-failure
-   graph:
-      image: graph:latest
-      env_file: "./env.prod"
-      volumes:
-         - graph:/graph
-      ports:
-         - "8080:8080"
-      networks:
-         - unifarm
-      command: npm run graph:start   
-      deploy:
-         mode: "replicated"
-         replicas: 3
-         placement:
-            max_replicas_per_node: 1
-         restart_policy:
-            condition: on-failure
    eth-events-sync:
-      image: events-listener:latest
-      env_file: "./env.prod"
+      image: events-listener-mainnet:latest
+      env_file: "./.env.prod"
       environment:
          - CHAIN_ID=1
       volumes:
          - eth_events:/events
-      ports:
-         - "9385:9385"
       networks:
          - unifarm
-      command: npm run listener-server:start   
+      command: ["run","listener-server:start"]     
       deploy:
          mode: "replicated"
-         replicas: 2
-         placement:
-            max_replicas_per_node: 1
          restart_policy:
-            condition: on-failure
+            condition: on-failure     
    bsc-events-sync:
-      image: events-listener:latest
-      env_file: "./env.prod"
+      image: events-listener-mainnet:latest
+      env_file: "./.env.prod"
       environment:
          - CHAIN_ID=56
       volumes:
          - bsc_events:/events
-      ports:
-         - "9385:9385"
       networks:
          - unifarm
-      command: npm run listener-server:start    
+      command: ["run","listener-server:start"]
       deploy:
          mode: "replicated"
-         replicas: 2
-         placement:
-            max_replicas_per_node: 1
          restart_policy:
             condition: on-failure
 
    polygon-events-sync:
-      image: events-listener:latest
-      env_file: "./env.prod"
+      image: events-listener-mainnet:latest
+      env_file: "./.env.prod"
       environment:
          - CHAIN_ID=137
       volumes:
          - polygon_events:/events
-      ports:
-         - "9385:9385"
       networks:
          - unifarm
-      command: npm run listener-server:start    
+      command: ["run","listener-server:start"]     
       deploy:
          mode: "replicated"
-         replicas: 2
-         placement:
-            max_replicas_per_node: 1
          restart_policy:
             condition: on-failure
    redis:
       image: redis:latest
       volumes:
-         - redis:/data
+         - redis-data:/data
       ports:
          - "6379:6379"
       networks:
          - unifarm
+      command: redis-server --appendonly yes  --requirepass ${REDIS_PASSWORD}   
       deploy:
          mode: "replicated"
          replicas: 1
          placement:
             constraints:
-               - ["node.role == manager"]
+               - "node.role==manager"
          restart_policy:
-            condition: on-failure
-
-   graph_nginx:
-       image: nginx:latest
-       ports:
-         - "80:80"
-         - "443:443"
-       networks:
-         - unifarm
-       volumes:
-         - /nginx/graph.unifarm.co.conf:/etc/nginx/conf.d
-         - certbot-etc:/etc/letsencrypt
-         - certbot-var:/var/lib/letsencrypt
-         - dhparam:/etc/ssl/certs  
-       deploy:
-         mode: "replicated"
-         restart_policy:
-            condition: on-failure
-
-   certbot:
-    image: certbot/certbot
-    volumes:
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
-    depends_on:
-      - graph_nginx
-    command: certonly --dry-run -m bhupendra.bisht@oropocket.com --agree-tos --no-eff-email -d graph.unifarm.co
-         
+            condition: on-failure                 
 networks:
    unifarm:
 volumes:
-   postgres:
    graph:
    eth_events:
    bsc_events:
    polygon_events:
-   certbot-etc:
-   certbot-var:
-   dhparam:         
+   redis-data:      

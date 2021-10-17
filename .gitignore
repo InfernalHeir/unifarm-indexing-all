@@ -8,3 +8,4 @@ storage
 graphql/build
 events/build
 postgres
+.env.testnet

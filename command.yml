@@ -142,4 +142,4 @@ services:
         address: "0xf4f079e8834ff38be9b719c70b4a4195ad6199e5"  
     proxies:
       -
-       - "0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80"    
+       - "0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80"

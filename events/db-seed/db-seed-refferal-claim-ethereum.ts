@@ -48,7 +48,7 @@ export async function allRefferalEvents(fetchOptions: AllEventsSync) {
       }
    });
 
-   if (fetchOptions.isProxy) {
+   /* if (fetchOptions.isProxy) {
       fs.writeFileSync(
          "./.tmp/events/proxy/ethereum-refferral-claim.json",
          JSON.stringify(refferralClaim)
@@ -58,7 +58,7 @@ export async function allRefferalEvents(fetchOptions: AllEventsSync) {
          "./.tmp/events/ethereum-refferral-claim.json",
          JSON.stringify(refferralClaim)
       );
-   }
+   } */
 
    await insertRefferalEvent(refferralClaim);
 
