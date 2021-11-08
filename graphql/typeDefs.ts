@@ -9,6 +9,13 @@ export const typeDefs = gql`
       tokenAddress: String!
    }
 
+   input GroupUnstakes {
+      "Chain id eg : 1 | 56 | 137"
+      chainId: Int!
+      "group users wallet address"
+      userAddresses: [String!]!
+   }
+
    "Order Direction ASC | DESC"
    enum OrderDirection {
       ASC
@@ -285,11 +292,9 @@ export const typeDefs = gql`
       "fetch all cohorts by chainId and global context"
       allCohorts(where: CohortGroupWhereClause!, filter: Filter!): Cohorts!
       "fetch all cohorts and proxies addresses"
-      allCohortsAndProxies(
-         where: CohortGroupWhereClause!
-      ): [CohortProxyGroupedAddresses!]!
+      allCohortsAndProxies(where: CohortGroupWhereClause!): [CohortProxyGroupedAddresses!]!
       "fetch all pools by chainId"
-      allPools(where: PoolsGroupWhereClause!, filter: Filter!): Pools!
+      allPools(where: PoolsGroupWhereClause!): Pools!
       "Fetch specfic token which is available in particular cohort."
       getTokens(where: PoolInputs): [Token!]!
       "Fetch Specfic Pools Just Defined The tokenAddress"
@@ -298,6 +303,8 @@ export const typeDefs = gql`
       getAllStakes(where: StakesWhere!, filter: Filter!): [Stake!]!
       "Fetch All Unstakes in specfic chain by particular user wallet address."
       getAllUnstakes(where: UnStakeWhere): [Unstake]!
+      "Fetch Group Unstakes for list of users."
+      getSpecficUnstakes(where: GroupUnstakes): [Unstake]!
       "Fetch All Rewards Claims By a user"
       getAllClaimsByUser(where: ClaimWhere): [Claim]!
       "Fetch All the Refferral Address a user refered to anyone"

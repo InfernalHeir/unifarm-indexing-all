@@ -21,10 +21,7 @@ export const POOL_FETCH_LIMIT = 30;
 // DEFAULT ORDERDIRECTION OF POOL
 export const DEFAULT_ORDER_DIRECTION = "DESC";
 
-export const getCohortByAddress = async (
-   chainId: number,
-   cohortId: string
-): Promise<Cohort> => {
+export const getCohortByAddress = async (chainId: number, cohortId: string): Promise<Cohort> => {
    const cohort = await getRepository(Cohort, "unifarm")
       .createQueryBuilder("cohort")
       .where("LOWER(cohort.cohortAddress) =:cohortAddress", {
@@ -96,29 +93,7 @@ export const getOffset = (offset: number) => {
    return offset === undefined ? DEFAULT_OFFSET : offset;
 };
 
-export const getAggregatedPoolInformation = async (
-   chainId: number,
-   limit: number,
-   orderDirection: OrderDirection,
-   offset: number
-) => {
-   var take: number;
-
-   if (limit > POOL_FETCH_LIMIT) {
-      take = POOL_FETCH_LIMIT;
-   } else {
-      take = limit;
-   }
-
-   const skip = getOffset(offset);
-
-   var direction;
-   if (orderDirection) {
-      direction = orderDirection;
-   } else {
-      orderDirection = DEFAULT_ORDER_DIRECTION;
-   }
-
+export const getAggregatedPoolInformation = async (chainId: number) => {
    const poolInformation = await getRepository(Token, "unifarm")
       .createQueryBuilder("token")
       .innerJoinAndMapOne(
@@ -127,9 +102,7 @@ export const getAggregatedPoolInformation = async (
          "cohort",
          "cohort.cohortAddress = token.cohortId"
       )
-      .skip(skip)
-      .take(take)
-      .orderBy("cohort.poolStartTime", direction)
+      .orderBy("cohort.poolStartTime", "DESC")
       .where("token.chainId =:chainId", {
          chainId,
       })
@@ -139,10 +112,20 @@ export const getAggregatedPoolInformation = async (
    return pools;
 };
 
-export const getPoolInformation = async (
-   chainId: number,
-   tokenAddress: string
-) => {
+export const getSpecificUserUnstakes = async (chainId: number, userAddresses: string[]) => {
+   const unstakes = await getRepository(Unstake, "unifarm")
+      .createQueryBuilder("unstake")
+      .where("unstake.chainId =:chainId", {
+         chainId,
+      })
+      .andWhere("LOWER(unstake.userAddress) IN (:...userAddresses)", {
+         userAddresses,
+      })
+      .getMany();
+   return unstakes;
+};
+
+export const getPoolInformation = async (chainId: number, tokenAddress: string) => {
    const poolInformation = await getRepository(Token, "unifarm")
       .createQueryBuilder("token")
       .innerJoinAndMapOne(
@@ -180,11 +163,7 @@ export const stringArrayLowerCase = (array: string[]) => {
    });
 };
 
-export const getSpecficPools = async (
-   chainId: number,
-   tokens: string[],
-   cohorts: string[]
-) => {
+export const getSpecficPools = async (chainId: number, tokens: string[], cohorts: string[]) => {
    const _tokens = stringArrayLowerCase(tokens);
 
    const _cohorts = stringArrayLowerCase(cohorts);
@@ -267,10 +246,7 @@ export const getAllClaims = async (chainId: number, userAddress: string) => {
    return claims;
 };
 
-export const getAllReferralUsers = async (
-   chainId: number,
-   referrerAddress: string
-) => {
+export const getAllReferralUsers = async (chainId: number, referrerAddress: string) => {
    const stakes = await getRepository(Stake, "unifarm")
       .createQueryBuilder("stake")
       .where("stake.chainId =:chainId", { chainId })
@@ -281,10 +257,7 @@ export const getAllReferralUsers = async (
    return stakes;
 };
 
-export const getAllReferralClaim = async (
-   chainId: number,
-   userAddress: string
-) => {
+export const getAllReferralClaim = async (chainId: number, userAddress: string) => {
    const refferal_claim = await getRepository(RefferralClaim, "unifarm")
       .createQueryBuilder("ref")
       .where("ref.chainId =:chainId", { chainId })
