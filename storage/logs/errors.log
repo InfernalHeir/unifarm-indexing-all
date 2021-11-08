@@ -145,3 +145,6 @@
 2021-10-07T10:22:12.370Z [__UNIFARM__] error: AllStakes:: Stakes cannot found.
 2021-10-07T10:23:01.141Z [__UNIFARM__] error: AllStakes:: Stakes cannot found.
 2021-10-17T11:14:26.566Z [__UNIFARM__] error: no pg_hba.conf entry for host "103.248.35.181", user "unifarm_testnet", database "unifarm_testnet_indexing", SSL off
+2021-10-19T12:28:23.076Z [__UNIFARM__] error: The server does not support SSL connections
+2021-10-19T12:39:11.634Z [__UNIFARM__] error: GET_TOKENS:: tokens derivation failed please try again. reason No repository for "Token" was found. Looks like this entity is not registered in current "unifarm" connection?
+2021-10-19T12:39:22.466Z [__UNIFARM__] error: GET_TOKENS:: tokens derivation failed please try again. reason No repository for "Token" was found. Looks like this entity is not registered in current "unifarm" connection?

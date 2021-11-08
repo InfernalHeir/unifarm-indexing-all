@@ -30,12 +30,12 @@ const clientOps: ClientOptions = {
       migrationsDir: `./db/migrations`,
    },
    logNotifications: true,
-   ssl: {
+   /* ssl: {
       ca:
          process.env.NODE_ENV === "dev"
             ? fs.readFileSync(`${__dirname}/ca-certificate.crt`).toString()
             : fs.readFileSync(`${process.env.PWD}/ca-certificate.crt`).toString(),
-   },
+   }, */
    name: "unifarm",
 };
 

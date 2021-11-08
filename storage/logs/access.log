@@ -1646,3 +1646,11 @@
 2021-10-17T11:33:05.107Z [__UNIFARM__] info: connection established to unifarm
 2021-10-17T11:40:24.400Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:8080//graphql
 2021-10-17T11:40:25.129Z [__UNIFARM__] info: connection established to unifarm
+2021-10-19T12:28:23.061Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:8080//graphql
+2021-10-19T12:28:23.076Z [__UNIFARM__] error: The server does not support SSL connections
+2021-10-19T12:39:11.634Z [__UNIFARM__] error: GET_TOKENS:: tokens derivation failed please try again. reason No repository for "Token" was found. Looks like this entity is not registered in current "unifarm" connection?
+2021-10-19T12:39:22.466Z [__UNIFARM__] error: GET_TOKENS:: tokens derivation failed please try again. reason No repository for "Token" was found. Looks like this entity is not registered in current "unifarm" connection?
+2021-10-19T12:40:07.381Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:8080//graphql
+2021-10-19T12:40:07.564Z [__UNIFARM__] info: connection established to unifarm
+2021-10-19T14:18:04.567Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:8080//graphql
+2021-10-19T14:18:04.725Z [__UNIFARM__] info: connection established to unifarm
