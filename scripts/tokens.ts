@@ -12,12 +12,18 @@ import { TokenDetails, TokenMetaData } from "../types/Tokens";
 import { getConnection } from "typeorm";
 import { Token } from "../db/entity/Token";
 import { BSC_CHAIN, chainNameById, POLYGON_CHAIN } from "../constants";
+import _ from "lodash";
 
 export async function allTokens(opts: CohortOptions) {
    // totally automatic
    try {
-      const manifest = yamlParser(opts.chainId);
-      const cohorts = manifest.cohorts;
+      var cohorts: any;
+      if (!_.isEmpty(opts.cohorts)) {
+         cohorts = opts.cohorts;
+      } else {
+         const manifest = yamlParser(opts.chainId);
+         cohorts = manifest.cohorts;
+      }
 
       logger.info(`manifest loaded. cohorts found ${cohorts.length}`);
 

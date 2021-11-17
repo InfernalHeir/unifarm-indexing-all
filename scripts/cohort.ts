@@ -11,6 +11,7 @@ import { getConnection } from "typeorm";
 import { Cohort } from "../db/entity/Cohort";
 import { updateChainId } from "../db/hooks/update";
 import { appBoot } from "../db/createConnection";
+import _ from "lodash";
 
 export async function allCohortInsertation(opts: CohortOptions) {
    try {
@@ -18,11 +19,16 @@ export async function allCohortInsertation(opts: CohortOptions) {
          throw new Error("please provide chainId");
       }
 
-      const manifest = yamlParser(opts.chainId);
-
-      const cohorts = manifest.cohorts;
-
-      const proxies = manifest.proxies;
+      var cohorts: any[];
+      var proxies: any;
+      if (!_.isEmpty(opts.cohorts)) {
+         cohorts = opts.cohorts;
+         proxies = opts?.proxies;
+      } else {
+         const manifest = yamlParser(opts.chainId);
+         cohorts = manifest.cohorts;
+         proxies = manifest.proxies;
+      }
 
       logger.info(`manifest loaded. cohorts found ${cohorts.length}`);
 

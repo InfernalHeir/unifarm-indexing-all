@@ -14,6 +14,17 @@ dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 // client options
 type ClientOptions = ConnectionOptions;
 
+var sslConfig;
+if (process.env.NODE_ENV === "localhost") {
+   sslConfig = null;
+} else {
+   sslConfig = {
+      ca:
+         process.env.NODE_ENV === "dev"
+            ? fs.readFileSync(`${__dirname}/ca-certificate.crt`).toString()
+            : fs.readFileSync(`${process.env.PWD}/ca-certificate.crt`).toString(),
+   };
+}
 const clientOps: ClientOptions = {
    type: "postgres",
    host: String(process.env.DB_HOSTNAME),
@@ -30,12 +41,7 @@ const clientOps: ClientOptions = {
       migrationsDir: `./db/migrations`,
    },
    logNotifications: true,
-   ssl: {
-      ca:
-         process.env.NODE_ENV === "dev"
-            ? fs.readFileSync(`${__dirname}/ca-certificate.crt`).toString()
-            : fs.readFileSync(`${process.env.PWD}/ca-certificate.crt`).toString(),
-   },
+   ssl: sslConfig,
    name: "unifarm",
 };
 
