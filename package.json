@@ -19,7 +19,7 @@
       "listener-server:clean": "rimraf ./events/build",
       "listener-server:build": "babel ./ --extensions '.ts' --config-file ./events/babel.config.js --out-dir ./events/build --no-copy-ignored",
       "listener-server:start": "pm2-runtime start ./build/events/listeners/initListeners.js --name listener",
-      "migrate:futureCohorts": "export NODE_ENV=localhost && ts-node ./scripts/misc/index.ts"
+      "migrate:futureCohorts": "export NODE_ENV=dev && ts-node ./scripts/misc/index.ts"
    },
    "dependencies": {
       "@babel/cli": "^7.15.7",

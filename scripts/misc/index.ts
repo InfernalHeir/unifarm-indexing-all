@@ -4,7 +4,7 @@ import { allCohortInsertation } from "../cohort";
 import { allTokens } from "../tokens";
 import _ from "lodash";
 import { appBoot } from "../../db/createConnection";
-import { BSC_CHAIN } from "../../constants";
+import { BSC_CHAIN, ETH_CHAIN, POLYGON_CHAIN } from "../../constants";
 import { logger } from "../../log";
 
 interface CohortType {
@@ -34,7 +34,7 @@ export const syncFutureTokens = async (chainId: number, cohorts: CohortType[]) =
 export const publishFutureCohorts = (chainId: number, cohorts: string[]) => {
    if (!chainId || _.isEmpty(cohorts)) return null;
    const isMessageSend = client.publish(
-      "FUTURE_COHORT_SYNC",
+      `FUTURE_COHORT_SYNC_${chainId}`,
       JSON.stringify({
          chainId,
          cohorts,
@@ -52,13 +52,14 @@ export const updateProxy = async (chainId: number, cohortId: string, proxies: st
 appBoot().then(() => {
    setTimeout(() => {
       /* syncFutureCohorts(
-         BSC_CHAIN,
-         [{ address: "0x3636288B7D9875eE32DEF575F98Dd5b1fdCAf92f", version: "V25" }],
+         ETH_CHAIN,
+         [{ address: "0xE02460E3B84B1F51B70474FD08D09FcE35e77047", version: "V28" }],
          [[]]
       ); */
-      /* syncFutureTokens(BSC_CHAIN, [
-         { address: "0x3636288B7D9875eE32DEF575F98Dd5b1fdCAf92f", version: "V25" },
+      /* syncFutureTokens(ETH_CHAIN, [
+         { address: "0xE02460E3B84B1F51B70474FD08D09FcE35e77047", version: "V28" },
       ]); */
-      publishFutureCohorts(BSC_CHAIN, ["0x3636288B7D9875eE32DEF575F98Dd5b1fdCAf92f"]);
+
+      publishFutureCohorts(ETH_CHAIN, ["0xE02460E3B84B1F51B70474FD08D09FcE35e77047"]);
    }, 4400);
 });

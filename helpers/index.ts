@@ -1,9 +1,12 @@
 import { Contract } from "ethers";
 import { Promise } from "bluebird";
 import {
+   BSC_CHAIN,
    BUSD,
    ETH_CHAIN,
+   OROWBTC,
    OROWETH,
+   POLYGON_CHAIN,
    SMG,
    UFARMUSDC,
    USDC,
@@ -12,6 +15,7 @@ import {
    V1REPROXY,
    V2,
    V3,
+   WBTC,
    WETH,
 } from "../constants";
 import { isAddress } from "@ethersproject/address";
@@ -210,6 +214,8 @@ export const locking = (cohort: string, locking: string, chainId: number): strin
       cohort.toLowerCase() === UFARMUSDC.toLowerCase()
    ) {
       return locking;
+   } else if (chainId === POLYGON_CHAIN && cohort.toLowerCase() === OROWBTC.toLowerCase()) {
+      return locking;
    }
    return "0";
 };
@@ -223,7 +229,8 @@ export const getTokenSequenceList = async (
    if (
       address.toLowerCase() === BUSD.toLowerCase() ||
       address.toLowerCase() === WETH.toLowerCase() ||
-      address.toLowerCase() === USDC.toLowerCase()
+      address.toLowerCase() === USDC.toLowerCase() ||
+      address.toLowerCase() === WBTC.toLowerCase()
    ) {
       return [];
    }

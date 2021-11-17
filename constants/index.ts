@@ -13,6 +13,8 @@ export const V4: string = "0x305A83c506F7c4EDF58D7904dEC16De81ef396Cb";
 export const V18: string = "0x2e47fd3D73F95e1B0d20Ef07cA2E4aD15Cc092B5";
 export const OROWETH: string = "0xCADcA4d47828b74b3ab48a9F1f3cA30e70C850b7";
 export const UFARMUSDC: string = "0x34e823351A0F0148819cF0602ec6Eead803d5461";
+export const OROWBTC: string = "0xc813B7537ee15b7153d1DAf1809E75629F32aA85";
+export const UFARMBUSD: string = "0x7285F2d898682B41549d6391F2115D048dC19fAB";
 
 // other proxies
 export const V1PROXY: string = "0xFDa2eb3CB5b289Ed62ADfCdcc218a8C999DC54A5";
@@ -29,6 +31,7 @@ export const BUSD: string = "0xC3A967c67431BD1a2206B854E588E6D4c628999A";
 export const WETH: string = "0xc778417e063141139fce010982780140aa0cd5ab";
 export const USDC: string = "0xeb8f08a975ab53e34d8a0330e0d34de942c95926";
 export const SMG: string = "0x973F076a3Cd36AcDd8edCdf29cfe2A2114Cc82a9";
+export const WBTC: string = "0x0d787a4a1548f673ed375445535a6c7A1EE56180";
 
 export const ETH_CHAIN = 4;
 export const BSC_CHAIN = 97;
