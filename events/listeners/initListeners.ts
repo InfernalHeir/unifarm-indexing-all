@@ -36,7 +36,7 @@ export async function start(eventOpts: InitListenersOptions) {
    // activate the listener
    activateListener(web3, cohorts);
 
-   client.subscribe("FUTURE_COHORT_SYNC");
+   client.subscribe(`FUTURE_COHORT_SYNC_${Number(process.env.CHAIN_ID)}`);
 
    client.on("message", (channel, message) => {
       const config = JSON.parse(message) as RedisCohortsPubSubListener;
