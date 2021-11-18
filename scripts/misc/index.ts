@@ -6,6 +6,13 @@ import _ from "lodash";
 import { appBoot } from "../../db/createConnection";
 import { BSC_CHAIN, ETH_CHAIN, POLYGON_CHAIN } from "../../constants";
 import { logger } from "../../log";
+import redis from "redis";
+
+export const subscriber = redis.createClient({
+   host: process.env.REDIS_HOSTNAME,
+   password: process.env.REDIS_PASSWORD,
+   port: 6379,
+});
 
 interface CohortType {
    address: string;
@@ -33,6 +40,8 @@ export const syncFutureTokens = async (chainId: number, cohorts: CohortType[]) =
 
 export const publishFutureCohorts = (chainId: number, cohorts: string[]) => {
    if (!chainId || _.isEmpty(cohorts)) return null;
+   subscriber.subscribe(`FUTURE_MESSAGE_${chainId}`);
+
    const isMessageSend = client.publish(
       `FUTURE_COHORT_SYNC_${chainId}`,
       JSON.stringify({
@@ -40,9 +49,14 @@ export const publishFutureCohorts = (chainId: number, cohorts: string[]) => {
          cohorts,
       })
    );
+
    if (isMessageSend) {
       logger.info(`Message has been send to the related worker please wait for activation`);
    }
+
+   subscriber.on("message", (channel, message) => {
+      console.log(`RECEIVED: ${message}`);
+   });
 };
 
 export const updateProxy = async (chainId: number, cohortId: string, proxies: string[]) => {
@@ -59,7 +73,6 @@ appBoot().then(() => {
       /* syncFutureTokens(ETH_CHAIN, [
          { address: "0xE02460E3B84B1F51B70474FD08D09FcE35e77047", version: "V28" },
       ]); */
-
-      publishFutureCohorts(ETH_CHAIN, ["0xE02460E3B84B1F51B70474FD08D09FcE35e77047"]);
+      publishFutureCohorts(ETH_CHAIN, ["0xab6FfA6A5D5589378A21dbb30dF2940E0320d1Cd"]);
    }, 4400);
 });

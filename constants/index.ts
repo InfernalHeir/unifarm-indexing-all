@@ -15,6 +15,7 @@ export const OROWETH: string = "0xCADcA4d47828b74b3ab48a9F1f3cA30e70C850b7";
 export const UFARMUSDC: string = "0x34e823351A0F0148819cF0602ec6Eead803d5461";
 export const OROWBTC: string = "0xc813B7537ee15b7153d1DAf1809E75629F32aA85";
 export const UFARMBUSD: string = "0x7285F2d898682B41549d6391F2115D048dC19fAB";
+export const UFARM_CTR: string = "0xeee8901f7152C7337664E89B5e829c12Aa341CAb";
 
 // other proxies
 export const V1PROXY: string = "0xFDa2eb3CB5b289Ed62ADfCdcc218a8C999DC54A5";

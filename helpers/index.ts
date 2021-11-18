@@ -9,6 +9,7 @@ import {
    POLYGON_CHAIN,
    SMG,
    UFARMUSDC,
+   UFARM_CTR,
    USDC,
    V1,
    V18,
@@ -211,7 +212,8 @@ export const locking = (cohort: string, locking: string, chainId: number): strin
       chainId === ETH_CHAIN &&
       cohort.toLowerCase() === V18.toLowerCase() &&
       cohort.toLowerCase() === OROWETH.toLowerCase() &&
-      cohort.toLowerCase() === UFARMUSDC.toLowerCase()
+      cohort.toLowerCase() === UFARMUSDC.toLowerCase() &&
+      cohort.toLowerCase() === UFARM_CTR.toLowerCase()
    ) {
       return locking;
    } else if (chainId === POLYGON_CHAIN && cohort.toLowerCase() === OROWBTC.toLowerCase()) {
