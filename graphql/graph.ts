@@ -35,7 +35,7 @@ async function startApolloServer(typeDefs: DocumentNode, resolvers: any) {
 
    app.listen(process.env.GRAPH_PORT, () => {
       logger.info(
-         `🚀 Server ready at http://localhost:${process.env.GRAPH_PORT}/${server.graphqlPath}`
+         `🚀 Server ready at http://localhost:${process.env.GRAPH_PORT}${server.graphqlPath}`
       );
    });
 }

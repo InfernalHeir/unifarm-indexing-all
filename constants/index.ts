@@ -1,4 +1,3 @@
-   
 import { Chain } from "../types/type";
 
 export const DAYS = 86400;
@@ -14,7 +13,9 @@ export const V4: string = "0xab6FfA6A5D5589378A21dbb30dF2940E0320d1Cd";
 export const V18: string = "0x6fd0bbf295965db381f1d5b353ff3e523c771dd6";
 export const OROWETH: string = "0x1c14Eb2f2bf443557fC131b3f6F4e929C0081346";
 export const UFARMUSDC: string = "0x32D72D6CC98436EF983BE7f5288ab2Ca63480fE4";
-
+export const OROWBTC: string = "0xe8369ca802f89b16a968ccb24431a7a412f41f27";
+export const UFARMBUSD: string = "0xfd70c4a2280731fa7c63ee720d8da58898322ab7";
+export const UFARM_CTR: string = "0xcedf01ea298f90df54f01878b324300b091b7a56";
 // other proxies
 export const V1PROXY: string = "0xe8369CA802f89b16A968ccb24431A7A412F41f27";
 export const V1REPROXY: string = "0x0862eD7f6B2bc350508B29542511249b7E11A0a0";
@@ -29,11 +30,11 @@ export const chainNameById: Chain = {
 export const BUSD: string = "0xe9e7cea3dedca5984780bafc599bd69add087d56";
 export const WETH: string = "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2";
 export const USDC: string = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48";
+export const WBTC: string = "0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6";
 
 export const ETH_CHAIN = 1;
 export const BSC_CHAIN = 56;
 export const POLYGON_CHAIN = 137;
 
 export const MORALIS_API = "https://deep-index.moralis.io";
-export const API_KEY =
-   "n3vA4ayBuxWDkJdaYy4fSlaPFK4cGe4ITTdhfuDls0IbeXCY3YsZSZdJOvDGttei";
+export const API_KEY = "n3vA4ayBuxWDkJdaYy4fSlaPFK4cGe4ITTdhfuDls0IbeXCY3YsZSZdJOvDGttei";

@@ -4,7 +4,7 @@ import { promisify } from "util";
 import { chainNameById } from "../constants";
 import { chain } from "lodash";
 
-config({ path: ".env.testnet" });
+config({ path: `.env.${process.env.NODE_ENV}` });
 
 export const client = redis.createClient({
    host: process.env.REDIS_HOSTNAME,

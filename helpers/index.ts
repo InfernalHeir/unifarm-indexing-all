@@ -1,16 +1,21 @@
 import { Contract } from "ethers";
 import { Promise } from "bluebird";
 import {
+   BSC_CHAIN,
    BUSD,
    ETH_CHAIN,
+   OROWBTC,
    OROWETH,
+   POLYGON_CHAIN,
    UFARMUSDC,
+   UFARM_CTR,
    USDC,
    V1,
    V18,
    V1REPROXY,
    V2,
    V3,
+   WBTC,
    WETH,
 } from "../constants";
 import { isAddress } from "@ethersproject/address";
@@ -42,19 +47,10 @@ export const deriveStakeDuration = async (
  * @returns get number of tokens in particular cohort.
  */
 
-export const getNoOfPools = async (
-   instance: Contract,
-   chainId: number
-): Promise<number> => {
-   if (
-      instance.address.toLowerCase() === V1.toLowerCase() &&
-      chainId === ETH_CHAIN
-   ) {
+export const getNoOfPools = async (instance: Contract, chainId: number): Promise<number> => {
+   if (instance.address.toLowerCase() === V1.toLowerCase() && chainId === ETH_CHAIN) {
       return 5;
-   } else if (
-      instance.address.toLowerCase() === V2.toLowerCase() &&
-      chainId === ETH_CHAIN
-   ) {
+   } else if (instance.address.toLowerCase() === V2.toLowerCase() && chainId === ETH_CHAIN) {
       return 6;
    }
    const noOfPools = await instance.viewTokensCount();
@@ -74,10 +70,7 @@ export const getIntervalDays = async (
 ): Promise<string[]> => {
    const promises = [];
 
-   if (
-      instance.address.toLowerCase() === V3.toLowerCase() &&
-      chainId === ETH_CHAIN
-   ) {
+   if (instance.address.toLowerCase() === V3.toLowerCase() && chainId === ETH_CHAIN) {
       return ["1", "8", "15", "22", "29", "36"];
    }
 
@@ -89,19 +82,10 @@ export const getIntervalDays = async (
    });
 };
 
-export const getPoolStartTime = async (
-   instance: Contract,
-   chainId: number
-): Promise<string> => {
-   if (
-      instance.address.toLowerCase() === V1.toLowerCase() &&
-      chainId === ETH_CHAIN
-   ) {
+export const getPoolStartTime = async (instance: Contract, chainId: number): Promise<string> => {
+   if (instance.address.toLowerCase() === V1.toLowerCase() && chainId === ETH_CHAIN) {
       return "1612302959";
-   } else if (
-      instance.address.toLowerCase() === V2.toLowerCase() &&
-      chainId === ETH_CHAIN
-   ) {
+   } else if (instance.address.toLowerCase() === V2.toLowerCase() && chainId === ETH_CHAIN) {
       return "1613215605";
    }
    const poolStartTime = await instance.poolStartTime();
@@ -126,29 +110,17 @@ export const getRefferralPercentage = async (
    instance: Contract,
    chainId: number
 ): Promise<string | null> => {
-   if (
-      instance.address.toLowerCase() === V1.toLowerCase() &&
-      chainId === ETH_CHAIN
-   ) {
+   if (instance.address.toLowerCase() === V1.toLowerCase() && chainId === ETH_CHAIN) {
       return null;
    }
    const refPercentage = await instance.refPercentage();
    return String(refPercentage);
 };
 
-export const getOptionalBenefits = async (
-   instance: Contract,
-   chainId: number
-) => {
-   if (
-      instance.address.toLowerCase() === V1.toLowerCase() &&
-      chainId === ETH_CHAIN
-   ) {
+export const getOptionalBenefits = async (instance: Contract, chainId: number) => {
+   if (instance.address.toLowerCase() === V1.toLowerCase() && chainId === ETH_CHAIN) {
       return null;
-   } else if (
-      instance.address.toLowerCase() === V2.toLowerCase() &&
-      chainId === ETH_CHAIN
-   ) {
+   } else if (instance.address.toLowerCase() === V2.toLowerCase() && chainId === ETH_CHAIN) {
       return null;
    }
    const optionalBenefits = await instance.optionableBenefit();
@@ -156,15 +128,9 @@ export const getOptionalBenefits = async (
 };
 
 export const getRewardStrategy = (instance: Contract, chainId: number) => {
-   if (
-      instance.address.toLowerCase() === V1.toLowerCase() &&
-      chainId === ETH_CHAIN
-   ) {
+   if (instance.address.toLowerCase() === V1.toLowerCase() && chainId === ETH_CHAIN) {
       return "daily";
-   } else if (
-      instance.address.toLowerCase() === V2.toLowerCase() &&
-      chainId === ETH_CHAIN
-   ) {
+   } else if (instance.address.toLowerCase() === V2.toLowerCase() && chainId === ETH_CHAIN) {
       return "daily";
    }
    return "hourly";
@@ -201,10 +167,7 @@ export const getPoolInformation = async (
 ): Promise<TokenDetails> => {
    const pool = await instance.tokenDetails(tokenAddress);
 
-   if (
-      instance.address.toLowerCase() === V1.toLowerCase() &&
-      chainId === ETH_CHAIN
-   ) {
+   if (instance.address.toLowerCase() === V1.toLowerCase() && chainId === ETH_CHAIN) {
       return {
          decimals: String(pool.decimal),
          userMinStake: "0",
@@ -213,10 +176,7 @@ export const getPoolInformation = async (
          lockableDays: "0",
          optionableStatus: false,
       };
-   } else if (
-      instance.address.toLowerCase() === V2.toLowerCase() &&
-      chainId === ETH_CHAIN
-   ) {
+   } else if (instance.address.toLowerCase() === V2.toLowerCase() && chainId === ETH_CHAIN) {
       return {
          decimals: String(pool.decimal),
          userMinStake: "0",
@@ -238,17 +198,16 @@ export const getPoolInformation = async (
 };
 
 // only throw locking tokens.
-export const locking = (
-   cohort: string,
-   locking: string,
-   chainId: number
-): string => {
+export const locking = (cohort: string, locking: string, chainId: number): string => {
    if (
       chainId === ETH_CHAIN &&
       cohort.toLowerCase() === V18.toLowerCase() &&
       cohort.toLowerCase() === OROWETH.toLowerCase() &&
-      cohort.toLowerCase() === UFARMUSDC.toLowerCase()
+      cohort.toLowerCase() === UFARMUSDC.toLowerCase() &&
+      cohort.toLowerCase() === UFARM_CTR.toLowerCase()
    ) {
+      return locking;
+   } else if (chainId === POLYGON_CHAIN && cohort.toLowerCase() === OROWBTC.toLowerCase()) {
       return locking;
    }
    return "0";
@@ -263,7 +222,8 @@ export const getTokenSequenceList = async (
    if (
       address.toLowerCase() === BUSD.toLowerCase() ||
       address.toLowerCase() === WETH.toLowerCase() ||
-      address.toLowerCase() === USDC.toLowerCase()
+      address.toLowerCase() === USDC.toLowerCase() ||
+      address.toLowerCase() === WBTC.toLowerCase()
    ) {
       return [];
    }
@@ -282,10 +242,7 @@ export const getTokenDailyDistribution = async (
    chainId: number
 ): Promise<string[]> => {
    // on v1 case it will read from the proxy one
-   if (
-      instance.address.toLowerCase() === V1REPROXY.toLowerCase() &&
-      chainId === ETH_CHAIN
-   ) {
+   if (instance.address.toLowerCase() === V1REPROXY.toLowerCase() && chainId === ETH_CHAIN) {
       instance = new Contract(V1REPROXY, V1REPROXYABI, ethProvider);
    }
 
@@ -300,11 +257,7 @@ export const getTokenDailyDistribution = async (
    });
 };
 
-export const getRewardCap = (
-   chainId: number,
-   cohort: string,
-   token: string
-): string | null => {
+export const getRewardCap = (chainId: number, cohort: string, token: string): string | null => {
    const tokenReward = rewards.filter((e) => {
       return (
          Number(e.chainId) === chainId &&

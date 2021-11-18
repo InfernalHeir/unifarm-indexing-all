@@ -113,7 +113,13 @@ services:
         address: "0x1c14eb2f2bf443557fc131b3f6f4e929c0081346"
       - 
         version: "V23"
-        address: "0xd5F119145bdF66998F3c33ae0fE529aD546c67F5" 
+        address: "0xd5F119145bdF66998F3c33ae0fE529aD546c67F5"
+      - 
+        version: "V25"
+        address: "0xa1f28581129f27c11ee0c6c421a4fbf29c3e9bc7"
+      - 
+        version: "V27"
+        address: "0xd3CE8115D38fF119c0FB1172bF6569014A8E184F"     
     proxies:
       -
        - "0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F"
@@ -139,7 +145,13 @@ services:
         address: "0x96537bac94c8adc38fd17d70077ebcb958c1362f"
       - 
         version: "V24"
-        address: "0xf4f079e8834ff38be9b719c70b4a4195ad6199e5"  
+        address: "0xf4f079e8834ff38be9b719c70b4a4195ad6199e5"
+      -
+        version: "V26"
+        address: "0x9442Cf0eCC338C09301bA25517bB2C5fF8a7794B"
+      - 
+        version: "ORO/WBTC FARM"
+        address: "0xe8369ca802f89b16a968ccb24431a7a412f41f27"      
     proxies:
       -
        - "0xB558C3c7Af7F1d437Fe82914426a63c13c6a3a80"

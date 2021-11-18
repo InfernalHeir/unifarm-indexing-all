@@ -10,6 +10,7 @@ import {
    getCohortByAddress,
    getCohortContractAddress,
    getSpecficPools,
+   getSpecificUserUnstakes,
    getTokens,
 } from "../graph-helpers";
 
@@ -21,9 +22,7 @@ export const resolvers = {
             return await getCohortByAddress(chainId, cohortAddress);
          } catch (err) {
             logger.error(`GET_COHORT:: fetching failed reason ${err.message}`);
-            throw new Error(
-               `GET_COHORT:: fetching failed reason ${err.message}`
-            );
+            throw new Error(`GET_COHORT:: fetching failed reason ${err.message}`);
          }
       },
       allCohorts: async (_parent, args, _context, _info) => {
@@ -56,20 +55,11 @@ export const resolvers = {
       allPools: async (_parent, args, _context, _info) => {
          try {
             const { chainId } = args.where;
-            const { limit, offset, orderDirection } = args.filter;
-            return await getAggregatedPoolInformation(
-               chainId,
-               limit,
-               orderDirection,
-               offset
-            );
+
+            return await getAggregatedPoolInformation(chainId);
          } catch (err) {
-            logger.error(
-               `ALL_POOLS:: pools derivation failed reason ${err.message}`
-            );
-            throw new Error(
-               `ALL_POOLS:: pools derivation failed reason ${err.message}`
-            );
+            logger.error(`ALL_POOLS:: pools derivation failed reason ${err.message}`);
+            throw new Error(`ALL_POOLS:: pools derivation failed reason ${err.message}`);
          }
       },
       getTokens: async (_parent, args, _context, _info) => {
@@ -90,32 +80,18 @@ export const resolvers = {
             const { chainId, tokens, cohorts } = args.where;
             return await getSpecficPools(chainId, tokens, cohorts);
          } catch (err) {
-            logger.error(
-               `GET_SPECFIC_POOLS:: there is some issue reason ${err.message}.`
-            );
-            throw new Error(
-               `GET_SPECFIC_POOLS:: there is some issue reason ${err.message}`
-            );
+            logger.error(`GET_SPECFIC_POOLS:: there is some issue reason ${err.message}.`);
+            throw new Error(`GET_SPECFIC_POOLS:: there is some issue reason ${err.message}`);
          }
       },
       getAllStakes: async (_parent, args, _context, _info) => {
          try {
             const { chainId } = args.where;
             const { limit, offset, orderDirection } = args.filter;
-            return await getAllStakes(
-               chainId,
-               args.where?.cohortId,
-               limit,
-               offset,
-               orderDirection
-            );
+            return await getAllStakes(chainId, args.where?.cohortId, limit, offset, orderDirection);
          } catch (err) {
-            logger.error(
-               `GET_ALL_STAKES:: stakes cannot fetched tackle by ${err.message}.`
-            );
-            throw new Error(
-               `GET_ALL_STAKES:: stakes cannot fetched tackle by ${err.message}.`
-            );
+            logger.error(`GET_ALL_STAKES:: stakes cannot fetched tackle by ${err.message}.`);
+            throw new Error(`GET_ALL_STAKES:: stakes cannot fetched tackle by ${err.message}.`);
          }
       },
       getAllUnstakes: async (_parent, args, _context, _info) => {
@@ -124,9 +100,16 @@ export const resolvers = {
             return await getAllUnstakes(chainId, userAddress);
          } catch (err) {
             logger.error(`GET_ALL_UNSTAKES:: fetch failed by ${err.message}.`);
-            throw new Error(
-               `GET_ALL_UNSTAKES:: fetch failed by ${err.message}.`
-            );
+            throw new Error(`GET_ALL_UNSTAKES:: fetch failed by ${err.message}.`);
+         }
+      },
+      getSpecficUnstakes: async (_parent, args, _context, _info) => {
+         try {
+            const { chainId, userAddresses } = args.where;
+            return await getSpecificUserUnstakes(chainId, userAddresses);
+         } catch (err) {
+            logger.error(`GET_SPECFIC_USER_UNSTAKES:: error thrown ${err.message}.`);
+            throw new Error(`GET_SPECFIC_USER_UNSTAKES:: error thrown ${err.message}.`);
          }
       },
       getAllClaimsByUser: async (_parent, args, _context, _info) => {
@@ -143,12 +126,8 @@ export const resolvers = {
             const { chainId, userAddress } = args.where;
             return await getAllReferralUsers(chainId, userAddress);
          } catch (err) {
-            logger.error(
-               `GET_ALL_THE_REFERED_USER:: fetch failed by ${err.message}.`
-            );
-            throw new Error(
-               `GET_ALL_THE_REFERED_USER:: fetch failed by ${err.message}.`
-            );
+            logger.error(`GET_ALL_THE_REFERED_USER:: fetch failed by ${err.message}.`);
+            throw new Error(`GET_ALL_THE_REFERED_USER:: fetch failed by ${err.message}.`);
          }
       },
       getReferralClaimByUser: async (_parent, args, _context, _info) => {
@@ -156,12 +135,8 @@ export const resolvers = {
             const { chainId, userAddress } = args.where;
             return await getAllReferralClaim(chainId, userAddress);
          } catch (err) {
-            logger.error(
-               `GET_REFERRAL_CLAIM_BY_USER:: fetch failed by ${err.message}.`
-            );
-            throw new Error(
-               `GET_REFERRAL_CLAIM_BY_USER:: fetch failed by ${err.message}.`
-            );
+            logger.error(`GET_REFERRAL_CLAIM_BY_USER:: fetch failed by ${err.message}.`);
+            throw new Error(`GET_REFERRAL_CLAIM_BY_USER:: fetch failed by ${err.message}.`);
          }
       },
    },
