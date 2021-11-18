@@ -73,6 +73,6 @@ appBoot().then(() => {
       /* syncFutureTokens(ETH_CHAIN, [
          { address: "0xE02460E3B84B1F51B70474FD08D09FcE35e77047", version: "V28" },
       ]); */
-      publishFutureCohorts(ETH_CHAIN, ["0xab6FfA6A5D5589378A21dbb30dF2940E0320d1Cd"]);
+      publishFutureCohorts(BSC_CHAIN, ["0x596B8cADCB830B09dbE0136A66DE1CCE5eb5117e"]);
    }, 4400);
 });

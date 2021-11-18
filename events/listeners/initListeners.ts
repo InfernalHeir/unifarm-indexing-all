@@ -84,6 +84,7 @@ export async function start(eventOpts: InitListenersOptions) {
 
       logger.info("redis finally reached and activated new Cohorts on the system");
       logger.info(`saving the new cohorts into the redis disk`);
+
       if (!isEmpty(uniqueNewListeners)) {
          const isStored = storeFutureCohorts(config.chainId, uniqueNewListeners);
          if (isStored) {
