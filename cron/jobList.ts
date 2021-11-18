@@ -1,16 +1,6 @@
 import { BSC_CHAIN, POLYGON_CHAIN } from "../constants";
-import {
-   CLAIM_ABI,
-   REFFERAL_CLAIM_ABI,
-   STAKE_ABI,
-   UNSTAKE_ABI,
-} from "../events/bsc/ABI";
-import {
-   CLAIM_TOPIC,
-   REFFERAL_EARN_TOPIC,
-   STAKE_TOPIC,
-   UNSTAKE_TOPIC,
-} from "../events/bsc/topics";
+import { CLAIM_ABI, REFFERAL_CLAIM_ABI, STAKE_ABI, UNSTAKE_ABI } from "../events/bsc/ABI";
+import { CLAIM_TOPIC, REFFERAL_EARN_TOPIC, STAKE_TOPIC, UNSTAKE_TOPIC } from "../events/bsc/topics";
 import { CohortsEvents } from "../events/events";
 
 export interface JobList {
@@ -246,6 +236,63 @@ export const jobList: JobList[] = [
       ABI: JSON.stringify(REFFERAL_CLAIM_ABI),
       topic: REFFERAL_EARN_TOPIC,
    },
+   // from here
+   {
+      chainId: BSC_CHAIN,
+      eventName: CohortsEvents.STAKE,
+      cohortId: "0xa1f28581129f27c11ee0c6c421a4fbf29c3e9bc7",
+      ABI: JSON.stringify(STAKE_ABI),
+      topic: STAKE_TOPIC,
+   },
+   {
+      chainId: BSC_CHAIN,
+      eventName: CohortsEvents.UNSTAKE,
+      cohortId: "0xa1f28581129f27c11ee0c6c421a4fbf29c3e9bc7",
+      ABI: JSON.stringify(UNSTAKE_ABI),
+      topic: UNSTAKE_TOPIC,
+   },
+   {
+      chainId: BSC_CHAIN,
+      eventName: CohortsEvents.CLAIM,
+      cohortId: "0xa1f28581129f27c11ee0c6c421a4fbf29c3e9bc7",
+      ABI: JSON.stringify(CLAIM_ABI),
+      topic: CLAIM_TOPIC,
+   },
+   {
+      chainId: BSC_CHAIN,
+      eventName: CohortsEvents.REFERRALEARN,
+      cohortId: "0xa1f28581129f27c11ee0c6c421a4fbf29c3e9bc7",
+      ABI: JSON.stringify(REFFERAL_CLAIM_ABI),
+      topic: REFFERAL_EARN_TOPIC,
+   },
+   {
+      chainId: BSC_CHAIN,
+      eventName: CohortsEvents.STAKE,
+      cohortId: "0xd3CE8115D38fF119c0FB1172bF6569014A8E184F",
+      ABI: JSON.stringify(STAKE_ABI),
+      topic: STAKE_TOPIC,
+   },
+   {
+      chainId: BSC_CHAIN,
+      eventName: CohortsEvents.UNSTAKE,
+      cohortId: "0xd3CE8115D38fF119c0FB1172bF6569014A8E184F",
+      ABI: JSON.stringify(UNSTAKE_ABI),
+      topic: UNSTAKE_TOPIC,
+   },
+   {
+      chainId: BSC_CHAIN,
+      eventName: CohortsEvents.CLAIM,
+      cohortId: "0xd3CE8115D38fF119c0FB1172bF6569014A8E184F",
+      ABI: JSON.stringify(CLAIM_ABI),
+      topic: CLAIM_TOPIC,
+   },
+   {
+      chainId: BSC_CHAIN,
+      eventName: CohortsEvents.REFERRALEARN,
+      cohortId: "0xd3CE8115D38fF119c0FB1172bF6569014A8E184F",
+      ABI: JSON.stringify(REFFERAL_CLAIM_ABI),
+      topic: REFFERAL_EARN_TOPIC,
+   },
    {
       chainId: BSC_CHAIN,
       eventName: CohortsEvents.UNSTAKE,
@@ -453,6 +500,62 @@ export const jobList: JobList[] = [
       chainId: POLYGON_CHAIN,
       eventName: CohortsEvents.REFERRALEARN,
       cohortId: "0xf4f079e8834ff38be9b719c70b4a4195ad6199e5",
+      ABI: JSON.stringify(REFFERAL_CLAIM_ABI),
+      topic: REFFERAL_EARN_TOPIC,
+   },
+   {
+      chainId: POLYGON_CHAIN,
+      eventName: CohortsEvents.STAKE,
+      cohortId: "0x9442Cf0eCC338C09301bA25517bB2C5fF8a7794B",
+      ABI: JSON.stringify(STAKE_ABI),
+      topic: STAKE_TOPIC,
+   },
+   {
+      chainId: POLYGON_CHAIN,
+      eventName: CohortsEvents.UNSTAKE,
+      cohortId: "0x9442Cf0eCC338C09301bA25517bB2C5fF8a7794B",
+      ABI: JSON.stringify(UNSTAKE_ABI),
+      topic: UNSTAKE_TOPIC,
+   },
+   {
+      chainId: POLYGON_CHAIN,
+      eventName: CohortsEvents.CLAIM,
+      cohortId: "0x9442Cf0eCC338C09301bA25517bB2C5fF8a7794B",
+      ABI: JSON.stringify(CLAIM_ABI),
+      topic: CLAIM_TOPIC,
+   },
+   {
+      chainId: POLYGON_CHAIN,
+      eventName: CohortsEvents.REFERRALEARN,
+      cohortId: "0x9442Cf0eCC338C09301bA25517bB2C5fF8a7794B",
+      ABI: JSON.stringify(REFFERAL_CLAIM_ABI),
+      topic: REFFERAL_EARN_TOPIC,
+   },
+   {
+      chainId: POLYGON_CHAIN,
+      eventName: CohortsEvents.STAKE,
+      cohortId: "0xe8369ca802f89b16a968ccb24431a7a412f41f27",
+      ABI: JSON.stringify(STAKE_ABI),
+      topic: STAKE_TOPIC,
+   },
+   {
+      chainId: POLYGON_CHAIN,
+      eventName: CohortsEvents.UNSTAKE,
+      cohortId: "0xe8369ca802f89b16a968ccb24431a7a412f41f27",
+      ABI: JSON.stringify(UNSTAKE_ABI),
+      topic: UNSTAKE_TOPIC,
+   },
+   {
+      chainId: POLYGON_CHAIN,
+      eventName: CohortsEvents.CLAIM,
+      cohortId: "0xe8369ca802f89b16a968ccb24431a7a412f41f27",
+      ABI: JSON.stringify(CLAIM_ABI),
+      topic: CLAIM_TOPIC,
+   },
+   {
+      chainId: POLYGON_CHAIN,
+      eventName: CohortsEvents.REFERRALEARN,
+      cohortId: "0xe8369ca802f89b16a968ccb24431a7a412f41f27",
       ABI: JSON.stringify(REFFERAL_CLAIM_ABI),
       topic: REFFERAL_EARN_TOPIC,
    },
