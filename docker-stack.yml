@@ -24,7 +24,9 @@ services:
          - CHAIN_ID=1
       networks:
          - unifarm
-      command: ["run","listener-server:start"]     
+      command: ["run","listener-server:start"]
+      depends_on: 
+         - redis     
       deploy:
          mode: "replicated"
          restart_policy:
@@ -37,6 +39,8 @@ services:
       networks:
          - unifarm
       command: ["run","listener-server:start"]
+      depends_on: 
+         - redis
       deploy:
          mode: "replicated"
          restart_policy:
@@ -49,7 +53,9 @@ services:
          - CHAIN_ID=137
       networks:
          - unifarm
-      command: ["run","listener-server:start"]     
+      command: ["run","listener-server:start"]
+      depends_on: 
+         - redis     
       deploy:
          mode: "replicated"
          restart_policy:
