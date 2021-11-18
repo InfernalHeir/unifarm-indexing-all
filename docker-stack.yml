@@ -14,7 +14,7 @@ services:
          mode: "replicated"
          replicas: 3
          placement:
-            max_replicas_per_node: 2
+            max_replicas_per_node: 1
          restart_policy:
             condition: on-failure
    eth-events-sync:
@@ -22,8 +22,6 @@ services:
       env_file: "./.env.prod"
       environment:
          - CHAIN_ID=1
-      volumes:
-         - eth_events:/events
       networks:
          - unifarm
       command: ["run","listener-server:start"]     
@@ -36,8 +34,6 @@ services:
       env_file: "./.env.prod"
       environment:
          - CHAIN_ID=56
-      volumes:
-         - bsc_events:/events
       networks:
          - unifarm
       command: ["run","listener-server:start"]
@@ -51,8 +47,6 @@ services:
       env_file: "./.env.prod"
       environment:
          - CHAIN_ID=137
-      volumes:
-         - polygon_events:/events
       networks:
          - unifarm
       command: ["run","listener-server:start"]     
@@ -68,7 +62,7 @@ services:
          - "6379:6379"
       networks:
          - unifarm
-      command: redis-server --appendonly yes  --requirepass ${REDIS_PASSWORD}   
+      command: redis-server --appendonly yes  --requirepass STTjrAbH2tKu6c3c   
       deploy:
          mode: "replicated"
          replicas: 1
@@ -81,7 +75,4 @@ networks:
    unifarm:
 volumes:
    graph:
-   eth_events:
-   bsc_events:
-   polygon_events:
    redis-data:      
