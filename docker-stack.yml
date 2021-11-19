@@ -20,6 +20,8 @@ services:
    eth-events-sync:
       image: events-listener-mainnet:latest
       env_file: "./.env.prod"
+      volumes:
+         - eth-events-logs:/events/storage
       environment:
          - CHAIN_ID=1
       networks:
@@ -34,6 +36,8 @@ services:
    bsc-events-sync:
       image: events-listener-mainnet:latest
       env_file: "./.env.prod"
+      volumes:
+         - bsc-events-logs:/events/storage
       environment:
          - CHAIN_ID=56
       networks:
@@ -49,6 +53,8 @@ services:
    polygon-events-sync:
       image: events-listener-mainnet:latest
       env_file: "./.env.prod"
+      volumes:
+         - polygon-events-logs:/events/storage
       environment:
          - CHAIN_ID=137
       networks:
@@ -81,4 +87,7 @@ networks:
    unifarm:
 volumes:
    graph:
+   eth-events-logs:   
+   bsc-events-logs:   
+   polygon-events-logs:   
    redis-data:      
