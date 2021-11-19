@@ -55,7 +55,10 @@ services:
         address: "0x17cf1f7abe02e2cefea0c9c1bd812b2cf8121f2b"
       -
         version: "UFARM-CTR DUAL FARM"
-        address: "0xcedf01ea298f90df54f01878b324300b091b7a56"    
+        address: "0xcedf01ea298f90df54f01878b324300b091b7a56"
+      -
+        version: "V28"
+        address: "0x7AfE6309fFdf5d5A6db8462d54bA737d73697a44"      
     proxies:
         -
          - "0xe8369CA802f89b16A968ccb24431A7A412F41f27"
@@ -119,7 +122,7 @@ services:
         address: "0xa1f28581129f27c11ee0c6c421a4fbf29c3e9bc7"
       - 
         version: "V27"
-        address: "0xd3CE8115D38fF119c0FB1172bF6569014A8E184F"     
+        address: "0xd3CE8115D38fF119c0FB1172bF6569014A8E184F"       
     proxies:
       -
        - "0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F"

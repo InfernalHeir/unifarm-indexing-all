@@ -2,7 +2,7 @@ import { logger } from "../../log";
 import Web3 from "web3";
 import { Interface, LogDescription } from "@ethersproject/abi";
 import ETH_ABI from "../../constants/ethereum/ABI.json";
-import { importEvents } from "./importEvents";
+import { importEvents, removedEvents } from "./importEvents";
 import { chainNameById } from "../../constants";
 
 function eventParse(data: string, topics: string[]) {
@@ -10,6 +10,27 @@ function eventParse(data: string, topics: string[]) {
    const logs: LogDescription = iface.parseLog({ topics, data });
    return logs;
 }
+
+export var syncingStatus = (provider: Web3) => {
+   provider.eth
+      .subscribe("syncing", function (error, sync) {
+         if (!error) console.log(sync);
+      })
+      .on("data", function (sync) {
+         // show some syncing stats
+         logger.info(`Sync Starting Block - ${sync.StartingBlock}`);
+         logger.info(`Sync Current Block - ${sync.CurrentBlock}`);
+         logger.info(`Sync Highest Block - ${sync.HighestBlock}`);
+         logger.info(`Sync Pulled States - ${sync.PulledStates}`);
+      })
+      .on("changed", function (isSyncing) {
+         if (isSyncing) {
+            // stop app operation
+         } else {
+            // regain app operation
+         }
+      });
+};
 
 export function activateListener(provider: Web3, addresses: string[]) {
    provider.eth
@@ -25,6 +46,7 @@ export function activateListener(provider: Web3, addresses: string[]) {
       })
       .on("data", async (event) => {
          const logs = eventParse(event.data, event.topics);
+
          importEvents({
             transactionHash: event.transactionHash,
             blockNumber: event.blockNumber,
@@ -45,8 +67,13 @@ export function activateListener(provider: Web3, addresses: string[]) {
                return;
             });
       })
-      .on("changed", (event) => {
-         //
+      .on("changed", async (event: any) => {
+         logger.info(`Event Has been failed or removed from the blockchain`);
+         logger.info(`Event Blob ${event}`);
+         if (event.removed) {
+            const logs = eventParse(event.data, event.topics);
+            await removedEvents(Number(process.env.CHAIN_ID), event.transactionHash, logs);
+         }
       })
       .on("error", (err) => {
          logger.error(`ActivateListener:: ${err.message}`);

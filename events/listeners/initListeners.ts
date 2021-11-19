@@ -1,4 +1,4 @@
-import { activateListener } from "../events-helpers/pubsub";
+import { activateListener, syncingStatus } from "../events-helpers/pubsub";
 import { listeners } from "./listeners-config/listenster.config";
 import { getWsProviders } from "../../providers/provider";
 import { appBoot } from "../../db/createConnection";
@@ -35,23 +35,7 @@ export const getNewCohorts = async (chainId: number): Promise<string[]> => {
    return parsed as string[];
 };
 
-export async function start(eventOpts: InitListenersOptions) {
-   if (eventOpts.chainId === undefined) {
-      throw new Error(
-         `Invaild ChainId please pass the chain id to subscibe corressponding event logs`
-      );
-   }
-
-   const previousCohorts = await getNewCohorts(eventOpts.chainId);
-   // create web3 instance
-   const web3 = getWsProviders(eventOpts.chainId);
-   // grab the cohorts which have to listen
-   const cohorts = listeners[eventOpts.chainId];
-
-   const mergedAll = concat(cohorts, previousCohorts);
-   // activate the listener
-   activateListener(web3, mergedAll);
-
+export const cohortRedisPubSubActivator = async () => {
    client.subscribe(`FUTURE_COHORT_SYNC_${Number(process.env.CHAIN_ID)}`);
 
    client.on("message", async (channel, message) => {
@@ -63,14 +47,15 @@ export async function start(eventOpts: InitListenersOptions) {
       const chainId = Number(config.chainId);
       const web3Object = getWsProviders(chainId);
 
-      const oldCohorts = await getNewCohorts(eventOpts.chainId);
+      const oldCohorts = await getNewCohorts(Number(process.env.CHAIN_ID));
 
       const futureCohorts = config.cohorts.map((address) => {
          return address.toLowerCase();
       });
 
       var concated: string[];
-      if (isEmpty(previousCohorts)) {
+
+      if (isEmpty(oldCohorts)) {
          concated = futureCohorts;
       } else {
          concated = concat(futureCohorts, oldCohorts) as string[];
@@ -96,9 +81,37 @@ export async function start(eventOpts: InitListenersOptions) {
             );
          } else {
             logger.info(`Failed to store`);
+            setter.publish(
+               `FUTURE_MESSAGE_${config.chainId}`,
+               `Something wrong went with BLOCK_CHAIN CHAINID ${process.env.CHAIN_ID}`
+            );
          }
       }
    });
+};
+
+export async function start(eventOpts: InitListenersOptions) {
+   if (eventOpts.chainId === undefined) {
+      throw new Error(
+         `Invaild ChainId please pass the chain id to subscibe corressponding event logs`
+      );
+   }
+
+   const previousCohorts = await getNewCohorts(eventOpts.chainId);
+   // create web3 instance
+   const web3 = getWsProviders(eventOpts.chainId);
+
+   // syncing status
+   syncingStatus(web3);
+   // grab the cohorts which have to listen
+   const cohorts = listeners[eventOpts.chainId];
+
+   const mergedAll = concat(cohorts, previousCohorts);
+   // activate the listener
+   activateListener(web3, mergedAll);
+
+   // listener for future cohorts
+   cohortRedisPubSubActivator();
 }
 
 appBoot().then(() => {

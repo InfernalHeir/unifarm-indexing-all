@@ -1,4 +1,9 @@
 import { LogDescription } from "@ethersproject/abi";
+import { EntityTarget, getConnection, getRepository } from "typeorm";
+import { Claim } from "../../db/entity/Claim";
+import { RefferralClaim } from "../../db/entity/RefferalClaim";
+import { Stake } from "../../db/entity/Stake";
+import { Unstake } from "../../db/entity/Unstake";
 import {
    insertClaimEvent,
    insertRefferalEvent,
@@ -87,5 +92,42 @@ export async function importEvents(importOptions: ImportEventOptions) {
    } catch (err) {
       logger.error(`Something wrong went insertation failed ${err.message}`);
       return;
+   }
+}
+
+async function deleteAll(target: EntityTarget<unknown>, chainId: number, hash: string) {
+   try {
+      await getConnection("unifarm")
+         .createQueryBuilder()
+         .delete()
+         .from(target)
+         .where("chainId =:chainId", {
+            chainId,
+         })
+         .andWhere("LOWER(hash) =:hash", {
+            hash: hash.toLowerCase(),
+         });
+
+      logger.info(
+         `Deleled the event from the blockchain ${chainId} CHAINID. transactionHash is ${hash}`
+      );
+   } catch (err) {
+      logger.error(`Event Not deleted ${err.message}. chainId is ${chainId}`);
+   }
+}
+
+export async function removedEvents(chainId: number, hash: string, event: LogDescription) {
+   if (!chainId || !hash) return null;
+
+   if (event.name === CohortsEvents.STAKE) {
+      await deleteAll(Stake, chainId, hash);
+   } else if (event.name === CohortsEvents.UNSTAKE) {
+      await deleteAll(Unstake, chainId, hash);
+   } else if (event.name === CohortsEvents.CLAIM) {
+      await deleteAll(Claim, chainId, hash);
+   } else if (event.name === CohortsEvents.REFERRALEARN) {
+      await deleteAll(RefferralClaim, chainId, hash);
+   } else {
+      return null;
    }
 }

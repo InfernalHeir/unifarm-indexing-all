@@ -21,17 +21,37 @@ import ETHPROXYABI from "../constants/ethereum/Proxy/Cohort.json";
 import BSCPROXYABI from "../constants/bsc/Proxy/Cohort.json";
 import POLYGONPROXYABI from "../constants/polygon/Proxy/Cohort.json";
 
+var options = {
+   timeout: 30000, // ms
+
+   // Useful if requests result are large
+   clientConfig: {
+      maxReceivedFrameSize: 100000000, // bytes - default: 1MiB
+      maxReceivedMessageSize: 100000000, // bytes - default: 8MiB
+   },
+
+   // Enable auto reconnection
+   reconnect: {
+      auto: true,
+      delay: 5000, // ms
+      maxAttempts: 5,
+      onTimeout: false,
+   },
+};
+
 export const ethProvider = new JsonRpcProvider(ethereumRPCUrl);
 
 export const bscProvider = new JsonRpcProvider(bscRPCUrl);
 
 export const polygonProvider = new JsonRpcProvider(polygonRPCUrl);
 
-export const wsEthProvider = new Web3(wsEthRPCUrl);
+export const wsEthProvider = new Web3(new Web3.providers.WebsocketProvider(wsEthRPCUrl, options));
 
-export const wsBscProvider = new Web3(wsBscRPCUrl);
+export const wsBscProvider = new Web3(new Web3.providers.WebsocketProvider(wsBscRPCUrl, options));
 
-export const wsPolygonProvider = new Web3(wsPolygonRPCUrl);
+export const wsPolygonProvider = new Web3(
+   new Web3.providers.WebsocketProvider(wsPolygonRPCUrl, options)
+);
 
 export const ethereumCohorts = (cohortAddress: string) => {
    return ethSwitch(cohortAddress, ethProvider);
