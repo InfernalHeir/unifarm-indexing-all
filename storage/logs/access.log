@@ -1654,3 +1654,14 @@
 2021-10-19T12:40:07.564Z [__UNIFARM__] info: connection established to unifarm
 2021-10-19T14:18:04.567Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:8080//graphql
 2021-10-19T14:18:04.725Z [__UNIFARM__] info: connection established to unifarm
+2021-11-19T07:57:47.844Z [__UNIFARM__] info: connection established to unifarm
+2021-11-19T08:00:12.419Z [__UNIFARM__] info: Sync Starting Block - undefined
+2021-11-19T08:00:12.423Z [__UNIFARM__] info: Sync Current Block - undefined
+2021-11-19T08:00:12.423Z [__UNIFARM__] info: Sync Highest Block - undefined
+2021-11-19T08:00:12.423Z [__UNIFARM__] info: Sync Pulled States - undefined
+2021-11-19T08:00:12.518Z [__UNIFARM__] info: Sync Starting Block - undefined
+2021-11-19T08:00:12.518Z [__UNIFARM__] info: Sync Current Block - undefined
+2021-11-19T08:00:12.519Z [__UNIFARM__] info: Sync Highest Block - undefined
+2021-11-19T08:00:12.519Z [__UNIFARM__] info: Sync Pulled States - undefined
+2021-11-19T08:00:19.225Z [__UNIFARM__] info: connection established to unifarm
+2021-11-19T08:00:23.374Z [__UNIFARM__] info: ActivateListener:: listners activated successfully subscription id is 0xabdf33fea4a22a0631a309d70bdf6f55 for chainId bsc

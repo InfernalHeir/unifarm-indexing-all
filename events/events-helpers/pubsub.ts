@@ -18,10 +18,7 @@ export var syncingStatus = (provider: Web3) => {
       })
       .on("data", function (sync) {
          // show some syncing stats
-         logger.info(`Sync Starting Block - ${sync.StartingBlock}`);
-         logger.info(`Sync Current Block - ${sync.CurrentBlock}`);
-         logger.info(`Sync Highest Block - ${sync.HighestBlock}`);
-         logger.info(`Sync Pulled States - ${sync.PulledStates}`);
+         logger.info(`Sync Information onData - ${sync}`);
       })
       .on("changed", function (isSyncing) {
          if (isSyncing) {
