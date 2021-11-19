@@ -148,3 +148,34 @@
 2021-10-19T12:28:23.076Z [__UNIFARM__] error: The server does not support SSL connections
 2021-10-19T12:39:11.634Z [__UNIFARM__] error: GET_TOKENS:: tokens derivation failed please try again. reason No repository for "Token" was found. Looks like this entity is not registered in current "unifarm" connection?
 2021-10-19T12:39:22.466Z [__UNIFARM__] error: GET_TOKENS:: tokens derivation failed please try again. reason No repository for "Token" was found. Looks like this entity is not registered in current "unifarm" connection?
+2021-11-19T08:33:05.399Z [__UNIFARM__] error: getaddrinfo ENOTFOUND undefined
+2021-11-19T08:40:03.306Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason invalid json response body at https://deep-index.moralis.io/api/v2/0xd23499e0Dc02C35d47D5284c85Cf4917D2454d2F/events?chain=bsc&from_block=0&topic=ReferralEarn(address,address,address,uint256,uint256)&offset=0 reason: Unexpected token < in JSON at position 0
+2021-11-19T08:40:03.311Z [__UNIFARM__] error: there is something wrong went with polygon chain. it will trying again. reason invalid json response body at https://deep-index.moralis.io/api/v2/0x9442Cf0eCC338C09301bA25517bB2C5fF8a7794B/events?chain=polygon&from_block=0&topic=Claim(address,address,address,uint256,uint256)&offset=0 reason: Unexpected token < in JSON at position 0
+2021-11-19T08:40:03.311Z [__UNIFARM__] error: there is something wrong went with bsc chain. it will trying again. reason invalid json response body at https://deep-index.moralis.io/api/v2/0xd3CE8115D38fF119c0FB1172bF6569014A8E184F/events?chain=bsc&from_block=0&topic=Stake(address,uint256,address,address,uint256,uint256)&offset=0 reason: Unexpected token < in JSON at position 0
+2021-11-19T14:51:24.767Z [__UNIFARM__] error: ALL_POOLS:: pools derivation failed reason syntax error at or near "table"
+2021-11-19T14:58:02.847Z [__UNIFARM__] error: ALL_POOLS:: pools derivation failed reason syntax error at or near ":"
+2021-11-19T15:00:26.244Z [__UNIFARM__] error: ALL_POOLS:: pools derivation failed reason syntax error at or near ")"
+2021-11-19T15:02:20.969Z [__UNIFARM__] error: ALL_POOLS:: pools derivation failed reason syntax error at or near ":"
+2021-11-19T15:02:55.892Z [__UNIFARM__] error: ALL_POOLS:: pools derivation failed reason syntax error at or near ":"
+2021-11-19T15:02:58.939Z [__UNIFARM__] error: ALL_POOLS:: pools derivation failed reason syntax error at or near ":"
+2021-11-19T15:06:37.236Z [__UNIFARM__] error: ALL_POOLS:: pools derivation failed reason table name "cohort" specified more than once
+2021-11-19T15:39:20.895Z [__UNIFARM__] error: ALL_POOLS:: pools derivation failed reason syntax error at or near "="
+2021-11-19T15:39:23.716Z [__UNIFARM__] error: ALL_POOLS:: pools derivation failed reason syntax error at or near "="
+2021-11-19T15:39:42.291Z [__UNIFARM__] error: ALL_POOLS:: pools derivation failed reason syntax error at or near "="
+2021-11-19T15:40:58.935Z [__UNIFARM__] error: ALL_POOLS:: pools derivation failed reason syntax error at or near "="
+2021-11-19T15:49:37.448Z [__UNIFARM__] error: ALL_POOLS:: pools derivation failed reason No repository for "Token" was found. Looks like this entity is not registered in current "unifarm" connection?
+2021-11-19T16:03:16.434Z [__UNIFARM__] error: ALL_POOLS:: pools derivation failed reason syntax error at or near "="
+2021-11-19T16:14:01.585Z [__UNIFARM__] error: GET_SPECFIC_POOLS:: there is some issue reason syntax error at or near ")".
+2021-11-19T16:14:01.800Z [__UNIFARM__] error: GET_SPECFIC_POOLS:: there is some issue reason syntax error at or near ")".
+2021-11-19T16:15:18.662Z [__UNIFARM__] error: GET_SPECFIC_POOLS:: there is some issue reason syntax error at or near ")".
+2021-11-19T16:15:19.076Z [__UNIFARM__] error: GET_SPECFIC_POOLS:: there is some issue reason syntax error at or near ")".
+2021-11-19T16:17:56.077Z [__UNIFARM__] error: GET_SPECFIC_POOLS:: there is some issue reason syntax error at or near ")".
+2021-11-19T16:17:56.191Z [__UNIFARM__] error: GET_SPECFIC_POOLS:: there is some issue reason syntax error at or near ")".
+2021-11-19T16:19:19.620Z [__UNIFARM__] error: GET_SPECFIC_POOLS:: there is some issue reason syntax error at or near ")".
+2021-11-19T16:21:08.565Z [__UNIFARM__] error: GET_SPECFIC_POOLS:: there is some issue reason syntax error at or near ")".
+2021-11-19T16:21:08.821Z [__UNIFARM__] error: GET_SPECFIC_POOLS:: there is some issue reason syntax error at or near ")".
+2021-11-19T16:21:09.082Z [__UNIFARM__] error: GET_SPECFIC_POOLS:: there is some issue reason syntax error at or near ")".
+2021-11-19T16:22:14.611Z [__UNIFARM__] error: GET_SPECFIC_POOLS:: there is some issue reason syntax error at or near ")".
+2021-11-19T16:22:14.942Z [__UNIFARM__] error: GET_SPECFIC_POOLS:: there is some issue reason syntax error at or near ")".
+2021-11-19T16:22:15.023Z [__UNIFARM__] error: GET_SPECFIC_POOLS:: there is some issue reason syntax error at or near ")".
+2021-11-19T16:22:15.099Z [__UNIFARM__] error: GET_SPECFIC_POOLS:: there is some issue reason syntax error at or near ")".

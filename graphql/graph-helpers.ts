@@ -100,7 +100,7 @@ export const getAggregatedPoolInformation = async (chainId: number) => {
          "token.cohortId",
          Cohort,
          "cohort",
-         "cohort.cohortAddress = token.cohortId"
+         "LOWER(cohort.cohortAddress) = LOWER(token.cohortId) and cohort.chainId = token.chainId"
       )
       .orderBy("cohort.poolStartTime", "DESC")
       .where("token.chainId =:chainId", {
@@ -113,13 +113,14 @@ export const getAggregatedPoolInformation = async (chainId: number) => {
 };
 
 export const getSpecificUserUnstakes = async (chainId: number, userAddresses: string[]) => {
+   const userAddressesLowerCase = stringArrayLowerCase(userAddresses);
    const unstakes = await getRepository(Unstake, "unifarm")
       .createQueryBuilder("unstake")
       .where("unstake.chainId =:chainId", {
          chainId,
       })
       .andWhere("LOWER(unstake.userAddress) IN (:...userAddresses)", {
-         userAddresses,
+         userAddresses: userAddressesLowerCase,
       })
       .getMany();
    return unstakes;
@@ -132,7 +133,7 @@ export const getPoolInformation = async (chainId: number, tokenAddress: string) 
          "token.cohortId",
          Cohort,
          "cohort",
-         "cohort.cohortAddress = token.cohortId"
+         "LOWER(cohort.cohortAddress) = LOWER(token.cohortId) and cohort.chainId = token.chainId"
       )
       .where("token.chainId =:chainId", {
          chainId,
@@ -174,7 +175,7 @@ export const getSpecficPools = async (chainId: number, tokens: string[], cohorts
          "token.cohortId",
          Cohort,
          "cohort",
-         "cohort.cohortAddress = token.cohortId"
+         "LOWER(cohort.cohortAddress) = LOWER(token.cohortId) and cohort.chainId = token.chainId"
       )
       .where("token.chainId =:chainId", {
          chainId,
