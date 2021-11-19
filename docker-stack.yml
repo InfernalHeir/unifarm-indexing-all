@@ -1,7 +1,7 @@
 version: "3.8"
 services:
    graph:
-      image: graph-mainnet:latest
+      image: unifarm/unifarm-mainnet-graph:latest
       env_file: "./.env.prod"
       volumes:
          - graph:/graph
@@ -18,7 +18,7 @@ services:
          restart_policy:
             condition: on-failure
    eth-events-sync:
-      image: events-listener-mainnet:latest
+      image: unifarm/unifarm-mainnet-events:latest
       env_file: "./.env.prod"
       volumes:
          - eth-events-logs:/events/storage
@@ -34,7 +34,7 @@ services:
          restart_policy:
             condition: on-failure     
    bsc-events-sync:
-      image: events-listener-mainnet:latest
+      image: unifarm/unifarm-mainnet-events:latest
       env_file: "./.env.prod"
       volumes:
          - bsc-events-logs:/events/storage
@@ -51,7 +51,7 @@ services:
             condition: on-failure
 
    polygon-events-sync:
-      image: events-listener-mainnet:latest
+      image: unifarm/unifarm-mainnet-events:latest
       env_file: "./.env.prod"
       volumes:
          - polygon-events-logs:/events/storage
