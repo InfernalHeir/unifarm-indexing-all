@@ -23,7 +23,7 @@ services:
       environment:
          - CHAIN_ID=4
       volumes:
-         - eth_events:/events
+         - eth_events:/events/storage
       networks:
          - unifarm
       command: ["run","listener-server:start"]     
@@ -37,7 +37,7 @@ services:
       environment:
          - CHAIN_ID=97
       volumes:
-         - bsc_events:/events
+         - bsc_events:/events/storage
       networks:
          - unifarm
       command: ["run","listener-server:start"]
@@ -52,7 +52,7 @@ services:
       environment:
          - CHAIN_ID=80001
       volumes:
-         - polygon_events:/events
+         - polygon_events:/events/storage
       networks:
          - unifarm
       command: ["run","listener-server:start"]     
@@ -68,7 +68,7 @@ services:
          - "6379:6379"
       networks:
          - unifarm
-      command: redis-server --appendonly yes  --requirepass ${REDIS_PASSWORD}   
+      command: redis-server --appendonly yes  --requirepass TdePagKTvyhAcnYR   
       deploy:
          mode: "replicated"
          replicas: 1
