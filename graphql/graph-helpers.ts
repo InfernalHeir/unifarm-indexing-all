@@ -100,7 +100,7 @@ export const getAggregatedPoolInformation = async (chainId: number) => {
          "token.cohortId",
          Cohort,
          "cohort",
-         "cohort.cohortAddress = token.cohortId"
+         "cohort.cohortAddress = token.cohortId and cohort.chainId = token.chainId"
       )
       .orderBy("cohort.poolStartTime", "DESC")
       .where("token.chainId =:chainId", {
@@ -132,7 +132,7 @@ export const getPoolInformation = async (chainId: number, tokenAddress: string) 
          "token.cohortId",
          Cohort,
          "cohort",
-         "cohort.cohortAddress = token.cohortId"
+         "cohort.cohortAddress = token.cohortId and cohort.chainId = token.chainId"
       )
       .where("token.chainId =:chainId", {
          chainId,
@@ -174,7 +174,7 @@ export const getSpecficPools = async (chainId: number, tokens: string[], cohorts
          "token.cohortId",
          Cohort,
          "cohort",
-         "cohort.cohortAddress = token.cohortId"
+         "cohort.cohortAddress = token.cohortId and cohort.chainId = token.chainId"
       )
       .where("token.chainId =:chainId", {
          chainId,
