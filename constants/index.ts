@@ -24,6 +24,7 @@ export const chainNameById: Chain = {
    1: "ethereum",
    56: "bsc",
    137: "polygon",
+   43114: "avax",
 };
 
 // DUMP pools
@@ -35,6 +36,7 @@ export const WBTC: string = "0x1bfd67037b42cf73acf2047067bd4f2c47d9bfd6";
 export const ETH_CHAIN = 1;
 export const BSC_CHAIN = 56;
 export const POLYGON_CHAIN = 137;
+export const AVAX_CHAIN = 43114;
 
 export const MORALIS_API = "https://deep-index.moralis.io";
 export const API_KEY = "n3vA4ayBuxWDkJdaYy4fSlaPFK4cGe4ITTdhfuDls0IbeXCY3YsZSZdJOvDGttei";

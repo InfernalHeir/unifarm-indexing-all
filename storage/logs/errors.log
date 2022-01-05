@@ -179,3 +179,7 @@
 2021-11-19T16:22:14.942Z [__UNIFARM__] error: GET_SPECFIC_POOLS:: there is some issue reason syntax error at or near ")".
 2021-11-19T16:22:15.023Z [__UNIFARM__] error: GET_SPECFIC_POOLS:: there is some issue reason syntax error at or near ")".
 2021-11-19T16:22:15.099Z [__UNIFARM__] error: GET_SPECFIC_POOLS:: there is some issue reason syntax error at or near ")".
+2021-12-22T09:31:14.055Z [__UNIFARM__] error: GET_ALL_UNSTAKES:: fetch failed by Cannot destructure property 'chainId' of 'args.where' as it is undefined..
+2021-12-22T09:32:21.523Z [__UNIFARM__] error: GET_ALL_UNSTAKES:: fetch failed by Cannot destructure property 'chainId' of 'args.where' as it is undefined..
+2021-12-22T09:35:31.506Z [__UNIFARM__] error: GET_ALL_UNSTAKES:: fetch failed by Cannot destructure property 'chainId' of 'args.where' as it is undefined..
+2021-12-22T09:35:59.604Z [__UNIFARM__] error: GET_ALL_UNSTAKES:: fetch failed by Cannot destructure property 'chainId' of 'args.where' as it is undefined..

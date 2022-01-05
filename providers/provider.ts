@@ -1,15 +1,18 @@
 import { JsonRpcProvider, WebSocketProvider } from "@ethersproject/providers";
 import { Contract } from "ethers";
 import {
+   avaxRPCUrl,
    bscRPCUrl,
    ethereumRPCUrl,
    polygonRPCUrl,
+   wsAvaxRPCUrl,
    wsBscRPCUrl,
    wsEthRPCUrl,
    wsPolygonRPCUrl,
 } from "./rpc";
 import BscCohortABI from "../constants/bsc/ABI.json";
 import PolygonCohortABI from "../constants/polygon/ABI.json";
+import AvaxCohortABI from "../constants/avax/ABI.json";
 import { ethSwitch } from "./switch";
 import Web3 from "web3";
 
@@ -45,6 +48,8 @@ export const bscProvider = new JsonRpcProvider(bscRPCUrl);
 
 export const polygonProvider = new JsonRpcProvider(polygonRPCUrl);
 
+export const avaxProvider = new JsonRpcProvider(avaxRPCUrl);
+
 export const wsEthProvider = new Web3(new Web3.providers.WebsocketProvider(wsEthRPCUrl, options));
 
 export const wsBscProvider = new Web3(new Web3.providers.WebsocketProvider(wsBscRPCUrl, options));
@@ -52,6 +57,8 @@ export const wsBscProvider = new Web3(new Web3.providers.WebsocketProvider(wsBsc
 export const wsPolygonProvider = new Web3(
    new Web3.providers.WebsocketProvider(wsPolygonRPCUrl, options)
 );
+
+export const wsAvaxProvider = new Web3(new Web3.providers.WebsocketProvider(wsAvaxRPCUrl, options));
 
 export const ethereumCohorts = (cohortAddress: string) => {
    return ethSwitch(cohortAddress, ethProvider);
@@ -63,6 +70,10 @@ export const bscCohorts = (cohortAddress: string) => {
 
 export const polygonCohorts = (cohortAddress: string) => {
    return new Contract(cohortAddress, PolygonCohortABI, polygonProvider);
+};
+
+export const avaxCohorts = (cohortAddress: string) => {
+   return new Contract(cohortAddress, AvaxCohortABI, avaxProvider);
 };
 
 // Proxy Instances
@@ -89,6 +100,8 @@ export const getCohorts = (chainId: number) => {
          return bscCohorts;
       case 137:
          return polygonCohorts;
+      case 43114:
+         return avaxCohorts;
       default:
          return null;
    }
@@ -115,6 +128,8 @@ export const getProviders = (chainId: number) => {
          return bscProvider;
       case 137:
          return polygonProvider;
+      case 43114:
+         return avaxProvider;
       default:
          return null;
    }
@@ -128,6 +143,8 @@ export const getWsProviders = (chainId: number) => {
          return wsBscProvider;
       case 137:
          return wsPolygonProvider;
+      case 43114:
+         return wsAvaxProvider;
       default:
          return null;
    }

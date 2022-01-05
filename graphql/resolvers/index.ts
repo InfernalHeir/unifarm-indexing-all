@@ -96,8 +96,8 @@ export const resolvers = {
       },
       getAllUnstakes: async (_parent, args, _context, _info) => {
          try {
-            const { chainId, userAddress } = args.where;
-            return await getAllUnstakes(chainId, userAddress);
+            const { chainId } = args.where;
+            return await getAllUnstakes(chainId);
          } catch (err) {
             logger.error(`GET_ALL_UNSTAKES:: fetch failed by ${err.message}.`);
             throw new Error(`GET_ALL_UNSTAKES:: fetch failed by ${err.message}.`);

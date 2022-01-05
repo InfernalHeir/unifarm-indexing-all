@@ -2634,3 +2634,49 @@
 2021-11-19T16:22:14.942Z [__UNIFARM__] error: GET_SPECFIC_POOLS:: there is some issue reason syntax error at or near ")".
 2021-11-19T16:22:15.023Z [__UNIFARM__] error: GET_SPECFIC_POOLS:: there is some issue reason syntax error at or near ")".
 2021-11-19T16:22:15.099Z [__UNIFARM__] error: GET_SPECFIC_POOLS:: there is some issue reason syntax error at or near ")".
+2021-11-29T12:54:46.218Z [__UNIFARM__] info: connection established to unifarm
+2021-11-29T12:54:50.142Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-11-29T12:54:51.256Z [__UNIFARM__] info: Basic Actions Performed
+2021-11-29T12:54:52.405Z [__UNIFARM__] info: Database Sync Successfully for the 56
+2021-11-29T12:55:34.944Z [__UNIFARM__] info: connection established to unifarm
+2021-11-29T12:55:38.858Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-11-29T12:55:42.018Z [__UNIFARM__] info: Tokens Sync done for bsc chain
+2021-11-29T12:56:12.693Z [__UNIFARM__] info: connection established to unifarm
+2021-11-29T12:56:16.575Z [__UNIFARM__] info: Message has been send to the related worker please wait for activation
+2021-12-10T13:11:01.413Z [__UNIFARM__] info: connection established to unifarm
+2021-12-10T13:11:05.353Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-12-10T13:11:06.294Z [__UNIFARM__] info: Basic Actions Performed
+2021-12-10T13:11:07.142Z [__UNIFARM__] info: Database Sync Successfully for the 56
+2021-12-10T13:12:04.370Z [__UNIFARM__] info: connection established to unifarm
+2021-12-10T13:12:08.283Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-12-10T13:12:11.048Z [__UNIFARM__] info: Tokens Sync done for bsc chain
+2021-12-10T13:12:36.981Z [__UNIFARM__] info: connection established to unifarm
+2021-12-10T13:12:40.868Z [__UNIFARM__] info: Message has been send to the related worker please wait for activation
+2021-12-17T13:19:22.932Z [__UNIFARM__] info: connection established to unifarm
+2021-12-17T13:19:26.824Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-12-17T13:19:27.541Z [__UNIFARM__] info: Basic Actions Performed
+2021-12-17T13:19:28.327Z [__UNIFARM__] info: Database Sync Successfully for the 56
+2021-12-17T13:20:01.132Z [__UNIFARM__] info: connection established to unifarm
+2021-12-17T13:20:05.016Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-12-17T13:20:07.554Z [__UNIFARM__] info: Tokens Sync done for bsc chain
+2021-12-17T13:20:33.275Z [__UNIFARM__] info: connection established to unifarm
+2021-12-17T13:20:37.133Z [__UNIFARM__] info: Message has been send to the related worker please wait for activation
+2021-12-22T07:54:11.251Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:8080/graphql
+2021-12-22T07:54:11.751Z [__UNIFARM__] info: connection established to unifarm
+2021-12-22T09:07:33.107Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:8080/graphql
+2021-12-22T09:07:33.604Z [__UNIFARM__] info: connection established to unifarm
+2021-12-22T09:07:58.968Z [__UNIFARM__] info: 🚀 Server ready at http://localhost:8080/graphql
+2021-12-22T09:07:59.496Z [__UNIFARM__] info: connection established to unifarm
+2021-12-22T09:31:14.055Z [__UNIFARM__] error: GET_ALL_UNSTAKES:: fetch failed by Cannot destructure property 'chainId' of 'args.where' as it is undefined..
+2021-12-22T09:32:21.523Z [__UNIFARM__] error: GET_ALL_UNSTAKES:: fetch failed by Cannot destructure property 'chainId' of 'args.where' as it is undefined..
+2021-12-22T09:35:31.506Z [__UNIFARM__] error: GET_ALL_UNSTAKES:: fetch failed by Cannot destructure property 'chainId' of 'args.where' as it is undefined..
+2021-12-22T09:35:59.604Z [__UNIFARM__] error: GET_ALL_UNSTAKES:: fetch failed by Cannot destructure property 'chainId' of 'args.where' as it is undefined..
+2021-12-23T13:18:42.426Z [__UNIFARM__] info: connection established to unifarm
+2021-12-23T13:18:46.351Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-12-23T13:18:47.121Z [__UNIFARM__] info: Basic Actions Performed
+2021-12-23T13:18:48.180Z [__UNIFARM__] info: Database Sync Successfully for the 137
+2021-12-23T13:19:39.647Z [__UNIFARM__] info: connection established to unifarm
+2021-12-23T13:19:43.554Z [__UNIFARM__] info: manifest loaded. cohorts found 1
+2021-12-23T13:19:46.544Z [__UNIFARM__] info: Tokens Sync done for polygon chain
+2021-12-23T13:20:14.159Z [__UNIFARM__] info: connection established to unifarm
+2021-12-23T13:20:18.078Z [__UNIFARM__] info: Message has been send to the related worker please wait for activation

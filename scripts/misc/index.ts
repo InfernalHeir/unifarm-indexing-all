@@ -66,13 +66,13 @@ export const updateProxy = async (chainId: number, cohortId: string, proxies: st
 appBoot().then(() => {
    setTimeout(() => {
       /* syncFutureCohorts(
-         ETH_CHAIN,
-         [{ address: "0xE02460E3B84B1F51B70474FD08D09FcE35e77047", version: "V28" }],
+         POLYGON_CHAIN,
+         [{ address: "0x1720bb2B6E11F6582cC1a7f6510FEb84064Ea811", version: "V32" }],
          [[]]
       ); */
-      /* syncFutureTokens(ETH_CHAIN, [
-         { address: "0xE02460E3B84B1F51B70474FD08D09FcE35e77047", version: "V28" },
+      /* syncFutureTokens(POLYGON_CHAIN, [
+         { address: "0x1720bb2B6E11F6582cC1a7f6510FEb84064Ea811", version: "V32" },
       ]); */
-      publishFutureCohorts(BSC_CHAIN, ["0x596B8cADCB830B09dbE0136A66DE1CCE5eb5117e"]);
+      //publishFutureCohorts(POLYGON_CHAIN, ["0x1720bb2B6E11F6582cC1a7f6510FEb84064Ea811"]);
    }, 4400);
 });

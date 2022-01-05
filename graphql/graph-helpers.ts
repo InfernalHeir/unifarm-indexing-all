@@ -216,8 +216,6 @@ export const getAllStakes = async (
    } else {
       const stakes = await getRepository(Stake, "unifarm")
          .createQueryBuilder("stake")
-         .offset(_offset)
-         .limit(take)
          .orderBy("stake.time", orderDirection ? orderDirection : "DESC")
          .where("stake.chainId =:chainId", { chainId })
          .getMany();
@@ -225,13 +223,10 @@ export const getAllStakes = async (
    }
 };
 
-export const getAllUnstakes = async (chainId: number, userAddress: string) => {
+export const getAllUnstakes = async (chainId: number) => {
    const unstakes = await getRepository(Unstake, "unifarm")
       .createQueryBuilder("unstake")
       .where("unstake.chainId =:chainId", { chainId })
-      .andWhere("LOWER(unstake.userAddress) =:userAddress", {
-         userAddress: userAddress.toLowerCase(),
-      })
       .getMany();
    return unstakes;
 };

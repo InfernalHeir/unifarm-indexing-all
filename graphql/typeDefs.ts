@@ -72,8 +72,6 @@ export const typeDefs = gql`
    input UnStakeWhere {
       "Chain id eg : 1 | 56 | 137"
       chainId: Int!
-      "user wallet address"
-      userAddress: String!
    }
 
    input ClaimWhere {
