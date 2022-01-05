@@ -66,6 +66,22 @@ services:
          mode: "replicated"
          restart_policy:
             condition: on-failure
+   avax-events-sync:
+      image: unifarm/unifarm-mainnet-events:2.0.1
+      env_file: "./.env.prod"
+      volumes:
+         - polygon-events-logs:/events/storage
+      environment:
+         - CHAIN_ID=43114
+      networks:
+         - unifarm
+      command: ["run","listener-server:start"]
+      depends_on: 
+         - redis     
+      deploy:
+         mode: "replicated"
+         restart_policy:
+            condition: on-failure         
    redis:
       image: redis:latest
       volumes:
