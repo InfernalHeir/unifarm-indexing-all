@@ -1,15 +1,18 @@
 import { JsonRpcProvider, WebSocketProvider } from "@ethersproject/providers";
 import { Contract } from "ethers";
 import {
+   avaxRPCUrl,
    bscRPCUrl,
    ethereumRPCUrl,
    polygonRPCUrl,
+   wsAvaxRPCUrl,
    wsBscRPCUrl,
    wsEthRPCUrl,
    wsPolygonRPCUrl,
 } from "./rpc";
 import BscCohortABI from "../constants/bsc/ABI.json";
 import PolygonCohortABI from "../constants/polygon/ABI.json";
+import AvaxCohortABI from "../constants/avax/ABI.json";
 import { ethSwitch } from "./switch";
 import Web3 from "web3";
 
@@ -27,11 +30,15 @@ export const bscProvider = new JsonRpcProvider(bscRPCUrl);
 
 export const polygonProvider = new JsonRpcProvider(polygonRPCUrl);
 
+export const avaxProvider = new JsonRpcProvider(avaxRPCUrl);
+
 export const wsEthProvider = new Web3(wsEthRPCUrl);
 
 export const wsBscProvider = new Web3(wsBscRPCUrl);
 
 export const wsPolygonProvider = new Web3(wsPolygonRPCUrl);
+
+export const wsAvaxProvider = new Web3(wsAvaxRPCUrl);
 
 export const ethereumCohorts = (cohortAddress: string) => {
    return ethSwitch(cohortAddress, ethProvider);
@@ -43,6 +50,10 @@ export const bscCohorts = (cohortAddress: string) => {
 
 export const polygonCohorts = (cohortAddress: string) => {
    return new Contract(cohortAddress, PolygonCohortABI, polygonProvider);
+};
+
+export const avaxCohorts = (cohortAddress: string) => {
+   return new Contract(cohortAddress, AvaxCohortABI, avaxProvider);
 };
 
 // Proxy Instances
@@ -69,6 +80,8 @@ export const getCohorts = (chainId: number) => {
          return bscCohorts;
       case 80001:
          return polygonCohorts;
+      case 43113:
+         return avaxCohorts;
       default:
          return null;
    }
@@ -95,6 +108,8 @@ export const getProviders = (chainId: number) => {
          return bscProvider;
       case 80001:
          return polygonProvider;
+      case 43113:
+         return avaxProvider;
       default:
          return null;
    }
@@ -108,6 +123,8 @@ export const getWsProviders = (chainId: number) => {
          return wsBscProvider;
       case 80001:
          return wsPolygonProvider;
+      case 43113:
+         return wsAvaxProvider;
       default:
          return null;
    }

@@ -25,6 +25,7 @@ export const chainNameById: Chain = {
    4: "rinkeby",
    97: "bsc testnet",
    80001: "mumbai",
+   43113: "avax testnet",
 };
 
 // DUMP pools
@@ -37,6 +38,7 @@ export const WBTC: string = "0x0d787a4a1548f673ed375445535a6c7A1EE56180";
 export const ETH_CHAIN = 4;
 export const BSC_CHAIN = 97;
 export const POLYGON_CHAIN = 80001;
+export const AVAX_TESTNET = 43113;
 
 export const MORALIS_API = "https://deep-index.moralis.io";
 
