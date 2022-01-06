@@ -18,7 +18,7 @@ services:
          restart_policy:
             condition: on-failure
    eth-events-sync:
-      image: unifarm/unifarm-testnet-events:4.4.4
+      image: unifarm/unifarm-testnet-events:4.4.5
       env_file: "./.env.prod"
       environment:
          - CHAIN_ID=4
@@ -32,7 +32,7 @@ services:
          restart_policy:
             condition: on-failure     
    bsc-events-sync:
-      image: unifarm/unifarm-testnet-events:4.4.4
+      image: unifarm/unifarm-testnet-events:4.4.5
       env_file: "./.env.prod"
       environment:
          - CHAIN_ID=97
@@ -47,7 +47,7 @@ services:
             condition: on-failure
 
    polygon-events-sync:
-      image: unifarm/unifarm-testnet-events:4.4.4
+      image: unifarm/unifarm-testnet-events:4.4.5
       env_file: "./.env.prod"
       environment:
          - CHAIN_ID=80001
@@ -60,6 +60,20 @@ services:
          mode: "replicated"
          restart_policy:
             condition: on-failure
+   avax-events-sync:
+      image: unifarm/unifarm-testnet-events:4.4.5
+      env_file: "./.env.prod"
+      environment:
+         - CHAIN_ID=43113
+      volumes:
+         - polygon_events:/events/storage
+      networks:
+         - unifarm
+      command: ["run","listener-server:start"]     
+      deploy:
+         mode: "replicated"
+         restart_policy:
+            condition: on-failure      
    redis:
       image: redis:latest
       volumes:
