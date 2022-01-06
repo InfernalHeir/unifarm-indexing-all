@@ -12,7 +12,7 @@
       "seed:all:tokens": "export NODE_ENV=dev && nodemon --ext '.ts' ./scripts/seed-all-tokens.ts",
       "seed:all:events": "export NODE_ENV=dev && nodemon --ext '.ts' ./index.ts",
       "start:dev:graph-server": "export NODE_ENV=dev && nodemon --ext '.ts' ./graphql/graph.ts",
-      "start:dev:all-listerners": "export NODE_ENV=dev && export CHAIN_ID=4 && nodemon --ext '.ts' events/listeners/initListeners.ts",
+      "start:dev:all-listerners": "export NODE_ENV=dev && export CHAIN_ID=43113 && nodemon --ext '.ts' events/listeners/initListeners.ts",
       "graph:clean": "rimraf ./graphql/build",
       "graph:build": "babel ./ --extensions '.ts' --config-file ./graphql/babel.config.js --out-dir ./graphql/build",
       "graph:start": "pm2-runtime start ./build/graphql/graph.js --name graph",
