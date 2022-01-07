@@ -18,7 +18,7 @@ services:
          restart_policy:
             condition: on-failure
    eth-events-sync:
-      image: unifarm/unifarm-mainnet-events:2.0.1
+      image: unifarm/unifarm-mainnet-events:3.0.0
       env_file: "./.env.prod"
       volumes:
          - eth-events-logs:/events/storage
@@ -34,7 +34,7 @@ services:
          restart_policy:
             condition: on-failure     
    bsc-events-sync:
-      image: unifarm/unifarm-mainnet-events:2.0.1
+      image: unifarm/unifarm-mainnet-events:3.0.0
       env_file: "./.env.prod"
       volumes:
          - bsc-events-logs:/events/storage
@@ -51,7 +51,7 @@ services:
             condition: on-failure
 
    polygon-events-sync:
-      image: unifarm/unifarm-mainnet-events:2.0.1
+      image: unifarm/unifarm-mainnet-events:3.0.0
       env_file: "./.env.prod"
       volumes:
          - polygon-events-logs:/events/storage
@@ -67,10 +67,10 @@ services:
          restart_policy:
             condition: on-failure
    avax-events-sync:
-      image: unifarm/unifarm-mainnet-events:2.0.1
+      image: unifarm/unifarm-mainnet-events:3.0.0
       env_file: "./.env.prod"
       volumes:
-         - polygon-events-logs:/events/storage
+         - avax-events-logs:/events/storage
       environment:
          - CHAIN_ID=43114
       networks:
@@ -105,5 +105,6 @@ volumes:
    graph:
    eth-events-logs:   
    bsc-events-logs:   
-   polygon-events-logs:   
+   polygon-events-logs:
+   avax-events-logs:   
    redis-data:      

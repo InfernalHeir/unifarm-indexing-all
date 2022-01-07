@@ -6,6 +6,7 @@ import { logger } from "../../log";
 import { concat, isEmpty, uniq } from "lodash";
 import { promisify } from "util";
 import { client, setter } from "./listeners-config/clients";
+import _ from "lodash";
 
 interface RedisCohortsPubSubListener {
    chainId: number;
@@ -102,11 +103,11 @@ export async function start(eventOpts: InitListenersOptions) {
    const web3 = getWsProviders(eventOpts.chainId);
 
    // syncing status
-   syncingStatus(web3);
+   //syncingStatus(web3);
    // grab the cohorts which have to listen
    const cohorts = listeners[eventOpts.chainId];
 
-   const mergedAll = concat(cohorts, previousCohorts);
+   const mergedAll = concat(_.isEmpty(cohorts) ? [] : cohorts, previousCohorts);
    // activate the listener
    activateListener(web3, mergedAll);
 

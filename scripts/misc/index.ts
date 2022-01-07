@@ -4,7 +4,7 @@ import { allCohortInsertation } from "../cohort";
 import { allTokens } from "../tokens";
 import _ from "lodash";
 import { appBoot } from "../../db/createConnection";
-import { BSC_CHAIN, ETH_CHAIN, POLYGON_CHAIN } from "../../constants";
+import { AVAX_CHAIN, BSC_CHAIN, ETH_CHAIN, POLYGON_CHAIN } from "../../constants";
 import { logger } from "../../log";
 import redis from "redis";
 
@@ -63,8 +63,28 @@ export const updateProxy = async (chainId: number, cohortId: string, proxies: st
    await updateProxyAddress(chainId, cohortId, proxies);
 };
 
+const storeFutureCohorts = async (chainId: number, newCohorts: string[]): Promise<boolean> => {
+   const update: boolean = await client.set(`FUTURE_COHORT_${chainId}`, JSON.stringify(newCohorts));
+   return update;
+};
+
+const addNewCohorts = async (chainId: number, cohorts: string[]) => {
+   try {
+      const updated = await storeFutureCohorts(chainId, cohorts);
+      if (updated) {
+         logger.info(`New Cohorts Added`);
+      } else {
+         logger.error(`not saved please try again`);
+      }
+   } catch (err) {
+      logger.error(`failed: ${err.message}`);
+      return;
+   }
+};
+
 appBoot().then(() => {
-   setTimeout(() => {
+   setTimeout(async () => {
+      //await addNewCohorts(AVAX_CHAIN, ["0x7af8171b72214068A6B48f4467e41d0d913FaFb6"]);
       /* syncFutureCohorts(
          POLYGON_CHAIN,
          [{ address: "0x1720bb2B6E11F6582cC1a7f6510FEb84064Ea811", version: "V32" }],
